@@ -62,7 +62,7 @@
 
                     <div class="tab-pane" id="tab_1">
 
-                        <?php $this->load->view('mantenedor/usuarios/ins_view') ?>
+                        <?php $this->load->view('mantenedor/usuarios/buscarpersona_view') ?>
 
                     </div>
 

@@ -266,7 +266,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-md-3">Tipo Persona:</label>
                                         <div class="col-md-4">
-                                            <p class="form-control-static"> Persona Natural
+                                            <p class="form-control-static"> Persona Jurídica
                                             </p>
                                         </div>
                                     </div>

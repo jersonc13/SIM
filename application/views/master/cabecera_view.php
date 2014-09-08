@@ -70,7 +70,7 @@
             <div class="page-header-inner">
                 <!-- BEGIN LOGO -->
                 <div class="page-logo">
-                    <a href="index.html">
+                    <a href="<?php echo URL_MAIN ?>/dashboard/inicio">
                         <img src="<?php echo URL_ADMINLIMG ?>/logo/logoSIMSDSF.png" width="70px" alt="logo" class="logo-default"/>
                     </a>
                     <div class="menu-toggler sidebar-toggler hide">
@@ -465,7 +465,7 @@
                                         <i class="fa fa-lock"></i> Lock Screen </a>
                                 </li>
                                 <li>
-                                    <a href="login.html">
+                                    <a href="<?php echo URL_MAIN ?>">
                                         <i class="fa fa-key"></i> Log Out </a>
                                 </li>
                             </ul>

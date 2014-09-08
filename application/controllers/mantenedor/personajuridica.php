@@ -30,7 +30,7 @@ class Personajuridica extends CI_Controller {
 
     function registrarPersonaJuridica() {
         // ins_personajuridica
-        $validar = $this->persona_model->da_registrarPersona( $tipo_accion = 'ins_personajuridica' ,'', $_POST['txtnombres'],$_POST['tipo_documento'], $_POST['txtdniruc'], $_POST['email'],$_POST['phone'], $_POST['operador'],'', '0', $_POST['address'], $_POST['cbo_departamento'], $_POST['cbo_provincia'], $_POST['cbo_distrito'], $_POST['txtlatitud'], $_POST['txtlongitud']);
+        $validar = $this->persona_model->da_registrarPersona( $tipo_accion = 'ins_personajuridica' ,'', $_POST['txtnombres'],$_POST['tipo_documento'], $_POST['txtdniruc'], '',$_POST['phone'], $_POST['operador'],'', '0', $_POST['address'], $_POST['cbo_departamento'], $_POST['cbo_provincia'], $_POST['cbo_distrito'], $_POST['txtlatitud'], $_POST['txtlongitud']);
 
         if ($validar) {
             echo $validar['msg'];

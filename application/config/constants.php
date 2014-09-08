@@ -20,17 +20,17 @@ define('DIR_WRITE_MODE', 0777);
 //define('SERVER_AP', 'yugocorp.sytes.net');
 define('SERVER_AP', 'localhost');
 define('SERVER_DB', 'localhost');
-define('URL_GLOBALCSS', 'http://'.SERVER_AP.'/pytsimadmin-ci/assets/global/css');
-define('URL_ADMINLCSS', 'http://'.SERVER_AP.'/pytsimadmin-ci/assets/admin/layout/css');
-define('URL_ADMINPCSS', 'http://'.SERVER_AP.'/pytsimadmin-ci/assets/admin/pages/css');
-define('URL_GOBALJS', 'http://'.SERVER_AP.'/pytsimadmin-ci/assets/global/scripts');
-define('URL_ADMINLJS', 'http://'.SERVER_AP.'/pytsimadmin-ci/assets/admin/layout/scripts');
-define('URL_ADMINPJS', 'http://'.SERVER_AP.'/pytsimadmin-ci/assets/admin/pages/scripts');
-define('URL_IMGAP', 'http://'.SERVER_AP.'/pytsimadmin-ci/assets/admin/pages/scripts');
-define('URL_GOBALPG', 'http://'.SERVER_AP.'/pytsimadmin-ci/assets/global/plugins');
-define('URL_ADMINLIMG', 'http://'.SERVER_AP.'/pytsimadmin-ci/assets/admin/layout/img');
-define('URL_MAIN', 'http://'.SERVER_AP.'/pytsimadmin-ci');
-define('URL_MAINDAS', 'http://'.SERVER_AP.'/pytsimadmin-ci/dashboard'); 
+define('URL_GLOBALCSS', 'http://'.SERVER_AP.'/SIM/assets/global/css');
+define('URL_ADMINLCSS', 'http://'.SERVER_AP.'/SIM/assets/admin/layout/css');
+define('URL_ADMINPCSS', 'http://'.SERVER_AP.'/SIM/assets/admin/pages/css');
+define('URL_GOBALJS', 'http://'.SERVER_AP.'/SIM/assets/global/scripts');
+define('URL_ADMINLJS', 'http://'.SERVER_AP.'/SIM/assets/admin/layout/scripts');
+define('URL_ADMINPJS', 'http://'.SERVER_AP.'/SIM/assets/admin/pages/scripts');
+define('URL_IMGAP', 'http://'.SERVER_AP.'/SIM/assets/admin/pages/scripts');
+define('URL_GOBALPG', 'http://'.SERVER_AP.'/SIM/assets/global/plugins');
+define('URL_ADMINLIMG', 'http://'.SERVER_AP.'/SIM/assets/admin/layout/img');
+define('URL_MAIN', 'http://'.SERVER_AP.'/SIM');
+define('URL_MAINDAS', 'http://'.SERVER_AP.'/SIM/dashboard'); 
 
 /*
 |--------------------------------------------------------------------------

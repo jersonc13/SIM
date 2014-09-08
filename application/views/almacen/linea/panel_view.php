@@ -1,11 +1,11 @@
-<script src="<?php echo URL_ADMINPJS ?>/mantenedor/persona/jsPersonaJuridica.js" type="text/javascript"></script>
+<script src="<?php echo URL_ADMINPJS ?>/almacen/linea/jsLinea.js" type="text/javascript"></script>
 <div class="page-content">
     <!-- BEGIN PAGE HEADER-->
     <div class="row">
         <div class="col-md-12">
             <!-- BEGIN PAGE TITLE & BREADCRUMB-->
             <h3 class="page-title">
-                Persona Jurídica
+                Linea de Producto
             </h3>
             <ul class="page-breadcrumb breadcrumb">
                 <li>
@@ -16,12 +16,12 @@
                 </li>
                 <li>
                     <a href="#">
-                        Mantenedor </a>
+                        Almacen </a>
                     <i class="fa fa-angle-right"></i>
                 </li>
                 <li>
                     <a href="#">
-                        Persona </a>
+                        Linea </a>
                     <i class="fa fa-angle-right"></i>
                 </li>
             </ul>
@@ -59,25 +59,27 @@
                     <div class="tab-pane active" id="tab_0">
 
                         <div id="mostrar_qry" >
+
+
                         </div>
 
                     </div>
 
                     <div class="tab-pane" id="tab_1">
 
-                        <?php $this->load->view('mantenedor/personajuridica/ins_view') ?>
+                        <?php $this->load->view('almacen/linea/ins_view') ?>
 
                     </div>
-                    
+
                     <div class="tab-pane" id="tab_2">
 
-                        <?php $this->load->view('mantenedor/personajuridica/detalle_view') ?>
+                        <?php $this->load->view('mantenedor/personanatural/detalle_view') ?>
 
                     </div>
-                    
+
                     <div class="tab-pane" id="tab_3">
 
-                        <?php $this->load->view('mantenedor/personajuridica/upd_view') ?>
+                        <?php $this->load->view('mantenedor/personanatural/upd_view') ?>
 
                     </div>
 

@@ -9,6 +9,7 @@ class Usuarios extends CI_Controller {
         parent::__construct();
         $this->_validaracceso();
         $this->load->model('mantenedor/usuarios_model');
+        $this->load->model('seguridad/permisos_model');
     }
 
     function _validaracceso() {
@@ -21,16 +22,25 @@ class Usuarios extends CI_Controller {
     }
 
     function index() {
-        $data['listarUsuarios'] = $this->usuarios_model->da_listarUsuarios();
-        $data['listarRoles'] = $this->usuarios_model->da_listarRoles();
+//        $data['listarUsuarios'] = $this->usuarios_model->da_listarUsuarios();
+//        $data['listarRoles'] = $this->usuarios_model->da_listarRoles();
         $data['main_content'] = 'mantenedor/usuarios/panel_view';
         $data['titulo'] = 'Usuarios | SIM';
         $this->load->view('master/plantilla_view', $data);
     }
 
-    function registrarUsuarios() {
+    function buscarPersona() {
+        $txtPersona = $_POST['txtPersona'];
+        $data['listarPersonas'] = $this->permisos_model->dblistarpersonas($txtPersona);
+        $this->load->view('mantenedor/usuarios/qrypermisos_view', $data);
+    }
 
-        $validar = $this->usuarios_model->da_registrarUsuarios($_POST['txtdniruc'], $_POST['txtusuario'], $_POST['txtcontrasena'], $_POST['cbo_tipousuarios']);
+    function registrarUsuarios() {
+        $txtusuario = $_POST['txtusuario'];
+        $txtcontrasena = $_POST['txtcontrasena'];
+        $cbo_tipousuarios = $_POST['cbo_tipousuarios'];
+        $txtnperid = $_POST['txtnperid'];
+        $validar = $this->usuarios_model->da_registrarUsuarios($txtusuario, $txtcontrasena, $cbo_tipousuarios, $txtnperid);
 
         if ($validar) {
             echo $validar['msg'];
@@ -39,19 +49,11 @@ class Usuarios extends CI_Controller {
         }
     }
 
-    function actualizarArea() {
-
-        $txte_nidarea = $_POST['txte_nidarea'];
-        $txte_area = $_POST['txte_area'];
-        $txte_alias = $_POST['txte_alias'];
-
-        $validar = $this->area_model->dbactualizarArea($txte_nidarea, $txte_area, $txte_alias);
-
-        if ($validar) {
-            echo $validar['msg'];
-        } else {
-            echo $validar['msg'];
-        }
+    function vista_crearusuario() {
+        $nPerId = $_POST['nidvalor'];
+        $data['nPerId'] = $nPerId;
+        $data['listarRoles'] = $this->usuarios_model->da_listarRoles();
+        $this->load->view('mantenedor/usuarios/ins_view', $data);
     }
 
     function listarUsuarios() {

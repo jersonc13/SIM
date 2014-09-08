@@ -9,9 +9,8 @@
         <form action="#" id="frmUsuarios" class="form-horizontal form-row-seperated">
             <div class="form-body">
                 <div class="form-group">
-                    <label class="control-label col-md-3">Ingrese DNI/RUC:</label>
                     <div class="col-md-6">
-                        <input type="text" id="txtdniruc" name="txtdniruc" class="form-control"/>
+                        <input type="hidden" id="txtnperid" name="txtnperid" value="<?php echo $nPerId; ?>" class="form-control"/>
                     </div>
                 </div>
                 <div class="form-group">
@@ -29,7 +28,7 @@
                 <div class="form-group">
                     <label class="control-label col-md-3">Tipo de Usuario:</label>
                     <div class="col-md-6">
-                        <select class="form-control" name="cbo_tipousuarios">
+                        <select class="form-control" name="cbo_tipousuarios" id="cbo_tipousuarios">
                             <option value="" disabled="true" selected="true">Seleccione</option>
                             <?php foreach ($listarRoles as $key => $listar) { ?>
                                 <option value="<?php echo $listar['nidroles'] ?>"><?php echo $listar['croles'] ?></option>
@@ -42,7 +41,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="col-md-offset-3 col-md-9">
-                            <button type="submit" class="btn green"><i class="fa fa-save"></i> Guardar</button>
+                            <input type="button" id="btngrabarusuario" name="btngrabarusuario" onclick="registrarPermisos()" value="Grabar" class="btn blue"/>
                         </div>
                     </div>
                 </div>

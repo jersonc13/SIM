@@ -19,7 +19,7 @@ class Usuarios_model extends CI_Model {
             return 0;
         }
     }
-    
+
     function da_listarRoles() {
         $instruccion = "CALL sim_sp_qry_cargarroles ('qry_rolesall','');";
         $query = $this->db->query($instruccion);
@@ -30,9 +30,9 @@ class Usuarios_model extends CI_Model {
             return 0;
         }
     }
-    
-    function da_registrarUsuarios($txtdniruc, $txtusuario, $txtcontrasena, $cbo_tipousuarios) {
-        $instruccion = "CALL sim_sp_ins_usuarios('ins_usuarios','" . $txtdniruc . "','" . $txtusuario . "','" . $txtcontrasena . "','" . $cbo_tipousuarios . "');";
+
+    function da_registrarUsuarios($txtusuario, $txtcontrasena, $cbo_tipousuarios, $txtnperid) {
+        $instruccion = "CALL sim_sp_ins_usuarios('ins_usuarios','" . $txtusuario . "','" . $txtcontrasena . "','" . $cbo_tipousuarios . "','" . $txtnperid . "');";
         $query = $this->db->query($instruccion);
         $this->db->close();
         if ($query) {

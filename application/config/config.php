@@ -15,7 +15,7 @@
 |
 */
 //$config['base_url']	= 'http://yugocorp.sytes.net/pytsim-ci/';
-$config['base_url']	= 'http://localhost/pytsim-ci/';
+$config['base_url']	= 'http://localhost/SIM/';
 
 /*
 |--------------------------------------------------------------------------
