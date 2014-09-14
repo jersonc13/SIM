@@ -6,14 +6,14 @@
     </div>
     <div class="portlet-body form">
         <!-- BEGIN FORM-->
-        <form action="#" id="frmClientesxEmpresa" class="form-horizontal form-row-seperated">
+        <form action="#" id="frmClientesxVendedor" class="form-horizontal form-row-seperated">
             <div class="form-body">
                 <div class="form-group">
-                    <label class="control-label col-md-3">Selección de Empresa:</label>
+                    <label class="control-label col-md-3">Selección Vendedor:</label>
                     <div class="col-md-6">
-                        <select id="cbo_empresa" name="cbo_empresa" class="form-control">
+                        <select id="cbo_vendedor" name="cbo_vendedor" class="form-control">
                             <option value="0" selected="true" disabled>Seleccione</option>
-                            <?php foreach ($listarEmpresas as $key => $listar) { ?>
+                            <?php foreach ($listarVendedor as $key => $listar) { ?>
                                 <option value="<?php echo $listar['nidperroles'] ?>"><?php echo $listar['cnomcomercial'] ?></option>
                             <?php } ?>
                         </select>

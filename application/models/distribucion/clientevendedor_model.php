@@ -3,14 +3,14 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Asignarclientes_model extends CI_Model {
+class Clientevendedor_model extends CI_Model {
 
     function __construct() {
         parent::__construct();
     }
 
-    function da_listarClientesxEmpresas() {
-        $instruccion = "CALL sim_sp_qry_clientesxempresa ('qry_clientesxempresa','','');";
+    function da_listarClientesvendedor() {
+        $instruccion = "CALL sim_sp_qry_clientesxvendedor ('qry_clientesxvendedor','','');";
         $query = $this->db->query($instruccion);
         $this->db->close();
         if ($query) {
@@ -20,8 +20,8 @@ class Asignarclientes_model extends CI_Model {
         }
     }
 
-    function da_registrarClientesxEmpresa($cbo_empresa, $cbo_cliente) {
-        $instruccion = "CALL sim_sp_ins_clientexempresa('ins_clientexempresa','" . $cbo_empresa . "','" . $cbo_cliente . "');";
+    function da_registrarClientesxVendedor($cbo_vendedor, $cbo_cliente) {
+        $instruccion = "CALL sim_sp_ins_clientexvendedor('ins_clientexvendedor','" . $cbo_vendedor . "','" . $cbo_cliente . "');";
         $query = $this->db->query($instruccion);
         $this->db->close();
         if ($query) {

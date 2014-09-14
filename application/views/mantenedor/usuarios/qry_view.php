@@ -13,7 +13,7 @@
             <thead>
                 <tr>
                     <th>Usuario</th>
-                    <th>Persona</th>
+                    <th>Nombre</th>
                     <th>DNI/RUC</th>
                     <th>Tipo Usuario</th>                    
                     <th>Opciones</th>          
@@ -23,7 +23,7 @@
                 <?php foreach ($listarUsuarios as $key => $listar) { ?>
                     <tr>
                         <td><?php echo $listar['cusuario'] ?></td>
-                        <td><?php echo $listar['capellidos'].' '.$listar['cnombres']  ?></td>
+                        <td><?php echo $listar['cnombre']  ?></td>
                         <td><?php echo $listar['cdniruc'] ?></td>
                         <td><?php echo $listar['cmaestra'] ?></td>
                         <td>

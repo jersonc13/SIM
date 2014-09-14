@@ -434,7 +434,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                                 <img alt="" class="img-circle" src="<?php echo URL_ADMINLIMG ?>/avatar3_small.jpg"/>
                                 <span class="username">
-                                    Bob </span>
+                                   <?php echo $this->session->userdata('sscusuario'); ?> </span>
                                 <i class="fa fa-angle-down"></i>
                             </a>
                             <ul class="dropdown-menu">

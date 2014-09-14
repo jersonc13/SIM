@@ -1,12 +1,12 @@
 $(function() {
-    asignarclientes();
-    $("#frmClientesxEmpresa").validate({
+    clientevendedor();
+    $("#frmClientesxVendedor").validate({
         errorElement: 'span',
         errorClass: 'help-block',
         submitHandler: function(form) {
             $.ajax({
                 type: "POST",
-                url: "asignarclientes/registrarClientesxEmpresa",
+                url: "clientevendedor/registrarClientesxVendedor",
                 data: $(form).serialize(),
                 success: function(data) {
                     if (data == '1') {
@@ -38,11 +38,11 @@ $(function() {
         }
     });
 });
-function asignarclientes() {
+function clientevendedor() {
     msgLoading("#mostrar_qry");
     $.ajax({
         type: "POST",
-        url: "asignarclientes/listarClientesxEmpresas",
+        url: "clientevendedor/listarClientesxVendedor",
         cache: false,
         success: function(data) {
             $("#mostrar_qry").html(data);
