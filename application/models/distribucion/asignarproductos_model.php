@@ -10,7 +10,7 @@ class Asignarproductos_model extends CI_Model {
     }
 
     function da_listarProductoxEmpresas() {
-        $instruccion = "CALL sim_sp_qry_productoxempresa ('qry_productoxempresa','','');";
+        $instruccion = "CALL sim_sp_qry_productoxempresa ('qry_productoxempresa','0','0');";
         $query = $this->db->query($instruccion);
         $this->db->close();
         if ($query) {

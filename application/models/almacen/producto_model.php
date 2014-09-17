@@ -10,7 +10,7 @@ class Producto_model extends CI_Model {
     }
 
     function da_listarProducto() {
-        $instruccion = "CALL sim_sp_qry_producto ('qry_producto','','');";
+        $instruccion = "CALL sim_sp_qry_producto ('qry_producto','0','0');";
         $query = $this->db->query($instruccion);
         $this->db->close();
         if ($query) {

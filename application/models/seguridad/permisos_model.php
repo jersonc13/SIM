@@ -70,6 +70,18 @@ class Permisos_model extends CI_Model {
             return 0;
         }
     }
+    public function PermisosxUsuarioUpd($arrayUpdate){
+        foreach ($arrayUpdate as $key => $sql) {
+            $this->db->query($sql);
+        }
+    }
+    public function PermisosIns($insertSql){
+        if( $this->db->query($insertSql) ){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
 }
 
