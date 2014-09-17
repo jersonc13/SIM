@@ -67,13 +67,15 @@ class Permisos extends CI_Controller {
     }
     public function setPermisosIns(){
         date_default_timezone_set('America/Lima');
+        $this->load->model('mantenedor/usuarios_model');
         $pid = $this->input->post('pid');
         $id = $this->input->post('ids');
         // $menusAsignados = $this->permisos_model->PermisosxUsuario($pid);
         $menusAsignados = $this->permisos_model->da_cargaropcionhijo($pid);
+        $pid = $this->usuarios_model->da_getCodUser($pid);
         $sql_permisos = "";
         $sql_insert = "INSERT INTO sim_opcionusuario(nidopcion,nidusuario,nestado) VALUES";
-        $sql_permisos_quitar=array();
+        $sql_permisos_quitar = array();
         $values="";
         if (is_array($id)) {
             foreach ($id as $i => $valor) {

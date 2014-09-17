@@ -20,6 +20,17 @@ class Usuarios_model extends CI_Model {
         }
     }
 
+    function da_getCodUser($nperid) {
+        $instruccion = "CALL sim_sp_qry_usuarios ('qry_idUserByCodPerson','".$nperid."');";
+        $query = $this->db->query($instruccion);
+        $this->db->close();
+        if ($query) {
+            return ($query->result_array()[0]['nidusuario']);
+        } else {
+            return 0;
+        }
+    }
+
     function da_listarRoles() {
         $instruccion = "CALL sim_sp_qry_cargarroles ('qry_rolesall','');";
         $query = $this->db->query($instruccion);
