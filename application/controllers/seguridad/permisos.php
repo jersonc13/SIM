@@ -70,56 +70,9 @@ class Permisos extends CI_Controller {
         $this->load->model('mantenedor/usuarios_model');
         $pid = $this->input->post('pid');
         $id = $this->input->post('ids');
-        // $menusAsignados = $this->permisos_model->PermisosxUsuario($pid);
-        $menusAsignados = $this->permisos_model->da_cargaropcionhijo($pid);
-        $pid = $this->usuarios_model->da_getCodUser($pid);
-        $sql_permisos = "";
-        $sql_insert = "INSERT INTO sim_opcionusuario(nidopcion,nidusuario,nestado) VALUES";
-        $sql_permisos_quitar = array();
-        $values="";
-        if (is_array($id)) {
-            foreach ($id as $i => $valor) {
-                if(is_array($menusAsignados)){
-                    if(!search_in_array($valor,$menusAsignados,'nidopcion') ){
-                        $values .= "($valor,$pid,1),";
-                    }
-                }else{
-                    $values .= "($valor,$pid,1),";
-                }
-            }
-        }
-
-        if (is_array($menusAsignados)) {
-            foreach ($menusAsignados as $key => $row ) {
-                $fecha_actual = date('Y-m-d H:i:s', time());
-                if(is_array($id)){                
-                    if( !in_array($row['nidopcion'], $id) ){
-                        $sql_permisos_quitar[]="UPDATE sim_opcionusuario set nestado=0 where nidusuario=$pid AND nidopcion=".$row['nidopcion'].";";
-                    }
-                }else{
-                    $sql_permisos_quitar[]="UPDATE sim_opcionusuario set nestado=0 where nidusuario=$pid AND nidopcion=".$row['nidopcion'].";";
-                }
-            }
-        }
-        $rpt="1";
-        if (trim($values)!="") {
-            $sql_permisos .= $sql_insert.substr($values, 0, -1).';';
-            // print_p($sql_permisos);
-            // print_p($sql_permisos_quitar);
-            // exit();
-            if( $this->permisos_model->PermisosIns($sql_permisos) ) {
-                $rpt = "1";
-            }
-        }
-        if (count($sql_permisos_quitar)>0) {
-            // print("sql_permisos");
-            // print_p($sql_permisos);
-            // print_p($sql_permisos_quitar);
-            // exit();
-            $this->permisos_model->PermisosxUsuarioUpd($sql_permisos_quitar);
-            $rpt = "1";
-        } else {}
-        echo $rpt;          
+        $uid = $this->usuarios_model->da_getCodUser($pid);
+        $rpt = $this->permisos_model->da_setopcionUsuario( $uid, $id );
+        echo $rpt;    
     }
 
     function opciones() {
