@@ -25,7 +25,7 @@ class Usuarios_model extends CI_Model {
         $query = $this->db->query($instruccion);
         $this->db->close();
         if ($query) {
-            return ($query->result_array()[0]['nidusuario']);
+            return ($query->row_array());
         } else {
             return 0;
         }
