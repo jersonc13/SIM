@@ -8,10 +8,9 @@ class Productopedido extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->_validaracceso();
-        $this->load->model('almacen/producto_model');
-        $this->load->model('almacen/linea_model');
-        $this->load->model('mantenedor/persona_model');
-        $this->load->model('distribucion/clientevendedor_model');
+        $this->load->model('distribucion/asignarvendedor_model');
+        $this->load->model('distribucion/asignarproductos_model');
+        $this->load->model('ventas/productopedido_model');
     }
 
     function _validaracceso() {
@@ -26,10 +25,11 @@ class Productopedido extends CI_Controller {
     function index() {
 //        $data['listarAreas'] = $this->areas_model->da_listarAreas();
         $data['main_content'] = 'ventas/productopedido/panel_view';
-        $data['listarLineas'] = $this->linea_model->da_listarLinea();
-        $data['listarClientes'] = $this->persona_model->da_listarPersona('qry_clientes');
-        $data['listarVendedor'] = $this->persona_model->da_listarPersona('qry_vendedor');
-        $data['titulo'] = 'Asignar Productos | SIM';
+        $data['idpersona'] = $this->session->userdata('ssnidpersona');
+        $idEmpresa = $this->asignarvendedor_model->da_listarVendedorxEmpresas('qry_empresaxvendedor',$this->session->userdata('ssnidpersona'));
+        $data['listarProductosxEmpresas'] = $this->asignarproductos_model->da_listarProductoxEmpresas('qry_productoxempresa',$idEmpresa[0]['nidperroles']);
+        $data['idempresa'] = $idEmpresa[0]['nidperroles'];
+        $data['titulo'] = 'Pedido de Producto | SIM';
         $this->load->view('master/plantilla_view', $data);
     }
 
@@ -39,9 +39,9 @@ class Productopedido extends CI_Controller {
         $this->load->view('distribucion/clientevendedor/qry_view', $data);
     }
 
-    function registrarClientesxVendedor() {
+    function registrarProductoPedido() {
 
-        $validar = $this->clientevendedor_model->da_registrarClientesxVendedor($_POST['cbo_vendedor'], $_POST['cbo_cliente']);
+        $validar = $this->productopedido_model->da_registrarProductoPedido($_POST['cbo_productoempresa'], $_POST['txtcantidad'], $_POST['idempresa'], $_POST['idpersona']);
 
         if ($validar) {
             echo $validar['msg'];

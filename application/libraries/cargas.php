@@ -3,11 +3,11 @@ session_start();
 class Cargas {
    
     //Crear menu de opciones por tipo de opciones
-    public function cargarroles() {
-        $CI = & get_instance();
-        $CI->load->model('dashboard/menu_model','cargarroles');
-        return $CI->cargarroles->da_cargarroles();
-    }
+//    public function cargarroles() {
+//        $CI = & get_instance();
+//        $CI->load->model('dashboard/menu_model','cargarroles');
+//        return $CI->cargarroles->da_cargarroles();
+//    }
     
     public function cargaropcionpadre() {
         $CI = & get_instance();

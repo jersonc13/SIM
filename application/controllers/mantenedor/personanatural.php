@@ -101,11 +101,10 @@ class Personanatural extends CI_Controller {
     function estadoPersona() {
         $nidvalor = $_POST['nidvalor'];
         $result = $this->persona_model->da_estadoPersona($nidvalor);
-
         if ($result) {
-            echo 1;
+            echo $result['msg'];
         } else {
-            echo 0;
+            echo $result['msg'];
         }
     }
 

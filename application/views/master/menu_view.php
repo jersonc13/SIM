@@ -1,6 +1,6 @@
 <?php
 //Cargar mis roles
-$cargarroles = $this->cargas->cargarroles();
+//$cargarroles = $this->cargas->cargarroles();
 $cargaropcionpadre = $this->cargas->cargaropcionpadre();
 $cargaropcionhijo = $this->cargas->cargaropcionhijo();
 
@@ -50,10 +50,11 @@ $cargaropcionhijo = $this->cargas->cargaropcionhijo();
                         </span>
                     </a>
                 </li>
-                
-                <?php 
+
+                <?php
 //                print_r($cargaropcionpadre);
-                foreach ($cargaropcionpadre as $oppadre) { ?>
+                foreach ($cargaropcionpadre as $oppadre) {
+                    ?>
                     <li>
                         <a href="javascript:;">
                             <i class="fa <?php echo $oppadre['cicono'] ?>"></i>
@@ -73,11 +74,13 @@ $cargaropcionhijo = $this->cargas->cargaropcionhijo();
                                             <i class="fa fa-angle-right"></i>
                                             <?php echo $ophijo['copcion'] ?> </a>
                                     </li>
-                                <?php }
-                            } ?>
+                                    <?php
+                                }
+                            }
+                            ?>
                         </ul>
                     </li>
-<?php } ?>
+                <?php } ?>
             </ul>
             <!-- END SIDEBAR MENU -->
         </div>

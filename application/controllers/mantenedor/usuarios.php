@@ -31,16 +31,15 @@ class Usuarios extends CI_Controller {
 
     function buscarPersona() {
         $txtPersona = $_POST['txtPersona'];
-        $data['listarPersonas'] = $this->permisos_model->dblistarpersonas($txtPersona);
+        $data['listarPersonas'] = $this->usuarios_model->dblistarpersonas($txtPersona);
         $this->load->view('mantenedor/usuarios/qrypermisos_view', $data);
     }
 
     function registrarUsuarios() {
         $txtusuario = $_POST['txtusuario'];
         $txtcontrasena = $_POST['txtcontrasena'];
-        $cbo_tipousuarios = $_POST['cbo_tipousuarios'];
         $txtnperid = $_POST['txtnperid'];
-        $validar = $this->usuarios_model->da_registrarUsuarios($txtusuario, $txtcontrasena, $cbo_tipousuarios, $txtnperid);
+        $validar = $this->usuarios_model->da_registrarUsuarios($txtusuario, $txtcontrasena, $txtnperid);
 
         if ($validar) {
             echo $validar['msg'];
@@ -52,8 +51,13 @@ class Usuarios extends CI_Controller {
     function vista_crearusuario() {
         $nPerId = $_POST['nidvalor'];
         $data['nPerId'] = $nPerId;
-        $data['listarRoles'] = $this->usuarios_model->da_listarRoles();
-        $this->load->view('mantenedor/usuarios/ins_view', $data);
+        $result = $this->usuarios_model->da_existeusuario($nPerId);
+        if ($result['msg'] == 2) {
+            echo $result['msg'];
+        } else {
+            $this->load->view('mantenedor/usuarios/ins_view', $data);
+        }
+
     }
 
     function listarUsuarios() {
@@ -62,28 +66,14 @@ class Usuarios extends CI_Controller {
         $this->load->view('mantenedor/usuarios/qry_view', $data);
     }
 
-    function editarArea() {
-        $nidarea = $_POST['nidarea'];
-        $data['editarArea'] = $this->usuarios_model->dbeditarArea($nidarea);
-        $this->load->view('mante/area/upd_view', $data);
-    }
-
-    function estadoAreas() {
-        $nidarea = $_POST['nidusuarios'];
-        $result = $this->usuarios_model->da_estadoAreas($nidarea);
-
+    function estadoUsuarios() {
+        $nidvalor = $_POST['nidvalor'];
+        $result = $this->usuarios_model->da_estadoUsuarios($nidvalor);
         if ($result) {
-            echo 1;
+            echo $result['msg'];
         } else {
-            echo 0;
+            echo $result['msg'];
         }
-    }
-
-    function buscarAreas() {
-        $txtbuscarArea = $_POST['txtbuscarArea'];
-        $data['listarAreaxId'] = $this->usuarios_model->dblistarareaxid($txtbuscarArea);
-        $data['listarAreas'] = $this->usuarios_model->da_listarAreas();
-        $this->load->view('mantenedor/usuarios/upd_view', $data);
     }
 
 }

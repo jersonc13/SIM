@@ -2,10 +2,10 @@
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&;amp;language=es"></script>
 <script src="<?php echo URL_ADMINPJS ?>/mantenedor/persona/jsPersonaMap.js" type="text/javascript"></script>
 <style type="text/css">
-#mapa-latitud { 
-    width: 550px;
-    height: 400px;
-}
+    #mapa-latitud { 
+        width: 550px;
+        height: 400px;
+    }
 </style>
 <div class="row">
     <div class="col-md-12">
@@ -209,7 +209,7 @@
                                                 * </span>
                                         </label>
                                         <div class="col-md-4">
-                                            <input type="text" class="form-control" name="address" value="petalos"/>
+                                            <input type="text" class="form-control" name="address" value=""/>
                                             <span class="help-block">
                                                 Ingrese Dirección Actual </span>
                                         </div>
@@ -232,7 +232,7 @@
                                                 * </span>
                                         </label>
                                         <div class="col-md-4" id="div_provincia">
-                                            <select class="form-control">
+                                            <select class="form-control" name="cbo_provincia" id="cbo_provincia">
                                                 <option>Debe seleccionar departamento</option>
                                             </select>
                                         </div>
@@ -242,7 +242,7 @@
                                                 * </span>
                                         </label>
                                         <div class="col-md-4" id="div_distrito">
-                                            <select class="form-control">
+                                            <select class="form-control" name="cbo_distrito" id="cbo_distrito">
                                                 <option>Debe seleccionar provincia</option>
                                             </select>
                                         </div>
@@ -267,7 +267,9 @@
                                         </div>
                                     </div>
                                     <div style="height:100%; width:100%;">
-                                        <div id="mapa-latitud"></div>
+                                        <span>
+                                            <div id="mapa-latitud"></div>
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="tab-pane" id="tab4">
@@ -330,7 +332,7 @@
                                             </p>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="form-group">
                                         <label class="control-label col-md-3">Estado Civil:</label>
                                         <div class="col-md-4">

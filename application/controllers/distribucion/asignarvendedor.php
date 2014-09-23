@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Asignarproductos extends CI_Controller {
+class Asignarvendedor extends CI_Controller {
 
     function __construct() {
         parent::__construct();
@@ -11,7 +11,7 @@ class Asignarproductos extends CI_Controller {
         $this->load->model('almacen/producto_model');
         $this->load->model('almacen/linea_model');
         $this->load->model('mantenedor/persona_model');
-        $this->load->model('distribucion/asignarproductos_model');
+        $this->load->model('distribucion/asignarvendedor_model');
     }
 
     function _validaracceso() {
@@ -25,23 +25,23 @@ class Asignarproductos extends CI_Controller {
 
     function index() {
 //        $data['listarAreas'] = $this->areas_model->da_listarAreas();
-        $data['main_content'] = 'distribucion/asignarproductos/panel_view';
+        $data['main_content'] = 'distribucion/asignarvendedor/panel_view';
         $data['listarLineas'] = $this->linea_model->da_listarLinea();
-        $data['listarProductos'] = $this->producto_model->da_listarProducto();
+        $data['listarVendedor'] = $this->persona_model->da_listarPersona('qry_vendedor');
         $data['listarEmpresas'] = $this->persona_model->da_listarPersona('qry_empresas');
         $data['titulo'] = 'Asignar Productos | SIM';
         $this->load->view('master/plantilla_view', $data);
     }
 
-    function listarProductosEmpresas() {
+    function listarVendedorxEmpresas() {
 
-        $data['listarProductosxEmpresas'] = $this->asignarproductos_model->da_listarProductoxEmpresas('qry_productoxempresa',0);
-        $this->load->view('distribucion/asignarproductos/qry_view', $data);
+        $data['listarVendedorxEmpresas'] = $this->asignarvendedor_model->da_listarVendedorxEmpresas('qry_vendedorxempresa',$this->session->userdata('ssnidpersona'));
+        $this->load->view('distribucion/asignarvendedor/qry_view', $data);
     }
 
-    function registrarproductoxempresa() {
+    function registrarVendedorxEmpresa() {
 
-        $validar = $this->asignarproductos_model->da_registrarProductoxEmpresa($_POST['cbo_empresa'], $_POST['cbo_producto']);
+        $validar = $this->asignarvendedor_model->da_registrarVendedorxEmpresa($_POST['cbo_empresa'], $_POST['cbo_vendedor']);
 
         if ($validar) {
             echo $validar['msg'];
@@ -63,18 +63,6 @@ class Asignarproductos extends CI_Controller {
         } else {
             echo $validar['msg'];
         }
-    }
-
-    function listarAreas() {
-
-        $data['listarAreas'] = $this->areas_model->da_listarAreas();
-        $this->load->view('mantenedor/areas/qry_view', $data);
-    }
-
-    function editarArea() {
-        $nidarea = $_POST['nidarea'];
-        $data['editarArea'] = $this->areas_model->dbeditarArea($nidarea);
-        $this->load->view('mante/area/upd_view', $data);
     }
 
     function estadoAreas() {

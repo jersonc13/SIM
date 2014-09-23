@@ -23,7 +23,7 @@ class Menu_model extends CI_Model {
     
     function da_cargaropcionpadre() {
         
-        $instruccion = "CALL sim_sp_qry_cargaropciones ('qry_opcpadre','".$this->session->userdata('ssnidpersona')."');";
+        $instruccion = "CALL sim_sp_qry_cargaropciones ('qry_opcpadre','".$this->session->userdata('ssnidusuario')."');";
         $this->db->close();
         $query = $this->db->query($instruccion);
         
@@ -36,7 +36,7 @@ class Menu_model extends CI_Model {
     
     function da_cargaropcionhijo() {
         
-        $instruccion = "CALL sim_sp_qry_cargaropciones ('qry_opchijo','".$this->session->userdata('ssnidpersona')."');";
+        $instruccion = "CALL sim_sp_qry_cargaropciones ('qry_opchijo','".$this->session->userdata('ssnidusuario')."');";
         $this->db->close();
         $query = $this->db->query($instruccion);
         

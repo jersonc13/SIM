@@ -44,10 +44,6 @@
                         <a href="#tab_1" data-toggle="tab">
                             Nuevo </a>
                     </li>
-                    <li >
-                        <a href="#tab_2" data-toggle="tab">
-                            Editar </a>
-                    </li>
                 </ul>
                 <div class="tab-content">
 
@@ -65,13 +61,6 @@
                         <?php $this->load->view('mantenedor/usuarios/buscarpersona_view') ?>
 
                     </div>
-
-                    <div class="tab-pane" id="tab_2">
-
-                        <?php $this->load->view('mantenedor/usuarios/detalle_view') ?>
-
-                    </div>
-
                 </div>
             </div>
         </div>

@@ -12,7 +12,7 @@ $(function() {
                     if (data == '1') {
                         alert("Datos ingresados correctamente");
                     } else {
-                        alert("Error al ingresar los datos");
+                        alert("Ya está registrado el RUC");
                     }
                 },
                 error: function(data) {
@@ -182,7 +182,8 @@ function cargarDistrito() {
 }
 
 function estadoPersona(nidvalor) {
-    if (confirm('Esta seguro dar de baja este registro?')) {
+
+    if (confirm('Esta seguro que desea cambiar el estado?')) {
         msgLoading("#mostrar_qry");
         $.ajax({
             type: "POST",
@@ -194,7 +195,8 @@ function estadoPersona(nidvalor) {
             success: function(data) {
                 switch (data) {
                     case "0":
-                        alert("Ha ocurrido un error, vuelva a intentarlo.");
+                        alert("El Ruc ya se encuentra activo para otra persona");
+                        listarPersonas();
                         break;
                     case "1":
                         listarPersonas();

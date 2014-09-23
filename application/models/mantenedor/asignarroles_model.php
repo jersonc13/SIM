@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Usuarios_model extends CI_Model {
+class Asignarroles_model extends CI_Model {
 
     function __construct() {
         parent::__construct();
@@ -20,30 +20,8 @@ class Usuarios_model extends CI_Model {
         }
     }
 
-    function da_existeusuario($nPerId) {
-        $instruccion = "CALL sim_sp_qry_usuarios('qry_usuarioxper','".$nPerId."');";
-        $query = $this->db->query($instruccion);
-        $this->db->close();
-        if ($query) {
-            return ($query->row_array());
-        } else {
-            return 0;
-        }
-    }
-
-    function da_registrarUsuarios($txtusuario, $txtcontrasena, $txtnperid) {
-        $instruccion = "CALL sim_sp_ins_usuarios('ins_usuarios','" . $txtusuario . "','" . $txtcontrasena . "','" . $txtnperid . "');";
-        $query = $this->db->query($instruccion);
-        $this->db->close();
-        if ($query) {
-            return ($query->row_array());
-        } else {
-            return 0;
-        }
-    }
-
-    function dblistarpersonas($txtPersona) {
-        $instruccion = "CALL sim_sp_qry_usuarios ('qry_persona','" . $txtPersona . "');";
+    function da_listarRoles() {
+        $instruccion = "CALL sim_sp_qry_cargarroles ('qry_rolesall','');";
         $query = $this->db->query($instruccion);
         $this->db->close();
         if ($query) {
@@ -52,10 +30,21 @@ class Usuarios_model extends CI_Model {
             return 0;
         }
     }
-    
-    function da_estadoUsuarios($nidvalor) {
 
-        $instruccion = "CALL sim_sp_upd_usuario ('upd_estadoUsu','" . $nidvalor . "','','','');";
+    function da_registrarUsuarios($cbo_tipousuarios, $txtnperid) {
+        $instruccion = "CALL sim_sp_ins_asignarroles('ins_rolesxpersona','" . $cbo_tipousuarios . "','" . $txtnperid . "');";
+        $query = $this->db->query($instruccion);
+        $this->db->close();
+        if ($query) {
+            return ($query->row_array());
+        } else {
+            return 0;
+        }
+    }
+
+    function da_estadoAreas($nidarea) {
+
+        $instruccion = "CALL sim_sp_upd_usuarios ('upd_estadoUsuarios','" . $nidarea . "','','','');";
 
         $query = $this->db->query($instruccion);
         $this->db->close();

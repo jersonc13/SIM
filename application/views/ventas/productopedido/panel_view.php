@@ -1,11 +1,11 @@
-<script src="<?php echo URL_ADMINPJS ?>/mantenedor/persona/jsPersonaNatural.js" type="text/javascript"></script>
+<script src="<?php echo URL_ADMINPJS ?>/ventas/productopedido/jsProductoPedido.js" type="text/javascript"></script>
 <div class="page-content">
     <!-- BEGIN PAGE HEADER-->
     <div class="row">
         <div class="col-md-12">
             <!-- BEGIN PAGE TITLE & BREADCRUMB-->
             <h3 class="page-title">
-                Persona Natural
+                Producto Pedido
             </h3>
             <ul class="page-breadcrumb breadcrumb">
                 <li>
@@ -16,12 +16,12 @@
                 </li>
                 <li>
                     <a href="#">
-                        Mantenedor </a>
+                        Distribucion </a>
                     <i class="fa fa-angle-right"></i>
                 </li>
                 <li>
                     <a href="#">
-                        Persona </a>
+                        Producto a Empresas </a>
                     <i class="fa fa-angle-right"></i>
                 </li>
             </ul>
@@ -47,11 +47,11 @@
 <!--                    <li >
                         <a href="#tab_2" data-toggle="tab">
                             Detalle </a>
-                    </li>
+                    </li>-->
                     <li >
                         <a href="#tab_3" data-toggle="tab">
                             Editar </a>
-                    </li>-->
+                    </li>
 
                 </ul>
                 <div class="tab-content">
@@ -67,21 +67,21 @@
 
                     <div class="tab-pane" id="tab_1">
 
-                        <?php $this->load->view('mantenedor/personanatural/ins_view') ?>
+                        <?php $this->load->view('ventas/productopedido/ins_view') ?>
 
                     </div>
-                    
+
 <!--                    <div class="tab-pane" id="tab_2">
 
                         <?php // $this->load->view('mantenedor/personanatural/detalle_view') ?>
 
-                    </div>
-                    
+                    </div>-->
+
                     <div class="tab-pane" id="tab_3">
 
-                        <?php // $this->load->view('mantenedor/personanatural/upd_view') ?>
+                        <?php $this->load->view('mantenedor/personanatural/upd_view') ?>
 
-                    </div>-->
+                    </div>
 
                 </div>
             </div>

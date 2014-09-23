@@ -1,18 +1,18 @@
 $(function() {
-    listarPersonas();
-    $("#submit_form").validate({
+    asignarproductos();
+    $("frmProductoPedido").validate({
         errorElement: 'span',
         errorClass: 'help-block',
         submitHandler: function(form) {
             $.ajax({
                 type: "POST",
-                url: "personanatural/registrarPersonaNatural",
+                url: "poductoPedido/registrarProductoPedido",
                 data: $(form).serialize(),
                 success: function(data) {
                     if (data == '1') {
                         alert("Datos ingresados correctamente");
                     } else {
-                        alert("El Dni ya se encuentra registrado");
+                        alert("Error al ingresar los datos");
                     }
                 },
                 error: function(data) {
@@ -21,22 +21,10 @@ $(function() {
             });
         },
         rules: {
-            txtapellidos: {
+            txtProducto: {
                 required: true
             },
-            txtnombres: {
-                required: true
-            },
-            txtdniruc: {
-                required: true,
-                minlength: 8,
-                maxlength: 11
-            },
-            email: {
-//                required: true,
-                email: true
-            },
-            address: {
+            cbo_linea: {
                 required: true
             }
         },
@@ -49,30 +37,12 @@ $(function() {
                     .closest('.form-group').removeClass('has-error'); // set error class to the control group
         }
     });
-
-    $( "#dialog" ).dialog({
-        autoOpen: false,
-        show: {
-            effect: "blind",
-            duration: 1000
-        },
-        hide: {
-            effect: "explode",
-            duration: 1000
-        },
-        open:function(event,ui){
-            initializeMap();
-        },
-        close: function( event, ui ) {
-
-        }
-    });
 });
-function listarPersonas() {
+function asignarproductos() {
     msgLoading("#mostrar_qry");
     $.ajax({
         type: "POST",
-        url: "personanatural/listarPersonas",
+        url: "asignarproductos/listarProductosEmpresas",
         cache: false,
         success: function(data) {
             $("#mostrar_qry").html(data);
@@ -158,7 +128,7 @@ function cargarDistrito() {
 }
 
 function estadoPersona(nidvalor) {
-    if (confirm('Esta seguro que desea cambiar el estado?')) {
+    if (confirm('Esta seguro de editar este registro?')) {
         msgLoading("#mostrar_qry");
         $.ajax({
             type: "POST",
@@ -170,8 +140,7 @@ function estadoPersona(nidvalor) {
             success: function(data) {
                 switch (data) {
                     case "0":
-                        alert("El Dni ya se encuentra activo para otra persona");
-                        listarPersonas();
+                        alert("Ha ocurrido un error, vuelva a intentarlo.");
                         break;
                     case "1":
                         listarPersonas();

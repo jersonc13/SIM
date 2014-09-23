@@ -23,15 +23,15 @@
         <link href="<?php echo URL_GOBALPG ?>/bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css"/>
         <link href="<?php echo URL_GOBALPG ?>/fullcalendar/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css"/>
         <link href="<?php echo URL_GOBALPG ?>/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css"/>
-        
+
         <link rel="stylesheet" type="text/css" href="<?php echo URL_GOBALPG ?>/select2/select2.css"/>
         <link rel="stylesheet" href="<?php echo URL_GOBALPG ?>/data-tables/DT_bootstrap.css"/>
-        
+
         <!-- END PAGE LEVEL PLUGIN STYLES -->
         <!-- BEGIN PAGE STYLES -->
         <link href="<?php echo URL_ADMINPCSS ?>/tasks.css" rel="stylesheet" type="text/css"/>
         <!-- END PAGE STYLES -->
-        
+
         <!--[if lt IE 9]>
         <script src="<?php echo URL_GOBALPG ?>/respond.min.js"></script>
         <script src="<?php echo URL_GOBALPG ?>/excanvas.min.js"></script> 
@@ -42,7 +42,7 @@
         <script src="<?php echo URL_GOBALPG ?>/jquery-ui/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
         <script src="<?php echo URL_GOBALPG ?>/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="<?php echo URL_ADMINPJS ?>/jsGeneral.js" type="text/javascript"></script>
-        
+
         <!-- BEGIN THEME STYLES -->
         <link href="<?php echo URL_GLOBALCSS ?>/components.css" rel="stylesheet" type="text/css"/>
         <link href="<?php echo URL_GLOBALCSS ?>/plugins.css" rel="stylesheet" type="text/css"/>
@@ -434,7 +434,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                                 <img alt="" class="img-circle" src="<?php echo URL_ADMINLIMG ?>/avatar3_small.jpg"/>
                                 <span class="username">
-                                   <?php echo $this->session->userdata('sscusuario'); ?> </span>
+                                    <?php echo $this->session->userdata('sscusuario'); ?> </span>
                                 <i class="fa fa-angle-down"></i>
                             </a>
                             <ul class="dropdown-menu">
@@ -481,4 +481,3 @@
         <!-- END HEADER -->
         <div class="clearfix">
         </div>
-        

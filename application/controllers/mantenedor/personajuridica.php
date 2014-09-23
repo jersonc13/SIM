@@ -101,12 +101,12 @@ class Personajuridica extends CI_Controller {
 
     function estadoPersona() {
         $nidvalor = $_POST['nidvalor'];
-        $result = $this->persona_model->da_estadopersona($nidvalor);
+        $validar = $this->persona_model->da_estadopersona($nidvalor);
 
-        if ($result) {
-            echo 1;
+        if ($validar) {
+            echo $validar['msg'];
         } else {
-            echo 0;
+            echo $validar['msg'];
         }
     }
 

@@ -15,6 +15,7 @@
                     <th>Usuario</th>
                     <th>Nombre</th>
                     <th>DNI/RUC</th>
+                    <th>Tipo Usuario</th>                    
                     <th>Opciones</th>          
                 </tr>
             </thead>
@@ -24,9 +25,10 @@
                         <td><?php echo $listar['cusuario'] ?></td>
                         <td><?php echo $listar['cnombre']  ?></td>
                         <td><?php echo $listar['cdniruc'] ?></td>
+                        <td><?php echo $listar['cmaestra'] ?></td>
                         <td>
                             <a href="#" class="btn btn-sm blue">Editar <i class="fa fa-edit"></i></a>
-                            <a href="#" onclick="estadoUsuarios(<?php echo $listar['nidusuario'] ?>)"<?php if ($listar['nestado'] == '1') { ?>  class="btn btn-sm red">Dar de baja <?php } else {  ?>   class="btn btn-sm green"> Activar <?php } ?> <i class="fa fa-refresh"></i></a></td>
+                            <a href="#" onclick="estadoUsuarios(<?php echo $listar['nidusuario'] ?>)" class="btn btn-sm red"><?php if ($listar['nestado'] == '1') { ?>Dar de baja <?php } else { ?> Dar de alta <?php } ?> <i class="fa fa-refresh"></i></a></td>
                     </tr>
                 <?php } ?>
             </tbody>
