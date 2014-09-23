@@ -4,6 +4,15 @@ $(function() {
 
 function registrarUsuarios() {
     contrasena = new String(txtcontrasena.value);
+    var rootNode = $("#listPermisos").dynatree("getRoot");
+    console.log(rootNode.data.key);
+    var selNodes = rootNode.tree.getSelectedNodes();
+    var selKeys = $.map(selNodes, function(node1){
+        if(node1.parent.data.key != '_1'){
+            return node1.data.key;
+        }
+    });
+
     if ($('#txtusuario').val() == '' || $('#txtcontrasena').val() == '' || contrasena.length<8) {
         alert("debe llenar todos los campos requeridos");
     }
@@ -15,11 +24,11 @@ function registrarUsuarios() {
             data: {
                 txtnperid: $('#txtnperid').val(),
                 txtusuario: $('#txtusuario').val(),
-                txtcontrasena: $('#txtcontrasena').val()
+                txtcontrasena: $('#txtcontrasena').val(),
+                ids:selKeys
             },
             success: function(data) {
                 alert("Datos ingresados correctamente");
-//            alert(data);
             },
             error: function() {
                 alert("Error al ingresar los datos");
@@ -38,7 +47,7 @@ function buscarPersona() {
         },
         success: function(data) {
             $("#detalle_lista").html(data);
-//            alert(data);
+
         },
         error: function() {
             alert("Ha ocurrido un error, vuelva a intentarlo.");
@@ -85,20 +94,24 @@ function crearusuario(nidvalor) {
             alert("Ha ocurrido un error, vuelva a intentarlo.");
         }
     });
-
 }
 
 function asignarPermisos(nidvalor) {
     msgLoading("#detalle_lista");
     $.ajax({
         type: "POST",
-        url: "permisos/opciones",
+        url: "permisos/getPermisos",
         cache: false,
         data: {
             nidvalor: nidvalor
         },
         success: function(data) {
-            $("#detalle_lista").html(data);
+            if ( data == '3' ) {
+                alert("Debe registrar usuario!!");
+                buscarPersona();
+            }else{
+                $("#detalle_lista").html(data);                
+            }
         },
         error: function() {
             alert("Ha ocurrido un error, vuelva a intentarlo.");
@@ -120,16 +133,14 @@ function estadoUsuarios(nidvalor) {
             success: function(data) {
                 switch (data) {
                     case "0":
-                        alert("la persona ya tiene usuario");
-//                        listarUsuarios();
-                        break;
+                    alert("la persona ya tiene usuario");
+                    break;
                     case "1":
-                        listarUsuarios();
-                        break;
+                    listarUsuarios();
+                    break;
                     case "2":
-                        alert("Ya existe otra persona con el mismo usuario");
-//                        listarUsuarios();
-                        break;
+                    alert("Ya existe otra persona con el mismo usuario");
+                    break;
                 }
             },
             error: function() {
@@ -149,11 +160,46 @@ function buscarUsuarios() {
         },
         success: function(data) {
             $("#detalle_lista").html(data);
-//            alert(data);
         },
         error: function() {
             alert("Ha ocurrido un error, vuelva a intentarlo.");
         }
     });
+}
+
+function registrarPermisos() {
+    var rootNode = $("#listPermisos").dynatree("getRoot");
+    console.log(rootNode.data.key);
+    var selNodes = rootNode.tree.getSelectedNodes();
+    var selKeys = $.map(selNodes, function(node1){
+        if(node1.parent.data.key != '_1'){
+            return node1.data.key;
+        }
+    });
+
+
+    $.ajax({
+        url:'permisos/setPermisosIns',
+        type:'POST',
+        cache:false,
+        data: {
+            ids:selKeys,
+            pid:$("#txtpid").val()
+        },
+        success: function(data) {
+            console.log(data);
+            $("#detalle_lista").html(data);
+            if (data=="1") {
+                alert("Se han aplicado las condiciones de configuración con éxito");
+                buscarPersona();
+            } else{
+                alert("Hubo un inconveniente al guardar su configuración");
+            }            
+        },
+        error: function() {
+            alert("Error al ingresar los datos");
+        }
+    });
+
 }
 

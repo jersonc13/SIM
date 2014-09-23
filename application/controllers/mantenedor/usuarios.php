@@ -9,7 +9,7 @@ class Usuarios extends CI_Controller {
         parent::__construct();
         $this->_validaracceso();
         $this->load->model('mantenedor/usuarios_model');
-        $this->load->model('seguridad/permisos_model');
+        $this->load->model('mantenedor/permisos_model');
     }
 
     function _validaracceso() {
@@ -22,8 +22,6 @@ class Usuarios extends CI_Controller {
     }
 
     function index() {
-//        $data['listarUsuarios'] = $this->usuarios_model->da_listarUsuarios();
-//        $data['listarRoles'] = $this->usuarios_model->da_listarRoles();
         $data['main_content'] = 'mantenedor/usuarios/panel_view';
         $data['titulo'] = 'Usuarios | SIM';
         $this->load->view('master/plantilla_view', $data);
@@ -36,16 +34,20 @@ class Usuarios extends CI_Controller {
     }
 
     function registrarUsuarios() {
+        $rpta = -1;
         $txtusuario = $_POST['txtusuario'];
         $txtcontrasena = $_POST['txtcontrasena'];
         $txtnperid = $_POST['txtnperid'];
         $validar = $this->usuarios_model->da_registrarUsuarios($txtusuario, $txtcontrasena, $txtnperid);
 
         if ($validar) {
-            echo $validar['msg'];
+            $id = $this->input->post('ids');
+            $uid = $this->usuarios_model->da_getCodUser($txtnperid);
+            $rpta = $this->permisos_model->da_setopcionUsuario( $uid, $id );            
         } else {
-            echo $validar['msg'];
+            $rpta = $validar['msg'];
         }
+        echo $rpta;
     }
 
     function vista_crearusuario() {
@@ -55,9 +57,33 @@ class Usuarios extends CI_Controller {
         if ($result['msg'] == 2) {
             echo $result['msg'];
         } else {
+            $data['permisos'] = $this->_cargarPermisos();
             $this->load->view('mantenedor/usuarios/ins_view', $data);
         }
 
+    }
+
+    function _cargarPermisos(){
+        $modulos = $this->permisos_model->da_cargaropcionp();
+        $menuModulo = $this->permisos_model->da_cargaropcionh();
+        $temp = array();
+        foreach( $modulos as $key => $value ) {
+            $temp[$value['nidopcion']]['key'] = $value['nidopcion'];
+            $temp[$value['nidopcion']]['title'] = $value['copcion'];
+            $temp[$value['nidopcion']]['expand'] = true;
+            $temp_menu = array();
+            $i=0;
+            foreach( $menuModulo as $menuHijos ) {
+                if( $value['nidopcion'] == $menuHijos['nidhijo'] ) {
+                    $temp_menu[$i]['key'] = $menuHijos['nidopcion'];
+                    $temp_menu[$i]['title'] = $menuHijos['copcion'];
+                    $i++;
+                    $temp[$value['nidopcion']]['isFolder'] = true;
+                    $temp[$value['nidopcion']]['children'] = $temp_menu;
+                }
+            }
+        }
+        return $temp;
     }
 
     function listarUsuarios() {

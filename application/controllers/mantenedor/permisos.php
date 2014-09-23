@@ -8,7 +8,7 @@ class Permisos extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->_validaracceso();
-        $this->load->model('seguridad/permisos_model');
+        $this->load->model('mantenedor/permisos_model');
         $this->load->helper('webService_helper');
     }
 
@@ -35,35 +35,43 @@ class Permisos extends CI_Controller {
     }
 
     public function getPermisos(){
+        $this->load->model('mantenedor/usuarios_model');
         $pid = $this->input->post('nidvalor');
         $data['pid'] = $pid;
-        $modulos = $this->permisos_model->da_cargaropcionp();
-        $menuModulo = $this->permisos_model->da_cargaropcionh();
-        $modulosAsignados = $this->permisos_model->da_cargaropcionpadre($pid);
-        $menusAsignados = $this->permisos_model->da_cargaropcionhijo($pid);
-        $this->session->set_userdata('pidx',$pid);
-        $temp = array();
-        foreach( $modulos as $key => $value ) {
-            $temp[$value['nidopcion']]['key'] = $value['nidopcion'];
-            $temp[$value['nidopcion']]['title'] = $value['copcion'];
-            $temp[$value['nidopcion']]['expand'] = true;
-            $temp_menu = array();
-            $i=0;
-            foreach( $menuModulo as $menuHijos ) {
-                if( $value['nidopcion'] == $menuHijos['nidhijo'] ) {
-                    if( search_in_array( $menuHijos['nidopcion'], $menusAsignados, 'nidopcion' ) ){
-                        $temp_menu[$i]['select'] = true;
+        $result = $this->usuarios_model->da_existeusuario($pid);
+        if( $result['msg'] == 2 ){
+            $pid = $this->usuarios_model->da_getCodUser($pid);
+
+            $modulos = $this->permisos_model->da_cargaropcionp();
+            $menuModulo = $this->permisos_model->da_cargaropcionh();
+            $modulosAsignados = $this->permisos_model->da_cargaropcionpadre($pid);
+            $menusAsignados = $this->permisos_model->da_cargaropcionhijo($pid);
+            $this->session->set_userdata('pidx',$pid);
+            $temp = array();
+            foreach( $modulos as $key => $value ) {
+                $temp[$value['nidopcion']]['key'] = $value['nidopcion'];
+                $temp[$value['nidopcion']]['title'] = $value['copcion'];
+                $temp[$value['nidopcion']]['expand'] = true;
+                $temp_menu = array();
+                $i=0;
+                foreach( $menuModulo as $menuHijos ) {
+                    if( $value['nidopcion'] == $menuHijos['nidhijo'] ) {
+                        if( search_in_array( $menuHijos['nidopcion'], $menusAsignados, 'nidopcion' ) ){
+                            $temp_menu[$i]['select'] = true;
+                        }
+                        $temp_menu[$i]['key'] = $menuHijos['nidopcion'];
+                        $temp_menu[$i]['title'] = $menuHijos['copcion'];
+                        $i++;
+                        $temp[$value['nidopcion']]['isFolder'] = true;
+                        $temp[$value['nidopcion']]['children'] = $temp_menu;
                     }
-                    $temp_menu[$i]['key'] = $menuHijos['nidopcion'];
-                    $temp_menu[$i]['title'] = $menuHijos['copcion'];
-                    $i++;
-                    $temp[$value['nidopcion']]['isFolder'] = true;
-                    $temp[$value['nidopcion']]['children'] = $temp_menu;
                 }
             }
+            $data['permisos'] = $temp;
+            $this->load->view('seguridad/permisos/permisos_qry_view', $data);
+        }else{
+            echo "3";
         }
-        $data['permisos'] = $temp;
-        $this->load->view('seguridad/permisos/permisos_qry_view', $data);
     }
     public function setPermisosIns(){
         date_default_timezone_set('America/Lima');
@@ -87,14 +95,6 @@ class Permisos extends CI_Controller {
         $data = $this->input->post('json');
         $prohibiciones = $data['chk_parametros_prohibiciones'];
         print_r($prohibiciones);
-
-//        $validar = $this->areas_model->da_registrarAreas($_POST['txtAreas'], $_POST['txtAlias'], $_POST['cbo_dependencia']);
-//
-//        if ($validar) {
-//            echo $validar['msg'];
-//        } else {
-//            echo $validar['msg'];
-//        }
     }
 
     function actualizarArea() {
