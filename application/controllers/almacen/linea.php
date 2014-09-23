@@ -99,4 +99,11 @@ class Linea extends CI_Controller {
         $this->load->view('mantenedor/areas/upd_view', $data);
     }
 
+    /*Funciones Edicion*/
+    function getEdit(){
+        $idLinea = $this->input->post( 'id' );
+        $data['idLinea'] = $idLinea;
+        $data['linea']   = $this->linea_model->getLinea( $idLinea );
+        $this->load->view('almacen/linea/upd_view', $data);
+    }
 }

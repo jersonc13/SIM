@@ -153,3 +153,25 @@ function estadoPersona(nidvalor) {
         });
     }
 }
+
+
+    /*Funciones de Edicion*/
+function editarLinea(id){
+    $.ajax({
+        url:'linea/getEdit',
+        type:'post',
+        cache:false,
+        data:{
+            id:id
+        },
+        success:function(data){
+            $("#mostrar_qry").html(data);
+        },
+        error:function(er){
+            console.log(er.statusText);
+            alert("Houston, tenemos un problema... Creo que has roto algo...");
+        }
+    });
+    
+    
+}

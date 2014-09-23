@@ -30,6 +30,14 @@ class Linea_model extends CI_Model {
             return 0;
         }
     }
+
+    public function getLinea( $id ){
+        $result = 0;
+        $query = $this->db->select('clinea, calias')->from('sim_linea')->where('nidlinea', $id)->get();
+        $this->db->close();
+        $result = ( $query ) ? $query->row_array() : 0;
+        return $result;
+    }
 }
 
 ?>
