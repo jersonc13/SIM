@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/SIM/application/models/mantenedor/persona_model.php</file>
-            <file>file:/C:/xampp/htdocs/SIM/application/views/mantenedor/personanatural/ins_view.php</file>
-            <file>file:/C:/xampp/htdocs/SIM/application/controllers/mantenedor/personanatural.php</file>
-            <file>file:/C:/xampp/htdocs/SIM/assets/admin/pages/scripts/mantenedor/persona/jsPersonaNatural.js</file>
-            <file>file:/C:/xampp/htdocs/SIM/application/views/mantenedor/personanatural/qry_view.php</file>
+            <file>file:/C:/xampp/htdocs/SIM/assets/admin/pages/scripts/mantenedor/empresas/jsEmpresas.js</file>
+            <file>file:/C:/xampp/htdocs/SIM/application/controllers/mantenedor/empresas.php</file>
+            <file>file:/C:/xampp/htdocs/SIM/application/views/mantenedor/empresas/qry_view.php</file>
+            <file>file:/C:/xampp/htdocs/SIM/application/views/mantenedor/empresas/buscarpersona_view.php</file>
+            <file>file:/C:/xampp/htdocs/SIM/application/models/mantenedor/empresas_model.php</file>
+            <file>file:/C:/xampp/htdocs/SIM/application/views/mantenedor/empresas/panel_view.php</file>
         </group>
     </open-files>
 </project-private>
