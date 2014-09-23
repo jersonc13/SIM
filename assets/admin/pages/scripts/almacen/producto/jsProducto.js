@@ -53,86 +53,12 @@ function listarProducto() {
     });
 }
 
-function buscarDNI() {
-    $.ajax({
-        type: "POST",
-        url: "personanatural/buscarDNI",
-        cache: false,
-        data: {
-            txtDetalleDNI: $('#txtDetalleDNI').val()
-        },
-        success: function(data) {
-            $("#detalle_lista").html(data);
-//            alert(data);
-        },
-        error: function() {
-            alert("Ha ocurrido un error, vuelva a intentarlo.");
-        }
-    });
-}
-
-function RegistrarDatos() {
-    $.ajax({
-        type: "POST",
-        url: "personanatural/cargarprovincia",
-        cache: false,
-        data: {
-            idDepartamento: $('#cbo_departamento').val()
-        },
-        success: function(data) {
-            $("#div_provincia").html(data);
-//            alert(data);
-        },
-        error: function() {
-            alert("Ha ocurrido un error, vuelva a intentarlo.");
-        }
-    });
-}
-
-
-
-function cargaProvincia() {
-    $.ajax({
-        type: "POST",
-        url: "personanatural/cargarprovincia",
-        cache: false,
-        data: {
-            idDepartamento: $('#cbo_departamento').val()
-        },
-        success: function(data) {
-            $("#div_provincia").html(data);
-//            alert(data);
-        },
-        error: function() {
-            alert("Ha ocurrido un error, vuelva a intentarlo.");
-        }
-    });
-}
-
-function cargarDistrito() {
-    $.ajax({
-        type: "POST",
-        url: "personanatural/cargardistrito",
-        cache: false,
-        data: {
-            idProvincia: $('#cbo_provincia').val()
-        },
-        success: function(data) {
-            $("#div_distrito").html(data);
-//            alert(data);
-        },
-        error: function() {
-            alert("Ha ocurrido un error, vuelva a intentarlo.");
-        }
-    });
-}
-
-function estadoPersona(nidvalor) {
+function estadoProducto(nidvalor) {
     if (confirm('Esta seguro de editar este registro?')) {
         msgLoading("#mostrar_qry");
         $.ajax({
             type: "POST",
-            url: "personanatural/estadoPersona",
+            url: "producto/estadoPersona",
             cache: false,
             data: {
                 nidvalor: nidvalor
