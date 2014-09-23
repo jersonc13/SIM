@@ -21,7 +21,30 @@ class Usuarios_model extends CI_Model {
     }
 
     function da_existeusuario($nPerId) {
-        $instruccion = "CALL sim_sp_qry_usuarios('qry_usuarioxper','".$nPerId."');";
+        $instruccion = "CALL sim_sp_qry_usuarios('qry_usuarioxper','" . $nPerId . "');";
+        $query = $this->db->query($instruccion);
+        $this->db->close();
+        if ($query) {
+            return ($query->result_array()[0]['nidusuario']);
+        } else {
+            return 0;
+        }
+    }
+
+    function da_getCodUser($nperid) {
+        $instruccion = "CALL sim_sp_qry_usuarios ('qry_idUserByCodPerson','" . $nperid . "');";
+        $query = $this->db->query($instruccion);
+        $this->db->close();
+        if ($query) {
+            return ($query->result_array()[0]['nidusuario']);
+        } else {
+            return 0;
+        }
+    }
+
+    function da_listarRoles() {
+        $instruccion = "CALL sim_sp_qry_cargarroles ('qry_rolesall','');";
+
         $query = $this->db->query($instruccion);
         $this->db->close();
         if ($query) {
@@ -52,7 +75,7 @@ class Usuarios_model extends CI_Model {
             return 0;
         }
     }
-    
+
     function da_estadoUsuarios($nidvalor) {
 
         $instruccion = "CALL sim_sp_upd_usuario ('upd_estadoUsu','" . $nidvalor . "','','','');";

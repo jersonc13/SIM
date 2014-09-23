@@ -10,7 +10,7 @@ class Linea_model extends CI_Model {
     }
 
     function da_listarLinea() {
-        $instruccion = "CALL sim_sp_qry_linea ('qry_linea','','');";
+        $instruccion = "CALL sim_sp_qry_linea ('qry_linea','0','0');";
         $query = $this->db->query($instruccion);
         $this->db->close();
         if ($query) {

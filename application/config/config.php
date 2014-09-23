@@ -15,7 +15,7 @@
 |
 */
 //$config['base_url']	= 'http://yugocorp.sytes.net/pytsim-ci/';
-$config['base_url']	= 'http://localhost/SIM/';
+$config['base_url']	= 'http://'.SERVER_AP.'/'.SERVER_PROJECT.'/';
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +27,7 @@ $config['base_url']	= 'http://localhost/SIM/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------

@@ -103,7 +103,7 @@ function asignarPermisos(nidvalor) {
     msgLoading("#detalle_lista");
     $.ajax({
         type: "POST",
-        url: "permisos/opciones",
+        url: "permisos/getPermisos",
         cache: false,
         data: {
             nidvalor: nidvalor
@@ -119,18 +119,52 @@ function asignarPermisos(nidvalor) {
 }
 
 function registrarPermisos() {
-    var chk_parametros_prohibiciones = "";
-    $("input[name='chk_opcioneshijos']:checked").each(function(index, value) {
-        chk_parametros_prohibiciones += this.id + "-";
-        ;
+    var rootNode = $("#listPermisos").dynatree("getRoot");
+    console.log(rootNode.data.key);
+    var selNodes = rootNode.tree.getSelectedNodes();
+    var selKeys = $.map(selNodes, function(node1){
+        if(node1.parent.data.key != '_1'){
+            return node1.data.key;
+        }
     });
-    chk_parametros_prohibiciones = chk_parametros_prohibiciones.substring(0, chk_parametros_prohibiciones.length - 1);
-    if (chk_parametros_prohibiciones == '') {
-        chk_parametros_prohibiciones = '0';
-    }
 
-    get_page('permisos/registrarOpciones/', 'detalle_lista', {
-        chk_parametros_prohibiciones: chk_parametros_prohibiciones
-    })
+
+    $.ajax({
+        url:'permisos/setPermisosIns',
+        type:'POST',
+        cache:false,
+        data: {
+            ids:selKeys,
+            pid:$("#txtpid").val()
+        },
+        success: function(data) {
+            console.log(data);
+            $("#detalle_lista").html(data);
+            if (data=="1") {
+                alert("Se han aplicado las condiciones de configuración con éxito");
+            } else{
+                alert("Hubo un inconveniente al guardar su configuración");
+            }            
+        },
+        error: function() {
+            alert("Error al ingresar los datos");
+        }
+    });
 
 }
+// function registrarPermisos() {
+//     var chk_parametros_prohibiciones = "";
+//     $("input[name='chk_opcioneshijos']:checked").each(function(index, value) {
+//         chk_parametros_prohibiciones += this.id + "-";
+//         ;
+//     });
+//     chk_parametros_prohibiciones = chk_parametros_prohibiciones.substring(0, chk_parametros_prohibiciones.length - 1);
+//     if (chk_parametros_prohibiciones == '') {
+//         chk_parametros_prohibiciones = '0';
+//     }
+
+//     get_page('permisos/registrarOpciones/', 'detalle_lista', {
+//         chk_parametros_prohibiciones: chk_parametros_prohibiciones
+//     })
+
+// }

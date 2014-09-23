@@ -9,11 +9,13 @@ class Asignarproductos_model extends CI_Model {
         parent::__construct();
     }
 
+
     function da_listarProductoxEmpresas($accion,$empresa) {
 //        print_r("-----");
 //        print_r($accion);
 //        exit();
         $instruccion = "CALL sim_sp_qry_productoxempresa ('$accion',$empresa);";
+
         $query = $this->db->query($instruccion);
         $this->db->close();
         if ($query) {

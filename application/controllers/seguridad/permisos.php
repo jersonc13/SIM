@@ -9,6 +9,7 @@ class Permisos extends CI_Controller {
         parent::__construct();
         $this->_validaracceso();
         $this->load->model('seguridad/permisos_model');
+        $this->load->helper('webService_helper');
     }
 
     function _validaracceso() {
@@ -33,21 +34,60 @@ class Permisos extends CI_Controller {
         $this->load->view('seguridad/permisos/qrypermisos_view', $data);
     }
 
+    public function getPermisos(){
+        $pid = $this->input->post('nidvalor');
+        $data['pid'] = $pid;
+        $modulos = $this->permisos_model->da_cargaropcionp();
+        $menuModulo = $this->permisos_model->da_cargaropcionh();
+        $modulosAsignados = $this->permisos_model->da_cargaropcionpadre($pid);
+        $menusAsignados = $this->permisos_model->da_cargaropcionhijo($pid);
+        $this->session->set_userdata('pidx',$pid);
+        $temp = array();
+        foreach( $modulos as $key => $value ) {
+            $temp[$value['nidopcion']]['key'] = $value['nidopcion'];
+            $temp[$value['nidopcion']]['title'] = $value['copcion'];
+            $temp[$value['nidopcion']]['expand'] = true;
+            $temp_menu = array();
+            $i=0;
+            foreach( $menuModulo as $menuHijos ) {
+                if( $value['nidopcion'] == $menuHijos['nidhijo'] ) {
+                    if( search_in_array( $menuHijos['nidopcion'], $menusAsignados, 'nidopcion' ) ){
+                        $temp_menu[$i]['select'] = true;
+                    }
+                    $temp_menu[$i]['key'] = $menuHijos['nidopcion'];
+                    $temp_menu[$i]['title'] = $menuHijos['copcion'];
+                    $i++;
+                    $temp[$value['nidopcion']]['isFolder'] = true;
+                    $temp[$value['nidopcion']]['children'] = $temp_menu;
+                }
+            }
+        }
+        $data['permisos'] = $temp;
+        $this->load->view('seguridad/permisos/permisos_qry_view', $data);
+    }
+    public function setPermisosIns(){
+        date_default_timezone_set('America/Lima');
+        $this->load->model('mantenedor/usuarios_model');
+        $pid = $this->input->post('pid');
+        $id = $this->input->post('ids');
+        $uid = $this->usuarios_model->da_getCodUser($pid);
+        $rpt = $this->permisos_model->da_setopcionUsuario( $uid, $id );
+        echo $rpt;    
+    }
+
     function opciones() {
         $nPerId = $_POST['nidvalor'];
         $data['opcionesp'] = $this->permisos_model->da_cargaropcionp();
         $data['opcionesh'] = $this->permisos_model->da_cargaropcionh();
         $data['opcionespadre'] = $this->permisos_model->da_cargaropcionpadre($nPerId);
         $data['opcioneshijo'] = $this->permisos_model->da_cargaropcionhijo($nPerId);
-//        print_r($data);
         $this->load->view('seguridad/permisos/menu_view', $data);
     }
-
     function registrarOpciones() {
         $data = $this->input->post('json');
         $prohibiciones = $data['chk_parametros_prohibiciones'];
         print_r($prohibiciones);
-        
+
 //        $validar = $this->areas_model->da_registrarAreas($_POST['txtAreas'], $_POST['txtAlias'], $_POST['cbo_dependencia']);
 //
 //        if ($validar) {
