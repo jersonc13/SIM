@@ -53,21 +53,45 @@ class Linea extends CI_Controller {
             echo $validar['msg'];
         }
     }
+
+    function actualizarArea() {
+
+        $txte_nidarea = $_POST['txte_nidarea'];
+        $txte_area = $_POST['txte_area'];
+        $txte_alias = $_POST['txte_alias'];
+
+        $validar = $this->area_model->dbactualizarArea($txte_nidarea, $txte_area, $txte_alias);
+
+        if ($validar) {
+            echo $validar['msg'];
+        } else {
+            echo $validar['msg'];
+        }
+    }
+
     function listarLinea() {
 
         $data['listarLineas'] = $this->linea_model->da_listarLinea();
         $this->load->view('almacen/linea/qry_view', $data);
     }
 
-    function estadoLinea() {
-        $nidvalor = $_POST['nidvalor'];
-        $result = $this->linea_model->da_estadoLinea($nidvalor);
+    function editarArea() {
+        $nidarea = $_POST['nidarea'];
+        $data['editarArea'] = $this->areas_model->dbeditarArea($nidarea);
+        $this->load->view('mante/area/upd_view', $data);
+    }
+
+    function estadoAreas() {
+        $nidarea = $_POST['nidareas'];
+        $result = $this->areas_model->da_estadoAreas($nidarea);
+
         if ($result) {
-            echo $result['msg'];
+            echo 1;
         } else {
-            echo $result['msg'];
+            echo 0;
         }
     }
+
     function buscarAreas() {
         $txtbuscarArea = $_POST['txtbuscarArea'];
         $data['listarAreaxId'] = $this->areas_model->dblistarareaxid($txtbuscarArea);
@@ -75,11 +99,4 @@ class Linea extends CI_Controller {
         $this->load->view('mantenedor/areas/upd_view', $data);
     }
 
-    /*Funciones Edicion*/
-    function getEdit(){
-        $idLinea = $this->input->post( 'id' );
-        $data['idLinea'] = $idLinea;
-        $data['linea']   = $this->linea_model->getLinea( $idLinea );
-        $this->load->view('almacen/linea/upd_view', $data);
-    }
 }

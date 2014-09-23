@@ -1,9 +1,11 @@
-<script src="<?php echo URL_ADMINPJS ?>/almacen/producto/jsProducto.js" type="text/javascript"></script>
+<script src="<?php echo URL_ADMINPJS ?>/mantenedor/empresas/jsEmpresas.js" type="text/javascript"></script>
 <div class="page-content">
+    <!-- BEGIN PAGE HEADER-->
     <div class="row">
         <div class="col-md-12">
+            <!-- BEGIN PAGE TITLE & BREADCRUMB-->
             <h3 class="page-title">
-                Producto de Producto
+                Empresas
             </h3>
             <ul class="page-breadcrumb breadcrumb">
                 <li>
@@ -14,17 +16,20 @@
                 </li>
                 <li>
                     <a href="#">
-                        Almacen </a>
+                        Mantenedor </a>
                     <i class="fa fa-angle-right"></i>
                 </li>
                 <li>
                     <a href="#">
-                        Producto </a>
+                        Empresas </a>
                     <i class="fa fa-angle-right"></i>
                 </li>
             </ul>
+            <!-- END PAGE TITLE & BREADCRUMB-->
         </div>
     </div>
+    <!-- END PAGE HEADER-->
+    <!-- BEGIN DASHBOARD STATS -->
     <div class="row">
 
         <div class="col-md-12">
@@ -41,12 +46,20 @@
                     </li>
                 </ul>
                 <div class="tab-content">
+
                     <div class="tab-pane active" id="tab_0">
+
                         <div id="mostrar_qry" >
+
+
                         </div>
+
                     </div>
+
                     <div class="tab-pane" id="tab_1">
-                        <?php $this->load->view('almacen/producto/ins_view') ?>
+
+                        <?php $this->load->view('mantenedor/empresas/buscarpersona_view') ?>
+
                     </div>
                 </div>
             </div>

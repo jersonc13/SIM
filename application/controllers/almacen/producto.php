@@ -46,41 +46,13 @@ class Producto extends CI_Controller {
         }
     }
 
-    function actualizarArea() {
-
-        $txte_nidarea = $_POST['txte_nidarea'];
-        $txte_area = $_POST['txte_area'];
-        $txte_alias = $_POST['txte_alias'];
-
-        $validar = $this->area_model->dbactualizarArea($txte_nidarea, $txte_area, $txte_alias);
-
-        if ($validar) {
-            echo $validar['msg'];
-        } else {
-            echo $validar['msg'];
-        }
-    }
-
-    function listarAreas() {
-
-        $data['listarAreas'] = $this->areas_model->da_listarAreas();
-        $this->load->view('mantenedor/areas/qry_view', $data);
-    }
-
-    function editarArea() {
-        $nidarea = $_POST['nidarea'];
-        $data['editarArea'] = $this->areas_model->dbeditarArea($nidarea);
-        $this->load->view('mante/area/upd_view', $data);
-    }
-
-    function estadoAreas() {
-        $nidarea = $_POST['nidareas'];
-        $result = $this->areas_model->da_estadoAreas($nidarea);
-
+    function estadoProducto() {
+        $nidvalor = $_POST['nidvalor'];
+        $result = $this->producto_model->da_estadoProducto($nidvalor);
         if ($result) {
-            echo 1;
+            echo $result['msg'];
         } else {
-            echo 0;
+            echo $result['msg'];
         }
     }
 

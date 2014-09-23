@@ -30,6 +30,20 @@ class Producto_model extends CI_Model {
             return 0;
         }
     }
+    
+    function da_estadoProducto($nidvalor) {
+
+        $instruccion = "CALL sim_sp_upd_producto ('upd_estadoProducto','" . $nidvalor . "');";
+
+        $query = $this->db->query($instruccion);
+        $this->db->close();
+
+        if ($query) {
+            return ($query->row_array());
+        } else {
+            return 0;
+        }
+    }
 
 }
 
