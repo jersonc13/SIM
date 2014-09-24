@@ -34,7 +34,7 @@ class Linea_model extends CI_Model {
 
     public function getLinea( $id ){
         $result = 0;
-        $query = $this->db->select('clinea, calias')->from('sim_linea')->where('nidlinea', $id)->get();
+        $query = $this->db->select('clinea, calias, nestado')->from('sim_linea')->where('nidlinea', $id)->get();
         $this->db->close();
         $result = ( $query ) ? $query->row_array() : 0;
         return $result;
@@ -51,6 +51,18 @@ class Linea_model extends CI_Model {
             return ($query->row_array());
         } else {
             return 0;
+        }
+    }
+
+    public function editar( $data, $id ){
+
+        $this->db->where('nidlinea', $id);
+        $query = $this->db->update('sim_linea', $data);
+
+        if( $query){
+            return true;
+        }else{
+            return false;
         }
     }
 

@@ -82,4 +82,18 @@ class Linea extends CI_Controller {
         $data['linea']   = $this->linea_model->getLinea( $idLinea );
         $this->load->view('almacen/linea/upd_view', $data);
     }
+
+    function editarLinea(){
+        $rpt = "";
+        $data['clinea'] = $this->input->post('txtUpdLinea');
+        $data['calias'] = $this->input->post('txtUpdAlias');
+        $data['nestado'] = $this->input->post('estado');
+        $nidlinea = $this->input->post('txtid');
+        if( $this->linea_model->editar( $data, $nidlinea ) ){
+            $rpt = "1";
+        }else{
+            $rpt = "0";
+        }
+        echo $rpt;
+    }
 }

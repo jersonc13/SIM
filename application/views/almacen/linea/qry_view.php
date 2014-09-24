@@ -21,7 +21,7 @@
                 <?php foreach ($listarLineas as $key => $listar) { ?>
                     <tr>
                         <td><?php echo $listar['clinea'] ?></td>
-                        <td><?php echo $listar['cestado'] ?></td>
+                        <td><?php echo $listar['nestado'] ?></td>
                         <td>
                             <a href="#" class="btn btn-sm blue" onclick="editarLinea(<?php echo $listar['nidlinea'] ?>)" >Editar <i class="fa fa-edit"></i></a>
                             <a href="#" onclick="estadoLinea(<?php echo $listar['nidlinea'] ?>)" <?php if ($listar['nestado'] == '1') { ?>  class="btn btn-sm red">Dar de baja <?php } else {  ?>   class="btn btn-sm green"> Activar <?php } ?> <i class="fa fa-refresh"></i></a></td>
