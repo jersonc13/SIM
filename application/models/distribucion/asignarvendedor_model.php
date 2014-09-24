@@ -30,6 +30,20 @@ class Asignarvendedor_model extends CI_Model {
             return 0;
         }
     }
+    
+    function da_estadoVendedor($nidvalor) {
+
+        $instruccion = "CALL sim_sp_upd_vendedorxempresa ('upd_estadoVendedorxempresa','" . $nidvalor . "');";
+
+        $query = $this->db->query($instruccion);
+        $this->db->close();
+
+        if ($query) {
+            return ($query->row_array());
+        } else {
+            return 0;
+        }
+    }
 
 }
 

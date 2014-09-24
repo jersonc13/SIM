@@ -9,7 +9,7 @@ class Empresas extends CI_Controller {
         parent::__construct();
         $this->_validaracceso();
         $this->load->model('mantenedor/empresas_model');
-        $this->load->model('seguridad/permisos_model');
+//        $this->load->model('seguridad/permisos_model');
     }
 
     function _validaracceso() {
@@ -46,14 +46,14 @@ class Empresas extends CI_Controller {
         }
     }
 
-    function vista_crearusuario() {
+    function crearempresa() {
         $nPerId = $_POST['nidvalor'];
         $data['nPerId'] = $nPerId;
-        $result = $this->empresas_model->da_existeusuario($nPerId);
+        $result = $this->empresas_model->da_existeempresa($nPerId);
         if ($result['msg'] == 2) {
             echo $result['msg'];
         } else {
-            $this->load->view('mantenedor/empresas/ins_view', $data);
+            echo $result['msg'];
         }
     }
 
@@ -63,9 +63,9 @@ class Empresas extends CI_Controller {
         $this->load->view('mantenedor/empresas/qry_view', $data);
     }
 
-    function estadoUsuarios() {
+    function estadoEmpresas() {
         $nidvalor = $_POST['nidvalor'];
-        $result = $this->empresas_model->da_estadoUsuarios($nidvalor);
+        $result = $this->empresas_model->da_estadoEmpresas($nidvalor);
         if ($result) {
             echo $result['msg'];
         } else {

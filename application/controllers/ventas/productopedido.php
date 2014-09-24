@@ -27,8 +27,8 @@ class Productopedido extends CI_Controller {
         $data['main_content'] = 'ventas/productopedido/panel_view';
         $data['idpersona'] = $this->session->userdata('ssnidpersona');
         $idEmpresa = $this->asignarvendedor_model->da_listarVendedorxEmpresas('qry_empresaxvendedor',$this->session->userdata('ssnidpersona'));
-        $data['listarProductosxEmpresas'] = $this->asignarproductos_model->da_listarProductoxEmpresas('qry_productoxempresa',$idEmpresa[0]['nidperroles']);
-        $data['idempresa'] = $idEmpresa[0]['nidperroles'];
+        $data['listarProductosxEmpresas'] = $this->asignarproductos_model->da_listarProductoxEmpresas('qry_productoxidempresa',$idEmpresa[0]['nidempresas']);
+        $data['idempresa'] = $idEmpresa[0]['nidempresas'];
         $data['titulo'] = 'Pedido de Producto | SIM';
         $this->load->view('master/plantilla_view', $data);
     }

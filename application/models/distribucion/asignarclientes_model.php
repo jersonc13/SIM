@@ -31,6 +31,20 @@ class Asignarclientes_model extends CI_Model {
         }
     }
 
+    function da_estadoCliente($nidvalor) {
+
+        $instruccion = "CALL sim_sp_upd_clientexempresa ('upd_estadoClientexempresa','" . $nidvalor . "');";
+
+        $query = $this->db->query($instruccion);
+        $this->db->close();
+
+        if ($query) {
+            return ($query->row_array());
+        } else {
+            return 0;
+        }
+    }
+
 }
 
 ?>

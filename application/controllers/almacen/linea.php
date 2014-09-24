@@ -68,12 +68,6 @@ class Linea extends CI_Controller {
             echo $result['msg'];
         }
     }
-    function buscarAreas() {
-        $txtbuscarArea = $_POST['txtbuscarArea'];
-        $data['listarAreaxId'] = $this->areas_model->dblistarareaxid($txtbuscarArea);
-        $data['listarAreas'] = $this->areas_model->da_listarAreas();
-        $this->load->view('mantenedor/areas/upd_view', $data);
-    }
 
     /*Funciones Edicion*/
     function getEdit(){

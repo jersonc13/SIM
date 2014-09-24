@@ -1,7 +1,7 @@
 <div class="portlet box blue">
     <div class="portlet-title">
         <div class="caption">
-            <i class="fa fa-globe"></i>Listado de Usuarios
+            <i class="fa fa-globe"></i>Listado de Empresas
         </div>
         <div class="tools">
             <a href="#" onclick="listarEmpresas()" class="reload">
@@ -12,7 +12,7 @@
         <table class="table table-striped table-bordered table-hover" id="sample_1">
             <thead>
                 <tr>
-                    <th>Usuario</th>
+                    <th>Empresa</th>
                     <th>Estado</th>
                     <th>Opciones</th>          
                 </tr>

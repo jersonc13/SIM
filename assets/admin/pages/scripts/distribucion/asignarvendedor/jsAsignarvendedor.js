@@ -9,10 +9,14 @@ $(function() {
                 url: "asignarvendedor/registrarVendedorxEmpresa",
                 data: $(form).serialize(),
                 success: function(data) {
-                    if (data == '1') {
-                        alert("Datos ingresados correctamente");
-                    } else {
-                        alert("El vendedor está asignado a otra empresa");
+                   switch (data) {
+                        case "1":
+                            alert("Datos ingresados correctamente");
+                            asignarvendedor();
+                            break;
+                        case "2":
+                            alert("La empresa ya cuenta con el vendedor");
+                            break;
                     }
                 },
                 error: function(data) {
@@ -21,10 +25,10 @@ $(function() {
             });
         },
         rules: {
-            txtProducto: {
+            cbo_empresa: {
                 required: true
             },
-            cbo_linea: {
+            cbo_vendedor: {
                 required: true
             }
         },
@@ -53,97 +57,25 @@ function asignarvendedor() {
     });
 }
 
-function buscarDNI() {
-    $.ajax({
-        type: "POST",
-        url: "personanatural/buscarDNI",
-        cache: false,
-        data: {
-            txtDetalleDNI: $('#txtDetalleDNI').val()
-        },
-        success: function(data) {
-            $("#detalle_lista").html(data);
-//            alert(data);
-        },
-        error: function() {
-            alert("Ha ocurrido un error, vuelva a intentarlo.");
-        }
-    });
-}
 
-function RegistrarDatos() {
-    $.ajax({
-        type: "POST",
-        url: "personanatural/cargarprovincia",
-        cache: false,
-        data: {
-            idDepartamento: $('#cbo_departamento').val()
-        },
-        success: function(data) {
-            $("#div_provincia").html(data);
-//            alert(data);
-        },
-        error: function() {
-            alert("Ha ocurrido un error, vuelva a intentarlo.");
-        }
-    });
-}
-
-
-
-function cargaProvincia() {
-    $.ajax({
-        type: "POST",
-        url: "personanatural/cargarprovincia",
-        cache: false,
-        data: {
-            idDepartamento: $('#cbo_departamento').val()
-        },
-        success: function(data) {
-            $("#div_provincia").html(data);
-//            alert(data);
-        },
-        error: function() {
-            alert("Ha ocurrido un error, vuelva a intentarlo.");
-        }
-    });
-}
-
-function cargarDistrito() {
-    $.ajax({
-        type: "POST",
-        url: "personanatural/cargardistrito",
-        cache: false,
-        data: {
-            idProvincia: $('#cbo_provincia').val()
-        },
-        success: function(data) {
-            $("#div_distrito").html(data);
-//            alert(data);
-        },
-        error: function() {
-            alert("Ha ocurrido un error, vuelva a intentarlo.");
-        }
-    });
-}
-
-function estadoPersona(nidvalor) {
+function estadoVendedor(nidvalor) {
     if (confirm('Esta seguro de editar este registro?')) {
         msgLoading("#mostrar_qry");
         $.ajax({
             type: "POST",
-            url: "personanatural/estadoPersona",
+            url: "asignarvendedor/estadoVendedor",
             cache: false,
             data: {
                 nidvalor: nidvalor
             },
             success: function(data) {
                 switch (data) {
-                    case "0":
-                        alert("Ha ocurrido un error, vuelva a intentarlo.");
+                    case "2":
+                        alert("Vendedor ya está asignado a la misma empresa");
+                        asignarvendedor();
                         break;
                     case "1":
-                        listarPersonas();
+                        asignarvendedor();
                         break;
                 }
             },

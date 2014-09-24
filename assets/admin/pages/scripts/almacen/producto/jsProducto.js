@@ -9,10 +9,14 @@ $(function() {
                 url: "producto/registrarProducto",
                 data: $(form).serialize(),
                 success: function(data) {
-                    if (data == '1') {
-                        alert("Datos ingresados correctamente");
-                    } else {
-                        alert("Error al ingresar los datos");
+                    switch (data) {
+                        case "1":
+                            alert("Datos ingresados correctamente");
+                            listarProducto();
+                            break;
+                        case "2":
+                            alert("La linea ya cuenta con dicho producto");
+                            break;
                     }
                 },
                 error: function(data) {
@@ -58,18 +62,19 @@ function estadoProducto(nidvalor) {
         msgLoading("#mostrar_qry");
         $.ajax({
             type: "POST",
-            url: "producto/estadoPersona",
+            url: "producto/estadoProducto",
             cache: false,
             data: {
                 nidvalor: nidvalor
             },
             success: function(data) {
                 switch (data) {
-                    case "0":
-                        alert("Ha ocurrido un error, vuelva a intentarlo.");
+                    case "2":
+                        alert("Ya existe una linea con el mismo producto");
+                        listarProducto();
                         break;
                     case "1":
-                        listarPersonas();
+                        listarProducto();
                         break;
                 }
             },

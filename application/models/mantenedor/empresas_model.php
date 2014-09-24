@@ -19,9 +19,20 @@ class Empresas_model extends CI_Model {
             return 0;
         }
     }
+    
+    function da_listarEmpresasActivas() {
+        $instruccion = "CALL sim_sp_qry_empresas ('qry_empresasactivas','','');";
+        $query = $this->db->query($instruccion);
+        $this->db->close();
+        if ($query) {
+            return ($query->result_array());
+        } else {
+            return 0;
+        }
+    }
 
-    function da_existeusuario($nPerId) {
-        $instruccion = "CALL sim_sp_qry_empresas('qry_usuarioxper','" . $nPerId . "');";
+    function da_existeempresa($nPerId) {
+        $instruccion = "CALL sim_sp_qry_empresas('qry_empresaxper','" . $nPerId . "','');";
         $query = $this->db->query($instruccion);
         $this->db->close();
         if ($query) {
@@ -66,7 +77,7 @@ class Empresas_model extends CI_Model {
     }
 
     function dblistarpersonas($txtPersona) {
-        $instruccion = "CALL sim_sp_qry_empresas ('qry_persona','" . $txtPersona . "');";
+        $instruccion = "CALL sim_sp_qry_empresas ('qry_persona','" . $txtPersona . "','');";
         $query = $this->db->query($instruccion);
         $this->db->close();
         if ($query) {
@@ -78,7 +89,7 @@ class Empresas_model extends CI_Model {
 
     function da_estadoEmpresas($nidvalor) {
 
-        $instruccion = "CALL sim_sp_upd_usuario ('upd_estadoUsu','" . $nidvalor . "','','','');";
+        $instruccion = "CALL sim_sp_upd_empresas ('upd_estadoEmp','" . $nidvalor . "');";
 
         $query = $this->db->query($instruccion);
         $this->db->close();

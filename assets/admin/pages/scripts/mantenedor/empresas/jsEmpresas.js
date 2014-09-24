@@ -62,21 +62,22 @@ function listarEmpresas() {
     });
 }
 
-function crearusuario(nidvalor) {
-    msgLoading("#detalle_lista");
+function crearempresa(nidvalor) {
+//    msgLoading("#detalle_lista");
     $.ajax({
         type: "POST",
-        url: "usuarios/vista_crearusuario",
+        url: "empresas/crearempresa",
         cache: false,
         data: {
             nidvalor: nidvalor
         },
         success: function(data) {
             if (data == '2') {
-                alert("Ya cuenta con usuario");
-                buscarPersona()
+                alert("Ya está registrada como empresa");
+//                listarEmpresas();
             } else {
-                $("#detalle_lista").html(data);
+                alert("Datos ingresados correctamente");
+                listarEmpresas();
             }
 
 
@@ -119,16 +120,12 @@ function estadoEmpresas(nidvalor) {
             },
             success: function(data) {
                 switch (data) {
-                    case "0":
-                        alert("la persona ya tiene usuario");
-//                        listarUsuarios();
-                        break;
                     case "1":
-                        listarUsuarios();
+                        listarEmpresas();
                         break;
                     case "2":
-                        alert("Ya existe otra persona con el mismo usuario");
-//                        listarUsuarios();
+                        alert("Ya existe una empresa con la misma persona");
+                        listarEmpresas();
                         break;
                 }
             },

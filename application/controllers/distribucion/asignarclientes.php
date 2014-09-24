@@ -11,6 +11,7 @@ class Asignarclientes extends CI_Controller {
         $this->load->model('almacen/producto_model');
         $this->load->model('almacen/linea_model');
         $this->load->model('mantenedor/persona_model');
+        $this->load->model('mantenedor/empresas_model');
         $this->load->model('distribucion/asignarclientes_model');
     }
 
@@ -26,9 +27,9 @@ class Asignarclientes extends CI_Controller {
     function index() {
 //        $data['listarAreas'] = $this->areas_model->da_listarAreas();
         $data['main_content'] = 'distribucion/asignarclientes/panel_view';
-        $data['listarLineas'] = $this->linea_model->da_listarLinea();
-        $data['listarClientes'] = $this->persona_model->da_listarPersona('qry_clientes');
-        $data['listarEmpresas'] = $this->persona_model->da_listarPersona('qry_empresas');
+//        $data['listarLineas'] = $this->linea_model->da_listarLinea();
+        $data['listarPersonas'] = $this->persona_model->da_listarPersona('qry_personas');
+        $data['listarEmpresas'] = $this->empresas_model->da_listarEmpresasActivas();
         $data['titulo'] = 'Asignar Productos | SIM';
         $this->load->view('master/plantilla_view', $data);
     }
@@ -50,29 +51,13 @@ class Asignarclientes extends CI_Controller {
         }
     }
 
-    function actualizarArea() {
-
-        $txte_nidarea = $_POST['txte_nidarea'];
-        $txte_area = $_POST['txte_area'];
-        $txte_alias = $_POST['txte_alias'];
-
-        $validar = $this->area_model->dbactualizarArea($txte_nidarea, $txte_area, $txte_alias);
-
-        if ($validar) {
-            echo $validar['msg'];
-        } else {
-            echo $validar['msg'];
-        }
-    }
-
-    function estadoAreas() {
-        $nidarea = $_POST['nidareas'];
-        $result = $this->areas_model->da_estadoAreas($nidarea);
-
+    function estadoCliente() {
+        $nidvalor = $_POST['nidvalor'];
+        $result = $this->asignarclientes_model->da_estadoCliente($nidvalor);
         if ($result) {
-            echo 1;
+            echo $result['msg'];
         } else {
-            echo 0;
+            echo $result['msg'];
         }
     }
 

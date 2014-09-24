@@ -18,7 +18,7 @@
                     <label class="control-label col-md-3">Línea de Producto:</label>
                     <div class="col-md-6">
                         <select id="cbo_linea" name="cbo_linea" class="form-control">
-                            <option value="0" selected="true">Sin Linea</option>
+                            <option value="">Selecciona una Linea</option>
                             <?php foreach ($listarLineas as $key => $listar) { ?>
                                 <option value="<?php echo $listar['nidlinea'] ?>"><?php echo $listar['clinea'] ?></option>
                             <?php } ?>

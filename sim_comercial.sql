@@ -60,29 +60,29 @@ CREATE TABLE `sim_carteraclientes` (
   `ccarcliguardar` varchar(30) DEFAULT NULL,
   `ccarcliactualizar` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`nidcartclientes`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
 
 /*Data for the table `sim_carteraclientes` */
 
-insert  into `sim_carteraclientes`(`nidcartclientes`,`nidclientes`,`nidempresas`,`nestado`,`ccarcliguardar`,`ccarcliactualizar`) values (1,6,4,1,'0','0'),(2,7,4,1,'0','0'),(3,6,5,1,'0','0'),(4,10,4,1,'0','0'),(5,10,4,1,'0','0'),(6,10,4,1,'0','0'),(7,10,4,1,'0','0'),(8,10,4,1,'0','0'),(9,10,4,1,'0','0'),(10,10,4,1,'0','0'),(11,10,4,1,'0','0'),(12,10,4,1,'0','0'),(13,10,4,1,'0','0'),(14,10,4,1,'0','0'),(15,10,4,1,'0','0'),(16,10,4,1,'0','0'),(17,10,4,1,'0','0'),(18,10,4,1,'0','0'),(19,10,4,1,'0','0'),(20,10,4,1,'0','0'),(21,10,4,1,'0','0'),(22,10,4,1,'0','0'),(23,10,4,1,'0','0'),(24,10,4,1,'0','0'),(25,10,4,1,'0','0'),(26,10,4,1,'0','0');
+insert  into `sim_carteraclientes`(`nidcartclientes`,`nidclientes`,`nidempresas`,`nestado`,`ccarcliguardar`,`ccarcliactualizar`) values (27,9,4,1,'0','0'),(28,10,4,1,'0','0'),(29,10,5,1,'0','0'),(30,15,5,1,'0','0'),(31,9,4,0,'0','0'),(32,15,4,1,'0','0');
 
 /*Table structure for table `sim_carteravendedor` */
 
 DROP TABLE IF EXISTS `sim_carteravendedor`;
 
 CREATE TABLE `sim_carteravendedor` (
-  `nidvenempresa` int(11) NOT NULL AUTO_INCREMENT,
+  `nidcartvendedor` int(11) NOT NULL AUTO_INCREMENT,
   `nidvendedor` int(11) NOT NULL,
   `nidempresas` int(11) NOT NULL,
   `nestado` int(11) NOT NULL,
   `ccarvenguardar` varchar(30) NOT NULL,
   `ccarvenactualizar` varchar(30) NOT NULL,
-  PRIMARY KEY (`nidvenempresa`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`nidcartvendedor`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 /*Data for the table `sim_carteravendedor` */
 
-insert  into `sim_carteravendedor`(`nidvenempresa`,`nidvendedor`,`nidempresas`,`nestado`,`ccarvenguardar`,`ccarvenactualizar`) values (2,9,4,1,'0','0'),(4,8,4,1,'0','0'),(5,11,4,1,'0','0');
+insert  into `sim_carteravendedor`(`nidcartvendedor`,`nidvendedor`,`nidempresas`,`nestado`,`ccarvenguardar`,`ccarvenactualizar`) values (8,2,4,1,'0','0'),(9,11,4,1,'0','0'),(10,2,4,0,'0','0');
 
 /*Table structure for table `sim_empresa` */
 
@@ -95,11 +95,11 @@ CREATE TABLE `sim_empresa` (
   `cempguardar` varchar(30) DEFAULT NULL,
   `cempactualizar` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`nidempresas`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 /*Data for the table `sim_empresa` */
 
-insert  into `sim_empresa`(`nidempresas`,`nidpersona`,`nestado`,`cempguardar`,`cempactualizar`) values (1,2,1,'0','0'),(2,2,1,'0','0'),(3,1,1,'0','0'),(4,7,1,'0','0'),(5,8,1,'0','0'),(6,9,1,'0','0'),(7,10,1,'0','0'),(8,6,1,'0','0'),(9,11,1,'0','0'),(10,12,1,'0','0'),(11,14,1,'0','0'),(12,14,1,'0','0');
+insert  into `sim_empresa`(`nidempresas`,`nidpersona`,`nestado`,`cempguardar`,`cempactualizar`) values (4,7,1,'0','0'),(5,8,1,'0','0'),(6,9,1,'0','0'),(7,10,1,'0','0'),(8,6,0,'0','0'),(9,11,0,'0','0'),(10,12,1,'0','0'),(11,14,0,'0','0'),(12,14,0,'0','0'),(13,15,1,'0','0');
 
 /*Table structure for table `sim_linea` */
 
@@ -113,11 +113,11 @@ CREATE TABLE `sim_linea` (
   `clinguardar` varchar(30) DEFAULT NULL,
   `clinactualizar` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`nidlinea`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 /*Data for the table `sim_linea` */
 
-insert  into `sim_linea`(`nidlinea`,`clinea`,`calias`,`nestado`,`clinguardar`,`clinactualizar`) values (1,'Esencias','ese',1,'0','0'),(2,'Mermeladas','mer',1,'0','0'),(3,'Levaduras','lev',1,'0','0'),(4,'Cerveza','cer',1,'0','0');
+insert  into `sim_linea`(`nidlinea`,`clinea`,`calias`,`nestado`,`clinguardar`,`clinactualizar`) values (1,'Esencias','ese',1,'0','0'),(2,'Mermeladas','mer',1,'0','0'),(3,'Levaduras','lev',1,'0','0'),(4,'Cerveza','cer',1,'0','0'),(5,'harinas','har',1,'0','0'),(6,'Levaduras2','Lev',0,'0','0'),(7,'Levaduras2','Lev',1,'0','0');
 
 /*Table structure for table `sim_maestra` */
 
@@ -169,11 +169,11 @@ CREATE TABLE `sim_opcion` (
   `copcguardar` varchar(30) DEFAULT NULL,
   `copcactualizar` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`nidopcion`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 
 /*Data for the table `sim_opcion` */
 
-insert  into `sim_opcion`(`nidopcion`,`copcion`,`curl`,`cicono`,`nvalor`,`nestado`,`copcguardar`,`copcactualizar`) values (1,'Mantenedores','#','fa-tasks',0,1,'0','0'),(2,'Encuesta','mantenedor/encuesta','',1,1,'0','0'),(3,'Preguntas','mantenedor/preguntas','',1,1,'0','0'),(4,'Persona Natural','mantenedor/personanatural','',1,1,'0','0'),(5,'Persona Juridica','mantenedor/personajuridica','',1,1,'0','0'),(6,'Areas','mantenedor/areas','',1,1,'0','0'),(7,'Cargos','mantenedor/cargos','',1,1,'0','0'),(8,'Usuarios','mantenedor/usuarios','',1,1,'0','0'),(9,'Seguridad','#','fa-cogs',0,1,'0','0'),(10,'Permisos','seguridad/permisos','',9,1,'0','0'),(11,'Almacen','#','fa-bookmark-o',0,1,'0','0'),(12,'Linea','almacen/linea','',11,1,'0','0'),(13,'Producto','almacen/producto','',11,1,'0','0'),(14,'Distribucion','#','fa-sitemap',0,1,'0','0'),(15,'Asignar Productos a Empresas','distribucion/asignarproductos','',14,1,'0','0'),(16,'Asignar Clientes a Empresas','distribucion/asignarclientes','',14,1,'0','0'),(17,'Asignar Clientes a Vendedor','distribucion/clientevendedor','',14,1,'0','0'),(18,'Ventas','#','fa-shopping-cart',0,1,'0','0'),(19,'Pedido de Productos','ventas/productopedido','',18,1,'0','0'),(20,'Venta Diaria','ventas/ventadiaria','',18,1,'0','0'),(21,'Asignar Vendedor a Empresas','distribucion/asignarvendedor','',14,1,'0','0');
+insert  into `sim_opcion`(`nidopcion`,`copcion`,`curl`,`cicono`,`nvalor`,`nestado`,`copcguardar`,`copcactualizar`) values (1,'Mantenedores','#','fa-tasks',0,1,'0','0'),(2,'Encuesta','mantenedor/encuesta','',1,1,'0','0'),(3,'Preguntas','mantenedor/preguntas','',1,1,'0','0'),(4,'Persona Natural','mantenedor/personanatural','',1,1,'0','0'),(5,'Persona Juridica','mantenedor/personajuridica','',1,1,'0','0'),(6,'Areas','mantenedor/areas','',1,1,'0','0'),(7,'Cargos','mantenedor/cargos','',1,1,'0','0'),(8,'Usuarios','mantenedor/usuarios','',1,1,'0','0'),(9,'Seguridad','#','fa-cogs',0,1,'0','0'),(10,'Permisos','seguridad/permisos','',9,1,'0','0'),(11,'Almacen','#','fa-bookmark-o',0,1,'0','0'),(12,'Linea','almacen/linea','',11,1,'0','0'),(13,'Producto','almacen/producto','',11,1,'0','0'),(14,'Distribucion','#','fa-sitemap',0,1,'0','0'),(15,'Asignar Productos a Empresas','distribucion/asignarproductos','',14,1,'0','0'),(16,'Asignar Clientes a Empresas','distribucion/asignarclientes','',14,1,'0','0'),(17,'Asignar Clientes a Vendedor','distribucion/clientevendedor','',14,1,'0','0'),(18,'Ventas','#','fa-shopping-cart',0,1,'0','0'),(19,'Pedido de Productos','ventas/productopedido','',18,1,'0','0'),(20,'Venta Diaria','ventas/ventadiaria','',18,1,'0','0'),(21,'Asignar Vendedor a Empresas','distribucion/asignarvendedor','',14,1,'0','0'),(22,'Empresas','mantenedor/empresas','',1,1,'0','0');
 
 /*Table structure for table `sim_opcionusuario` */
 
@@ -189,7 +189,7 @@ CREATE TABLE `sim_opcionusuario` (
 
 /*Data for the table `sim_opcionusuario` */
 
-insert  into `sim_opcionusuario`(`nidopcion`,`nidusuario`,`nestado`,`copcusuguardar`,`copcusuactualizar`) values (1,3,1,'0','0'),(2,3,1,'0','0'),(3,3,1,'0','0'),(4,3,1,'0','0'),(5,3,1,'0','0'),(8,3,1,'0','0'),(9,3,1,'0','0'),(10,3,1,'0','0'),(1,1,1,'0','0'),(2,1,1,'0','0'),(5,1,1,'0','0'),(11,3,1,'0','0'),(12,3,1,'0','0'),(13,3,1,'0','0'),(14,3,1,'0','0'),(15,3,1,'0','0'),(16,3,1,'0','0'),(17,3,1,'0','0'),(18,3,1,'0','0'),(19,3,1,'0','0'),(20,3,1,'0','0'),(21,3,1,'0','0'),(18,20,1,'0','0'),(19,20,1,'0','0'),(20,20,1,'0','0');
+insert  into `sim_opcionusuario`(`nidopcion`,`nidusuario`,`nestado`,`copcusuguardar`,`copcusuactualizar`) values (1,1,1,'0','0'),(2,1,1,'0','0'),(5,1,1,'0','0'),(18,20,1,'0','0'),(19,20,1,'0','0'),(20,20,1,'0','0'),(18,25,1,'0','0'),(19,25,1,'0','0'),(1,3,1,'0','0'),(2,3,1,'0','0'),(3,3,1,'0','0'),(4,3,1,'0','0'),(5,3,1,'0','0'),(8,3,1,'0','0'),(22,3,1,'0','0'),(11,3,1,'0','0'),(12,3,1,'0','0'),(13,3,1,'0','0'),(14,3,1,'0','0'),(15,3,1,'0','0'),(16,3,1,'0','0'),(17,3,1,'0','0'),(21,3,1,'0','0'),(18,3,1,'0','0'),(19,3,1,'0','0'),(20,3,1,'0','0');
 
 /*Table structure for table `sim_percorreo` */
 
@@ -285,7 +285,7 @@ CREATE TABLE `sim_persona` (
 
 /*Data for the table `sim_persona` */
 
-insert  into `sim_persona`(`nidpersona`,`capellidos`,`cnombres`,`cnomcomercial`,`cdniruc`,`crandom`,`nestado`,`cperguardar`,`cperactualizar`,`nidsexo`,`nidestadocivil`,`nidtipdocumento`) values (1,'García Zárate','Marlon H.','','43501922','1234',1,'2014070243501922','2014070243501922',NULL,NULL,NULL),(2,'Castañeda Purizaca','Jerson','','70257295','1235',1,'2014070243501922','2014070243501922',NULL,NULL,NULL),(3,'Castañeda Purizaca','Jerson Andre','','70257295','12345',0,'0','0',0,21,19),(4,'Perez Pereda','Juan Jaime','','12312312323','12345',0,'0','0',11,22,19),(5,'Perez cabrera','alonso','','12312312','12345',0,'0','0',11,21,18),(6,'cabrera cabrera','lazaro','','12312333','12345',1,'0','0',11,22,18),(7,'','','Carbon & Miel','10121212122','12345',0,'0','0',0,0,19),(8,'','','Dist. Cumbres SAC','10232233232','12345',1,'0','0',0,0,19),(9,'','','Bodega fitopanpan','12312312312','12345',1,'0','0',0,0,19),(10,'','','Bodega carloncho','12312323421','12345',1,'0','0',0,0,19),(11,'Dominguez','Domingo','','70257293','12345',1,'0','0',11,21,18),(12,'','','bodega ramirez','12312312312','12345',0,'0','0',0,0,19),(13,'castro','aurora','','70257297','12345',1,'0','0',11,21,18),(14,'gonzales','torres','','70257290','12345',1,'0','0',12,22,18),(15,'','','bodega azucena','12312313222','12345',1,'0','0',0,0,19),(16,'Gonzales','andre','','70257299','319.139069',1,'0','0',11,24,18);
+insert  into `sim_persona`(`nidpersona`,`capellidos`,`cnombres`,`cnomcomercial`,`cdniruc`,`crandom`,`nestado`,`cperguardar`,`cperactualizar`,`nidsexo`,`nidestadocivil`,`nidtipdocumento`) values (1,'García Zárate','Marlon H.','','43501922','1234',1,'2014070243501922','2014070243501922',NULL,NULL,NULL),(2,'Castañeda Purizaca','Jerson','','70257295','1235',1,'2014070243501922','2014070243501922',NULL,NULL,NULL),(3,'Castañeda Purizaca','Jerson Andre','','70257295','12345',0,'0','0',0,21,19),(4,'Perez Pereda','Juan Jaime','','12312312323','12345',0,'0','0',11,22,19),(5,'Perez cabrera','alonso','','12312312','12345',0,'0','0',11,21,18),(6,'cabrera cabrera','lazaro','','12312333','12345',1,'0','0',11,22,18),(7,'','','Carbon & Miel','10121212122','12345',1,'0','0',0,0,19),(8,'','','Dist. Cumbres SAC','10232233232','12345',1,'0','0',0,0,19),(9,'','','Bodega fitopanpan','12312312312','12345',1,'0','0',0,0,19),(10,'','','Bodega carloncho','12312323421','12345',1,'0','0',0,0,19),(11,'Dominguez','Domingo','','70257293','12345',1,'0','0',11,21,18),(12,'','','bodega ramirez','12312312312','12345',0,'0','0',0,0,19),(13,'castro','aurora','','70257297','12345',1,'0','0',11,21,18),(14,'gonzales','torres','','70257290','12345',1,'0','0',12,22,18),(15,'','','bodega azucena','12312313222','12345',1,'0','0',0,0,19),(16,'Gonzales','andre','','70257299','319.139069',1,'0','0',11,24,18);
 
 /*Table structure for table `sim_pertelefono` */
 
@@ -343,11 +343,11 @@ CREATE TABLE `sim_productos` (
   `cproactualizar` varchar(30) DEFAULT NULL,
   `nidlinea` int(11) DEFAULT NULL,
   PRIMARY KEY (`nidproductos`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 /*Data for the table `sim_productos` */
 
-insert  into `sim_productos`(`nidproductos`,`cproductos`,`nestado`,`cproguardar`,`cproactualizar`,`nidlinea`) values (1,'frutas del campo',1,'0','0',2),(2,'carbon y miel',1,'0','0',2),(3,'pan carbon y miel',1,'0','0',3),(4,'esencia de vainilla',1,'0','0',1),(5,'Lata de Cerveza 650 L.',1,'0','0',4);
+insert  into `sim_productos`(`nidproductos`,`cproductos`,`nestado`,`cproguardar`,`cproactualizar`,`nidlinea`) values (1,'frutas del campo',1,'0','0',2),(2,'carbon y miel',1,'0','0',2),(3,'pan carbon y miel',1,'0','0',3),(4,'esencia de vainilla',1,'0','0',1),(5,'Lata de Cerveza 650 L.',1,'0','0',4),(6,'blanca flor 500 gr',1,'0','0',5),(9,'Lata de Cerveza 650 L.',0,'0','0',1);
 
 /*Table structure for table `sim_productosempresa` */
 
@@ -355,17 +355,17 @@ DROP TABLE IF EXISTS `sim_productosempresa`;
 
 CREATE TABLE `sim_productosempresa` (
   `nidproempresa` int(11) NOT NULL AUTO_INCREMENT,
-  `nidperroles` int(11) DEFAULT NULL,
+  `nidempresas` int(11) DEFAULT NULL,
   `nidproductos` int(11) DEFAULT NULL,
   `nestado` int(11) DEFAULT NULL,
   `cproempguardar` varchar(30) DEFAULT NULL,
   `cproempactualizar` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`nidproempresa`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 /*Data for the table `sim_productosempresa` */
 
-insert  into `sim_productosempresa`(`nidproempresa`,`nidperroles`,`nidproductos`,`nestado`,`cproempguardar`,`cproempactualizar`) values (1,4,1,1,'0','0'),(2,4,4,1,'0','0'),(3,4,3,1,'0','0'),(4,5,5,1,'0','0'),(5,4,0,1,'0','0'),(6,3,5,1,'0','0');
+insert  into `sim_productosempresa`(`nidproempresa`,`nidempresas`,`nidproductos`,`nestado`,`cproempguardar`,`cproempactualizar`) values (7,4,6,1,'0','0'),(10,6,6,1,'0','0'),(11,4,6,0,'0','0'),(12,4,1,1,'0','0'),(13,4,4,1,'0','0');
 
 /*Table structure for table `sim_ubdepartamento` */
 
@@ -423,11 +423,11 @@ CREATE TABLE `sim_ultimasesion` (
   `nestado` int(11) DEFAULT NULL,
   `random` int(11) DEFAULT NULL,
   PRIMARY KEY (`nidultsesion`)
-) ENGINE=InnoDB AUTO_INCREMENT=135 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=160 DEFAULT CHARSET=latin1;
 
 /*Data for the table `sim_ultimasesion` */
 
-insert  into `sim_ultimasesion`(`nidultsesion`,`nidusuario`,`dinicio`,`dfin`,`nestado`,`random`) values (1,2,'2014-07-03 01:08:00','0000-00-00 00:00:00',1,6),(2,2,'2014-07-03 01:09:10','0000-00-00 00:00:00',1,12),(3,2,'2014-07-03 01:11:21','0000-00-00 00:00:00',1,6),(4,2,'2014-07-03 01:12:48','0000-00-00 00:00:00',1,9),(5,2,'2014-07-03 01:14:12','0000-00-00 00:00:00',1,5),(6,2,'2014-07-03 01:14:48','0000-00-00 00:00:00',1,7),(7,2,'2014-07-03 01:21:22','0000-00-00 00:00:00',1,5),(8,2,'2014-07-04 17:51:53','0000-00-00 00:00:00',1,11),(9,2,'2014-07-04 18:15:32','0000-00-00 00:00:00',1,8),(10,2,'2014-07-06 09:34:04','0000-00-00 00:00:00',1,11),(11,2,'2014-07-06 09:36:56','0000-00-00 00:00:00',1,11),(12,2,'2014-07-09 22:38:54','0000-00-00 00:00:00',1,12),(13,2,'2014-07-10 00:17:06','0000-00-00 00:00:00',1,5),(14,2,'2014-07-10 01:13:50','0000-00-00 00:00:00',1,13),(15,2,'2014-07-10 01:47:24','0000-00-00 00:00:00',1,9),(16,2,'2014-07-10 22:50:14','0000-00-00 00:00:00',1,8),(17,3,'2014-07-14 17:33:40','0000-00-00 00:00:00',1,11),(18,3,'2014-07-14 18:35:15','0000-00-00 00:00:00',1,8),(19,3,'2014-07-14 23:52:33','0000-00-00 00:00:00',1,15),(20,2,'2014-07-20 16:01:16','0000-00-00 00:00:00',1,7),(21,2,'2014-07-20 16:07:51','0000-00-00 00:00:00',1,9),(22,3,'2014-07-20 17:11:38','0000-00-00 00:00:00',1,6),(23,3,'2014-07-20 17:15:34','0000-00-00 00:00:00',1,7),(24,3,'2014-07-20 17:17:31','0000-00-00 00:00:00',1,10),(25,3,'2014-07-20 17:26:02','0000-00-00 00:00:00',1,7),(26,3,'2014-08-15 20:45:21','0000-00-00 00:00:00',1,12),(27,3,'2014-08-20 18:31:24','0000-00-00 00:00:00',1,5),(28,3,'2014-08-21 01:56:44','0000-00-00 00:00:00',1,9),(29,3,'2014-08-21 22:12:39','0000-00-00 00:00:00',1,9),(30,3,'2014-08-26 11:59:03','0000-00-00 00:00:00',1,6),(31,3,'2014-08-26 12:26:30','0000-00-00 00:00:00',1,14),(32,3,'2014-08-28 21:29:12','0000-00-00 00:00:00',1,7),(33,3,'2014-08-28 21:29:15','0000-00-00 00:00:00',1,15),(34,1,'2014-08-28 21:50:18','0000-00-00 00:00:00',1,10),(35,3,'2014-08-28 21:50:41','0000-00-00 00:00:00',1,12),(36,3,'2014-08-28 22:28:02','0000-00-00 00:00:00',1,11),(37,3,'2014-08-29 13:00:31','0000-00-00 00:00:00',1,5),(38,3,'2014-08-29 14:10:50','0000-00-00 00:00:00',1,8),(39,1,'2014-08-29 16:54:43','0000-00-00 00:00:00',1,14),(40,3,'2014-08-29 17:12:58','0000-00-00 00:00:00',1,15),(41,3,'2014-08-29 17:49:02','0000-00-00 00:00:00',1,11),(42,3,'2014-08-29 17:50:52','0000-00-00 00:00:00',1,13),(43,3,'2014-08-29 18:21:26','0000-00-00 00:00:00',1,11),(44,3,'2014-08-29 19:07:28','0000-00-00 00:00:00',1,7),(45,3,'2014-08-29 19:08:52','0000-00-00 00:00:00',1,13),(46,3,'2014-08-29 19:12:09','0000-00-00 00:00:00',1,8),(47,3,'2014-08-29 19:24:26','0000-00-00 00:00:00',1,8),(48,3,'2014-09-05 19:58:09','0000-00-00 00:00:00',1,6),(49,3,'2014-09-05 21:19:33','0000-00-00 00:00:00',1,12),(50,3,'2014-09-05 22:04:58','0000-00-00 00:00:00',1,11),(51,3,'2014-09-06 00:07:39','0000-00-00 00:00:00',1,12),(52,3,'2014-09-06 00:07:52','0000-00-00 00:00:00',1,6),(53,3,'2014-09-06 00:07:54','0000-00-00 00:00:00',1,11),(54,3,'2014-09-06 13:23:29','0000-00-00 00:00:00',1,12),(55,3,'2014-09-06 14:15:23','0000-00-00 00:00:00',1,11),(56,3,'2014-09-06 14:31:23','0000-00-00 00:00:00',1,9),(57,3,'2014-09-06 15:31:44','0000-00-00 00:00:00',1,7),(58,3,'2014-09-07 17:05:46','0000-00-00 00:00:00',1,6),(59,3,'2014-09-07 19:11:16','0000-00-00 00:00:00',1,10),(60,3,'2014-09-08 01:30:03','0000-00-00 00:00:00',1,14),(61,3,'2014-09-08 02:05:52','0000-00-00 00:00:00',1,7),(62,3,'2014-09-08 02:36:52','0000-00-00 00:00:00',1,7),(63,3,'2014-09-08 02:40:12','0000-00-00 00:00:00',1,6),(64,3,'2014-09-08 02:41:13','0000-00-00 00:00:00',1,15),(65,3,'2014-09-08 02:43:22','0000-00-00 00:00:00',1,6),(66,3,'2014-09-08 02:53:37','0000-00-00 00:00:00',1,11),(67,3,'2014-09-08 03:04:12','0000-00-00 00:00:00',1,11),(68,3,'2014-09-08 03:19:41','0000-00-00 00:00:00',1,6),(69,3,'2014-09-08 03:26:12','0000-00-00 00:00:00',1,9),(70,3,'2014-09-08 03:34:40','0000-00-00 00:00:00',1,7),(71,3,'2014-09-08 03:39:21','0000-00-00 00:00:00',1,13),(72,3,'2014-09-08 03:54:58','0000-00-00 00:00:00',1,12),(73,3,'2014-09-08 03:57:38','0000-00-00 00:00:00',1,8),(74,3,'2014-09-08 05:56:48','0000-00-00 00:00:00',1,15),(75,3,'2014-09-08 05:58:17','0000-00-00 00:00:00',1,11),(76,3,'2014-09-08 17:49:16','0000-00-00 00:00:00',1,5),(77,3,'2014-09-09 21:39:36','0000-00-00 00:00:00',1,11),(78,3,'2014-09-10 00:33:17','0000-00-00 00:00:00',1,13),(79,3,'2014-09-10 01:06:36','0000-00-00 00:00:00',1,7),(80,3,'2014-09-10 01:07:41','0000-00-00 00:00:00',1,10),(81,3,'2014-09-10 01:08:52','0000-00-00 00:00:00',1,5),(82,2,'2014-09-10 01:11:51','0000-00-00 00:00:00',1,7),(83,3,'2014-09-10 02:25:27','0000-00-00 00:00:00',1,12),(84,3,'2014-09-10 02:57:25','0000-00-00 00:00:00',1,14),(85,3,'2014-09-10 02:58:59','0000-00-00 00:00:00',1,7),(86,3,'2014-09-10 03:24:52','0000-00-00 00:00:00',1,10),(87,3,'2014-09-10 18:47:50','0000-00-00 00:00:00',1,7),(88,3,'2014-09-16 21:37:43','0000-00-00 00:00:00',1,9),(89,3,'2014-09-17 00:58:18','0000-00-00 00:00:00',1,5),(90,3,'2014-09-18 23:26:13','0000-00-00 00:00:00',1,5),(91,3,'2014-09-19 00:32:28','0000-00-00 00:00:00',1,5),(92,3,'2014-09-19 00:57:16','0000-00-00 00:00:00',1,6),(93,3,'2014-09-19 01:10:01','0000-00-00 00:00:00',1,11),(94,3,'2014-09-19 01:21:21','0000-00-00 00:00:00',1,10),(95,3,'2014-09-20 01:52:41','0000-00-00 00:00:00',1,5),(96,3,'2014-09-20 11:10:38','0000-00-00 00:00:00',1,10),(97,20,'2014-09-20 11:15:44','0000-00-00 00:00:00',1,15),(98,3,'2014-09-20 11:16:05','0000-00-00 00:00:00',1,7),(99,20,'2014-09-20 11:18:11','0000-00-00 00:00:00',1,15),(100,3,'2014-09-20 11:28:39','0000-00-00 00:00:00',1,5),(101,20,'2014-09-20 11:29:02','0000-00-00 00:00:00',1,7),(102,20,'2014-09-20 12:36:07','0000-00-00 00:00:00',1,9),(103,3,'2014-09-20 15:53:04','0000-00-00 00:00:00',1,6),(104,3,'2014-09-20 16:29:37','0000-00-00 00:00:00',1,8),(105,3,'2014-09-20 17:12:51','0000-00-00 00:00:00',1,5),(106,3,'2014-09-20 19:42:28','0000-00-00 00:00:00',1,10),(107,3,'2014-09-20 19:43:44','0000-00-00 00:00:00',1,10),(108,3,'2014-09-20 19:47:41','0000-00-00 00:00:00',1,11),(109,3,'2014-09-20 19:51:00','0000-00-00 00:00:00',1,6),(110,3,'2014-09-21 01:13:16','0000-00-00 00:00:00',1,12),(111,3,'2014-09-21 14:51:29','0000-00-00 00:00:00',1,11),(112,3,'2014-09-21 16:13:22','0000-00-00 00:00:00',1,8),(113,3,'2014-09-21 16:39:27','0000-00-00 00:00:00',1,14),(114,3,'2014-09-21 16:53:14','0000-00-00 00:00:00',1,6),(115,3,'2014-09-21 19:06:49','0000-00-00 00:00:00',1,15),(116,3,'2014-09-21 22:06:06','0000-00-00 00:00:00',1,15),(117,3,'2014-09-22 00:37:52','0000-00-00 00:00:00',1,15),(118,3,'2014-09-22 00:44:22','0000-00-00 00:00:00',1,14),(119,3,'2014-09-22 01:06:19','0000-00-00 00:00:00',1,15),(120,3,'2014-09-22 01:54:14','0000-00-00 00:00:00',1,6),(121,3,'2014-09-22 01:56:14','0000-00-00 00:00:00',1,11),(122,3,'2014-09-22 01:58:10','0000-00-00 00:00:00',1,8),(123,3,'2014-09-22 02:02:06','0000-00-00 00:00:00',1,15),(124,3,'2014-09-22 02:59:06','0000-00-00 00:00:00',1,15),(125,3,'2014-09-22 03:22:13','0000-00-00 00:00:00',1,8),(126,3,'2014-09-22 03:49:09','0000-00-00 00:00:00',1,11),(127,3,'2014-09-22 03:56:30','0000-00-00 00:00:00',1,15),(128,3,'2014-09-22 03:58:12','0000-00-00 00:00:00',1,10),(129,3,'2014-09-22 04:02:20','0000-00-00 00:00:00',1,5),(130,3,'2014-09-22 04:05:56','0000-00-00 00:00:00',1,11),(131,3,'2014-09-22 04:09:24','0000-00-00 00:00:00',1,13),(132,3,'2014-09-22 04:22:49','0000-00-00 00:00:00',1,15),(133,3,'2014-09-22 04:23:38','0000-00-00 00:00:00',1,13),(134,3,'2014-09-22 23:22:35','0000-00-00 00:00:00',1,14);
+insert  into `sim_ultimasesion`(`nidultsesion`,`nidusuario`,`dinicio`,`dfin`,`nestado`,`random`) values (1,2,'2014-07-03 01:08:00','0000-00-00 00:00:00',1,6),(2,2,'2014-07-03 01:09:10','0000-00-00 00:00:00',1,12),(3,2,'2014-07-03 01:11:21','0000-00-00 00:00:00',1,6),(4,2,'2014-07-03 01:12:48','0000-00-00 00:00:00',1,9),(5,2,'2014-07-03 01:14:12','0000-00-00 00:00:00',1,5),(6,2,'2014-07-03 01:14:48','0000-00-00 00:00:00',1,7),(7,2,'2014-07-03 01:21:22','0000-00-00 00:00:00',1,5),(8,2,'2014-07-04 17:51:53','0000-00-00 00:00:00',1,11),(9,2,'2014-07-04 18:15:32','0000-00-00 00:00:00',1,8),(10,2,'2014-07-06 09:34:04','0000-00-00 00:00:00',1,11),(11,2,'2014-07-06 09:36:56','0000-00-00 00:00:00',1,11),(12,2,'2014-07-09 22:38:54','0000-00-00 00:00:00',1,12),(13,2,'2014-07-10 00:17:06','0000-00-00 00:00:00',1,5),(14,2,'2014-07-10 01:13:50','0000-00-00 00:00:00',1,13),(15,2,'2014-07-10 01:47:24','0000-00-00 00:00:00',1,9),(16,2,'2014-07-10 22:50:14','0000-00-00 00:00:00',1,8),(17,3,'2014-07-14 17:33:40','0000-00-00 00:00:00',1,11),(18,3,'2014-07-14 18:35:15','0000-00-00 00:00:00',1,8),(19,3,'2014-07-14 23:52:33','0000-00-00 00:00:00',1,15),(20,2,'2014-07-20 16:01:16','0000-00-00 00:00:00',1,7),(21,2,'2014-07-20 16:07:51','0000-00-00 00:00:00',1,9),(22,3,'2014-07-20 17:11:38','0000-00-00 00:00:00',1,6),(23,3,'2014-07-20 17:15:34','0000-00-00 00:00:00',1,7),(24,3,'2014-07-20 17:17:31','0000-00-00 00:00:00',1,10),(25,3,'2014-07-20 17:26:02','0000-00-00 00:00:00',1,7),(26,3,'2014-08-15 20:45:21','0000-00-00 00:00:00',1,12),(27,3,'2014-08-20 18:31:24','0000-00-00 00:00:00',1,5),(28,3,'2014-08-21 01:56:44','0000-00-00 00:00:00',1,9),(29,3,'2014-08-21 22:12:39','0000-00-00 00:00:00',1,9),(30,3,'2014-08-26 11:59:03','0000-00-00 00:00:00',1,6),(31,3,'2014-08-26 12:26:30','0000-00-00 00:00:00',1,14),(32,3,'2014-08-28 21:29:12','0000-00-00 00:00:00',1,7),(33,3,'2014-08-28 21:29:15','0000-00-00 00:00:00',1,15),(34,1,'2014-08-28 21:50:18','0000-00-00 00:00:00',1,10),(35,3,'2014-08-28 21:50:41','0000-00-00 00:00:00',1,12),(36,3,'2014-08-28 22:28:02','0000-00-00 00:00:00',1,11),(37,3,'2014-08-29 13:00:31','0000-00-00 00:00:00',1,5),(38,3,'2014-08-29 14:10:50','0000-00-00 00:00:00',1,8),(39,1,'2014-08-29 16:54:43','0000-00-00 00:00:00',1,14),(40,3,'2014-08-29 17:12:58','0000-00-00 00:00:00',1,15),(41,3,'2014-08-29 17:49:02','0000-00-00 00:00:00',1,11),(42,3,'2014-08-29 17:50:52','0000-00-00 00:00:00',1,13),(43,3,'2014-08-29 18:21:26','0000-00-00 00:00:00',1,11),(44,3,'2014-08-29 19:07:28','0000-00-00 00:00:00',1,7),(45,3,'2014-08-29 19:08:52','0000-00-00 00:00:00',1,13),(46,3,'2014-08-29 19:12:09','0000-00-00 00:00:00',1,8),(47,3,'2014-08-29 19:24:26','0000-00-00 00:00:00',1,8),(48,3,'2014-09-05 19:58:09','0000-00-00 00:00:00',1,6),(49,3,'2014-09-05 21:19:33','0000-00-00 00:00:00',1,12),(50,3,'2014-09-05 22:04:58','0000-00-00 00:00:00',1,11),(51,3,'2014-09-06 00:07:39','0000-00-00 00:00:00',1,12),(52,3,'2014-09-06 00:07:52','0000-00-00 00:00:00',1,6),(53,3,'2014-09-06 00:07:54','0000-00-00 00:00:00',1,11),(54,3,'2014-09-06 13:23:29','0000-00-00 00:00:00',1,12),(55,3,'2014-09-06 14:15:23','0000-00-00 00:00:00',1,11),(56,3,'2014-09-06 14:31:23','0000-00-00 00:00:00',1,9),(57,3,'2014-09-06 15:31:44','0000-00-00 00:00:00',1,7),(58,3,'2014-09-07 17:05:46','0000-00-00 00:00:00',1,6),(59,3,'2014-09-07 19:11:16','0000-00-00 00:00:00',1,10),(60,3,'2014-09-08 01:30:03','0000-00-00 00:00:00',1,14),(61,3,'2014-09-08 02:05:52','0000-00-00 00:00:00',1,7),(62,3,'2014-09-08 02:36:52','0000-00-00 00:00:00',1,7),(63,3,'2014-09-08 02:40:12','0000-00-00 00:00:00',1,6),(64,3,'2014-09-08 02:41:13','0000-00-00 00:00:00',1,15),(65,3,'2014-09-08 02:43:22','0000-00-00 00:00:00',1,6),(66,3,'2014-09-08 02:53:37','0000-00-00 00:00:00',1,11),(67,3,'2014-09-08 03:04:12','0000-00-00 00:00:00',1,11),(68,3,'2014-09-08 03:19:41','0000-00-00 00:00:00',1,6),(69,3,'2014-09-08 03:26:12','0000-00-00 00:00:00',1,9),(70,3,'2014-09-08 03:34:40','0000-00-00 00:00:00',1,7),(71,3,'2014-09-08 03:39:21','0000-00-00 00:00:00',1,13),(72,3,'2014-09-08 03:54:58','0000-00-00 00:00:00',1,12),(73,3,'2014-09-08 03:57:38','0000-00-00 00:00:00',1,8),(74,3,'2014-09-08 05:56:48','0000-00-00 00:00:00',1,15),(75,3,'2014-09-08 05:58:17','0000-00-00 00:00:00',1,11),(76,3,'2014-09-08 17:49:16','0000-00-00 00:00:00',1,5),(77,3,'2014-09-09 21:39:36','0000-00-00 00:00:00',1,11),(78,3,'2014-09-10 00:33:17','0000-00-00 00:00:00',1,13),(79,3,'2014-09-10 01:06:36','0000-00-00 00:00:00',1,7),(80,3,'2014-09-10 01:07:41','0000-00-00 00:00:00',1,10),(81,3,'2014-09-10 01:08:52','0000-00-00 00:00:00',1,5),(82,2,'2014-09-10 01:11:51','0000-00-00 00:00:00',1,7),(83,3,'2014-09-10 02:25:27','0000-00-00 00:00:00',1,12),(84,3,'2014-09-10 02:57:25','0000-00-00 00:00:00',1,14),(85,3,'2014-09-10 02:58:59','0000-00-00 00:00:00',1,7),(86,3,'2014-09-10 03:24:52','0000-00-00 00:00:00',1,10),(87,3,'2014-09-10 18:47:50','0000-00-00 00:00:00',1,7),(88,3,'2014-09-16 21:37:43','0000-00-00 00:00:00',1,9),(89,3,'2014-09-17 00:58:18','0000-00-00 00:00:00',1,5),(90,3,'2014-09-18 23:26:13','0000-00-00 00:00:00',1,5),(91,3,'2014-09-19 00:32:28','0000-00-00 00:00:00',1,5),(92,3,'2014-09-19 00:57:16','0000-00-00 00:00:00',1,6),(93,3,'2014-09-19 01:10:01','0000-00-00 00:00:00',1,11),(94,3,'2014-09-19 01:21:21','0000-00-00 00:00:00',1,10),(95,3,'2014-09-20 01:52:41','0000-00-00 00:00:00',1,5),(96,3,'2014-09-20 11:10:38','0000-00-00 00:00:00',1,10),(97,20,'2014-09-20 11:15:44','0000-00-00 00:00:00',1,15),(98,3,'2014-09-20 11:16:05','0000-00-00 00:00:00',1,7),(99,20,'2014-09-20 11:18:11','0000-00-00 00:00:00',1,15),(100,3,'2014-09-20 11:28:39','0000-00-00 00:00:00',1,5),(101,20,'2014-09-20 11:29:02','0000-00-00 00:00:00',1,7),(102,20,'2014-09-20 12:36:07','0000-00-00 00:00:00',1,9),(103,3,'2014-09-20 15:53:04','0000-00-00 00:00:00',1,6),(104,3,'2014-09-20 16:29:37','0000-00-00 00:00:00',1,8),(105,3,'2014-09-20 17:12:51','0000-00-00 00:00:00',1,5),(106,3,'2014-09-20 19:42:28','0000-00-00 00:00:00',1,10),(107,3,'2014-09-20 19:43:44','0000-00-00 00:00:00',1,10),(108,3,'2014-09-20 19:47:41','0000-00-00 00:00:00',1,11),(109,3,'2014-09-20 19:51:00','0000-00-00 00:00:00',1,6),(110,3,'2014-09-21 01:13:16','0000-00-00 00:00:00',1,12),(111,3,'2014-09-21 14:51:29','0000-00-00 00:00:00',1,11),(112,3,'2014-09-21 16:13:22','0000-00-00 00:00:00',1,8),(113,3,'2014-09-21 16:39:27','0000-00-00 00:00:00',1,14),(114,3,'2014-09-21 16:53:14','0000-00-00 00:00:00',1,6),(115,3,'2014-09-21 19:06:49','0000-00-00 00:00:00',1,15),(116,3,'2014-09-21 22:06:06','0000-00-00 00:00:00',1,15),(117,3,'2014-09-22 00:37:52','0000-00-00 00:00:00',1,15),(118,3,'2014-09-22 00:44:22','0000-00-00 00:00:00',1,14),(119,3,'2014-09-22 01:06:19','0000-00-00 00:00:00',1,15),(120,3,'2014-09-22 01:54:14','0000-00-00 00:00:00',1,6),(121,3,'2014-09-22 01:56:14','0000-00-00 00:00:00',1,11),(122,3,'2014-09-22 01:58:10','0000-00-00 00:00:00',1,8),(123,3,'2014-09-22 02:02:06','0000-00-00 00:00:00',1,15),(124,3,'2014-09-22 02:59:06','0000-00-00 00:00:00',1,15),(125,3,'2014-09-22 03:22:13','0000-00-00 00:00:00',1,8),(126,3,'2014-09-22 03:49:09','0000-00-00 00:00:00',1,11),(127,3,'2014-09-22 03:56:30','0000-00-00 00:00:00',1,15),(128,3,'2014-09-22 03:58:12','0000-00-00 00:00:00',1,10),(129,3,'2014-09-22 04:02:20','0000-00-00 00:00:00',1,5),(130,3,'2014-09-22 04:05:56','0000-00-00 00:00:00',1,11),(131,3,'2014-09-22 04:09:24','0000-00-00 00:00:00',1,13),(132,3,'2014-09-22 04:22:49','0000-00-00 00:00:00',1,15),(133,3,'2014-09-22 04:23:38','0000-00-00 00:00:00',1,13),(134,3,'2014-09-22 23:22:35','0000-00-00 00:00:00',1,14),(135,3,'2014-09-23 00:50:16','0000-00-00 00:00:00',1,6),(136,3,'2014-09-23 01:38:38','0000-00-00 00:00:00',1,5),(137,3,'2014-09-23 03:15:57','0000-00-00 00:00:00',1,8),(138,25,'2014-09-23 03:18:39','0000-00-00 00:00:00',1,10),(139,3,'2014-09-23 03:19:03','0000-00-00 00:00:00',1,14),(140,3,'2014-09-23 13:40:03','0000-00-00 00:00:00',1,13),(141,3,'2014-09-23 21:07:36','0000-00-00 00:00:00',1,7),(142,3,'2014-09-24 00:35:59','0000-00-00 00:00:00',1,13),(143,3,'2014-09-24 00:56:38','0000-00-00 00:00:00',1,9),(144,3,'2014-09-24 01:01:08','0000-00-00 00:00:00',1,13),(145,3,'2014-09-24 01:03:09','0000-00-00 00:00:00',1,7),(146,3,'2014-09-24 01:04:24','0000-00-00 00:00:00',1,6),(147,3,'2014-09-24 01:34:24','0000-00-00 00:00:00',1,8),(148,3,'2014-09-24 02:17:23','0000-00-00 00:00:00',1,11),(149,3,'2014-09-24 02:40:27','0000-00-00 00:00:00',1,12),(150,3,'2014-09-24 02:49:29','0000-00-00 00:00:00',1,6),(151,3,'2014-09-24 03:07:08','0000-00-00 00:00:00',1,10),(152,3,'2014-09-24 03:38:42','0000-00-00 00:00:00',1,5),(153,3,'2014-09-24 03:39:46','0000-00-00 00:00:00',1,15),(154,3,'2014-09-24 03:53:14','0000-00-00 00:00:00',1,7),(155,3,'2014-09-24 04:16:02','0000-00-00 00:00:00',1,10),(156,3,'2014-09-24 04:23:55','0000-00-00 00:00:00',1,10),(157,3,'2014-09-24 04:40:54','0000-00-00 00:00:00',1,12),(158,3,'2014-09-24 04:42:01','0000-00-00 00:00:00',1,10),(159,3,'2014-09-24 04:44:58','0000-00-00 00:00:00',1,7);
 
 /*Table structure for table `sim_usuario` */
 
@@ -443,11 +443,11 @@ CREATE TABLE `sim_usuario` (
   `cusuactualizar` varchar(30) DEFAULT NULL,
   `ntipousuario` int(2) DEFAULT NULL,
   PRIMARY KEY (`nidusuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 
 /*Data for the table `sim_usuario` */
 
-insert  into `sim_usuario`(`nidusuario`,`cusuario`,`ccontrasena`,`nestado`,`nidpersona`,`cusuguardar`,`cusuactualizar`,`ntipousuario`) values (1,'43501922','e10adc3949ba59abbe56e057f20f883e',1,1,'2014070243501922','2014070243501922',6),(3,'udemo','e10adc3949ba59abbe56e057f20f883e',1,2,'2014070243501922','2014070243501922',6),(16,'cumbres','e10adc3949ba59abbe56e057f20f883e',1,8,'123456','123456',6),(17,'fitopanpan','e10adc3949ba59abbe56e057f20f883e',1,9,'123456','123456',7),(18,'bcarloncho','827ccb0eea8a706c4c34a16891f84e7b',1,10,'123456','123456',7),(19,'aaee','e10adc3949ba59abbe56e057f20f883e',1,6,'123456','123456',8),(20,'domingod','e10adc3949ba59abbe56e057f20f883e',0,11,'123456','123456',8),(21,'bramirez','e10adc3949ba59abbe56e057f20f883e',1,12,'123456','123456',7),(22,'dtorres','e10adc3949ba59abbe56e057f20f883e',1,14,'123456','123456',8),(24,'udemo','25d55ad283aa400af464c76d713c07ad',1,13,'123456','123456',7);
+insert  into `sim_usuario`(`nidusuario`,`cusuario`,`ccontrasena`,`nestado`,`nidpersona`,`cusuguardar`,`cusuactualizar`,`ntipousuario`) values (1,'43501922','e10adc3949ba59abbe56e057f20f883e',1,1,'2014070243501922','2014070243501922',6),(3,'udemo','e10adc3949ba59abbe56e057f20f883e',1,2,'2014070243501922','2014070243501922',6),(16,'cumbres','e10adc3949ba59abbe56e057f20f883e',1,8,'123456','123456',6),(17,'fitopanpan','e10adc3949ba59abbe56e057f20f883e',1,9,'123456','123456',7),(18,'bcarloncho','827ccb0eea8a706c4c34a16891f84e7b',1,10,'123456','123456',7),(19,'aaee','e10adc3949ba59abbe56e057f20f883e',1,6,'123456','123456',8),(20,'domingod','e10adc3949ba59abbe56e057f20f883e',0,11,'123456','123456',8),(21,'bramirez','e10adc3949ba59abbe56e057f20f883e',1,12,'123456','123456',7),(22,'dtorres','e10adc3949ba59abbe56e057f20f883e',1,14,'123456','123456',8),(24,'udemo','25d55ad283aa400af464c76d713c07ad',1,13,'123456','123456',7),(25,'ddomingod','220466675e31b9d20c051d5e57974150',1,11,'123456','123456',7);
 
 /*Table structure for table `sim_vendedorclientes` */
 
@@ -548,12 +548,21 @@ DELIMITER $$
 
 /*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_ins_clientexempresa`(IN vaccion VARCHAR(30),IN vnidempresas VARCHAR(100),IN vnidcliente VARCHAR(100))
 BEGIN
+	declare vexiste int;
 	IF (vaccion = 'ins_clientexempresa') THEN
+	set vexiste = (select count(nestado) from sim_carteraclientes where nidclientes=vnidcliente and nidempresas=vnidempresas and nestado=1);
 	
+	if (vexiste > 0) then
+	
+	SELECT '2' AS msg;	
+	
+	else
 	INSERT INTO sim_carteraclientes (nidclientes,nidempresas,nestado,ccarcliguardar,ccarcliactualizar)
 	VALUES (vnidcliente,vnidempresas,'1','0','0');
 	
 	SELECT '1' AS msg;	
+	
+	end if;
 	
 	END IF;
 	
@@ -611,12 +620,18 @@ DELIMITER $$
 
 /*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_ins_linea`(IN vaccion VARCHAR(30),IN vlinea VARCHAR(100),IN valias VARCHAR(100))
 BEGIN
+	declare vexiste varchar(100);
 	IF (vaccion = 'ins_linea') THEN
-	
+	set vexiste = (select count(clinea) from sim_linea where clinea=vlinea and nestado=1);
+	if (vexiste > 0) then
+	SELECT '2' AS msg;		
+	else
 	INSERT INTO sim_linea (clinea,calias,nestado,clinguardar,clinactualizar)
 	VALUES (vlinea,valias,'1','0','0');
 	
 	SELECT '1' AS msg;	
+	end if;
+	
 	
 	END IF;
 	
@@ -712,13 +727,17 @@ DELIMITER $$
 
 /*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_ins_producto`(IN vaccion VARCHAR(30),IN vcproducto VARCHAR(100),IN vnidlinea VARCHAR(100))
 BEGIN
+	declare vexiste int;
 	IF (vaccion = 'ins_producto') THEN
-	
+	set vexiste = (select count(nidlinea) from sim_productos where cproductos=vcproducto and nidlinea=vnidlinea);
+	if (vexiste > 0)then
+	SELECT '2' AS msg;	
+	else
 	INSERT INTO sim_productos (cproductos,nestado,cproguardar,cproactualizar,nidlinea)
 	VALUES (vcproducto,'1','0','0',vnidlinea);
 	
 	SELECT '1' AS msg;	
-	
+	end if;
 	END IF;
 	
 		
@@ -754,15 +773,19 @@ DELIMITER ;
 
 DELIMITER $$
 
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_ins_productoxempresa`(IN vaccion VARCHAR(30),IN vnidperroles VARCHAR(100),IN vnidproducto VARCHAR(100))
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_ins_productoxempresa`(IN vaccion VARCHAR(30),IN vnidempresa VARCHAR(100),IN vnidproducto VARCHAR(100))
 BEGIN
+	declare vasignado int;
 	IF (vaccion = 'ins_productoxempresa') THEN
-	
-	INSERT INTO sim_productosempresa (nidperroles,nidproductos,nestado,cproempguardar,cproempactualizar)
-	VALUES (vnidperroles,vnidproducto,'1','0','0');
-	
-	SELECT '1' AS msg;	
-	
+	set vasignado = (select count(nidempresas) from sim_productosempresa where nidempresas=vnidempresa and nidproductos= vnidproducto and nestado=1);
+		
+	if (vasignado>0)then
+		select '2' as msg;
+	else
+		INSERT INTO sim_productosempresa (nidempresas,nidproductos,nestado,cproempguardar,cproempactualizar)
+		VALUES (vnidempresa,vnidproducto,'1','0','0');
+		SELECT '1' AS msg;
+	end if;
 	END IF;
 	
 		
@@ -820,18 +843,19 @@ DELIMITER $$
 /*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_ins_vendedorxempresa`(IN vaccion VARCHAR(30),IN vnidempresas VARCHAR(100),IN vnidvendedor VARCHAR(100))
 BEGIN
 	DECLARE vexiste INT;
-	SET vexiste = (SELECT COUNT(nidvendedor) FROM sim_carteravendedor WHERE nidvendedor=vnidvendedor);
-	
 	IF (vaccion = 'ins_vendedorxempresa') THEN
-		
-	IF (vexiste=0) THEN
+	SET vexiste = (SELECT COUNT(nestado) FROM sim_carteravendedor WHERE nidvendedor=vnidvendedor AND nidempresas=vnidempresas AND nestado=1);
 	
-		INSERT INTO sim_carteravendedor (nidvendedor,nidempresas,nestado,ccarvenguardar,ccarvenactualizar)
-		VALUES (vnidvendedor,vnidempresas,'1','0','0');
-		SELECT '1' AS msg;
+	IF (vexiste > 0) THEN
+	
+	SELECT '2' AS msg;	
+	
 	ELSE
+	INSERT INTO sim_carteravendedor (nidvendedor,nidempresas,nestado,ccarvenguardar,ccarvenactualizar)
+	VALUES (vnidvendedor,vnidempresas,'1','0','0');
 	
-		SELECT '0' AS msg;
+	SELECT '1' AS msg;	
+	
 	END IF;
 	
 	END IF;
@@ -988,14 +1012,19 @@ DELIMITER $$
 BEGIN
 	IF (vaccion = 'qry_clientesxempresa') THEN
 	
-	SELECT carcli.nidcartclientes,carcli.nidclientes,carcli.nidempresas,perro.nidperroles,perro.nidroles,
-	perro.nidpersona,perro.nestado,per.cnomcomercial as cliente
-	from sim_carteraclientes carcli
-	inner join sim_personaroles perro on perro.nidperroles=carcli.nidclientes
-	inner join sim_persona per on per.nidpersona=perro.nidpersona
-	WHERE perro.nestado = 1
-	and perro.nidroles=7;
-	
+SELECT carcli.nidcartclientes,carcli.nidclientes,carcli.nidempresas,emp.nidempresas,
+	emp.nidpersona,carcli.nestado,LTRIM(CONCAT(per.`capellidos`,' ',per.`cnombres`,per.`cnomcomercial`)) AS empresa,
+	LTRIM(CONCAT(per2.`capellidos`,' ',per2.`cnombres`,per2.`cnomcomercial`)) AS cliente,
+	CASE WHEN carcli.nestado='1' THEN '<span class="label label-success"><i class="fa fa-angle-double-up" ></i></span>' 
+	WHEN carcli.nestado='0' THEN '<span class="label label-danger"><i class="fa fa-angle-double-down" ></i></span>'	
+	ELSE '<span class="label label-danger">Inactivo<i class="fa fa-asterisk" ></i></span>'  END cestado
+	FROM sim_carteraclientes carcli
+	INNER JOIN sim_empresa emp ON emp.nidempresas=carcli.nidempresas
+	INNER JOIN sim_persona per ON per.nidpersona=emp.nidpersona
+	INNER JOIN sim_persona per2 ON per2.`nidpersona`=carcli.`nidclientes`
+	WHERE emp.nestado = 1
+	AND per.nestado=1
+	AND per2.nestado=1;
 	
 	END IF;
     END */$$
@@ -1027,21 +1056,56 @@ BEGIN
     END */$$
 DELIMITER ;
 
-/* Procedure structure for procedure `sim_sp_qry_empresa` */
+/* Procedure structure for procedure `sim_sp_qry_empresas` */
 
-/*!50003 DROP PROCEDURE IF EXISTS  `sim_sp_qry_empresa` */;
+/*!50003 DROP PROCEDURE IF EXISTS  `sim_sp_qry_empresas` */;
 
 DELIMITER $$
 
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_qry_empresa`(IN vaccion VARCHAR(30),IN vnidempresa INT ,IN vempresa VARCHAR(20))
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_qry_empresas`(IN vaccion VARCHAR(30),IN vnidempresa VARCHAR(200),IN vcempresa VARCHAR(200))
 BEGIN
+	DECLARE vexiste INT;
 	IF (vaccion = 'qry_empresas') THEN
 	
-	SELECT per.nidpersona,per.cnomcomercial,per.cdniruc,per.nestado,perro.nidperroles
-	FROM sim_persona per
-	INNER JOIN sim_personaroles perro ON perro.nidpersona=per.nidpersona
-	WHERE perro.nestado = 1
-	AND perro.nidroles=6;
+	SELECT emp.nidempresas,emp.nidpersona,emp.nestado,LTRIM(CONCAT(per.`capellidos`,' ',per.`cnombres`,per.`cnomcomercial`)) AS cnombre,
+	CASE WHEN emp.nestado='1' THEN '<span class="label label-success"><i class="fa fa-angle-double-up" ></i></span>' 
+	WHEN emp.nestado='0' THEN '<span class="label label-danger"><i class="fa fa-angle-double-down" ></i></span>'	
+	ELSE '<span class="label label-danger">Inactivo<i class="fa fa-asterisk" ></i></span>'  END cestado
+	FROM sim_empresa emp
+	inner join sim_persona per on per.nidpersona=emp.nidpersona
+	where per.nestado=1;
+	END IF;
+	
+	IF (vaccion = 'qry_empresasactivas') THEN
+	
+	SELECT emp.nidempresas,emp.nidpersona,emp.nestado,LTRIM(CONCAT(per.`capellidos`,' ',per.`cnombres`,per.`cnomcomercial`)) AS cnombre,
+	CASE WHEN emp.nestado='1' THEN '<span class="label label-success"><i class="fa fa-angle-double-up" ></i></span>' 
+	WHEN emp.nestado='0' THEN '<span class="label label-danger"><i class="fa fa-angle-double-down" ></i></span>'	
+	ELSE '<span class="label label-danger">Inactivo<i class="fa fa-asterisk" ></i></span>'  END cestado
+	FROM sim_empresa emp
+	INNER JOIN sim_persona per ON per.nidpersona=emp.nidpersona
+	WHERE emp.nestado=1 and per.nestado=1;
+	END IF;
+	
+	IF (vaccion = 'qry_persona') THEN
+	SELECT nidpersona,capellidos,cnombres,cnomcomercial,nestado,cdniruc
+	FROM sim_persona
+	WHERE CONCAT(capellidos,' ',cnombres,' ',cnomcomercial) LIKE CONCAT ('%', vnidempresa, '%')
+	AND nestado = 1;
+	END IF;
+	
+	IF (vaccion = 'qry_empresaxper') THEN
+	
+	SET vexiste = (SELECT COUNT(emp.nidpersona) FROM sim_empresa emp WHERE emp.nidpersona=vnidempresa AND emp.nestado=1);
+	
+	IF (vexiste>0) THEN
+		SELECT 2 AS msg;
+	ELSE
+		INSERT INTO sim_empresa(nidpersona,nestado,cempguardar,cempactualizar)
+		VALUES (vnidempresa,'1','0','0');
+		SELECT 3 AS msg;
+	END IF;
+		
 	
 	END IF;
     END */$$
@@ -1079,9 +1143,11 @@ DELIMITER $$
 BEGIN
 	IF (vaccion = 'qry_linea') THEN
 	
-	SELECT nidlinea,clinea,calias,nestado,clinguardar,clinactualizar
-	FROM sim_linea
-	WHERE nestado = 1;
+	SELECT nidlinea,clinea,calias,nestado,clinguardar,clinactualizar,
+	CASE WHEN nestado='1' THEN '<span class="label label-success"><i class="fa fa-angle-double-up" ></i></span>' 
+	WHEN nestado='0' THEN '<span class="label label-danger"><i class="fa fa-angle-double-down" ></i></span>'	
+	ELSE '<span class="label label-danger">Inactivo<i class="fa fa-asterisk" ></i></span>'  END cestado
+	FROM sim_linea;
 	
 	END IF;
     END */$$
@@ -1184,7 +1250,16 @@ BEGIN
 	AND perro.nidroles=7;
 	
 	END IF;
-    END */$$
+	
+	IF (vaccion = 'qry_personas') THEN
+	
+	SELECT nidpersona,capellidos,cnombres,cnomcomercial,nestado,cdniruc,LTRIM(CONCAT(`capellidos`,' ',`cnombres`,`cnomcomercial`)) AS cnomcomercial
+	FROM sim_persona
+	WHERE nestado = 1;
+	
+	END IF;
+	
+   END */$$
 DELIMITER ;
 
 /* Procedure structure for procedure `sim_sp_qry_producto` */
@@ -1197,9 +1272,13 @@ DELIMITER $$
 BEGIN
 	IF (vaccion = 'qry_producto') THEN
 	
-	SELECT nidproductos,cproductos,nestado,cproguardar,cproactualizar,nidlinea
-	FROM sim_productos
-	WHERE nestado = 1;
+	SELECT pro.nidproductos,pro.cproductos,pro.nestado,pro.cproguardar,pro.cproactualizar,pro.nidlinea,lin.clinea,
+	CASE WHEN pro.nestado='1' THEN '<span class="label label-success"><i class="fa fa-angle-double-up" ></i></span>' 
+	WHEN pro.nestado='0' THEN '<span class="label label-danger"><i class="fa fa-angle-double-down" ></i></span>'	
+	ELSE '<span class="label label-danger">Inactivo<i class="fa fa-asterisk" ></i></span>'  END cestado
+	FROM sim_productos pro
+	inner join sim_linea lin on lin.nidlinea=pro.nidlinea
+	WHERE lin.nestado = 1;
 	
 	END IF;
     END */$$
@@ -1215,24 +1294,35 @@ DELIMITER $$
 BEGIN
 	IF (vaccion = 'qry_productoxempresa') THEN
 	
-	SELECT pxe.nidproempresa,pxe.nidperroles,pxe.nidproductos,pxe.nestado,pxe.cproempguardar,pxe.cproempactualizar,pro.cproductos,LTRIM(CONCAT(per.`capellidos`,' ',per.`cnombres`,per.`cnomcomercial`))  as cnomcomercial
+	SELECT pxe.nidproempresa,pxe.nidempresas,pxe.nidproductos,pxe.nestado,pxe.cproempguardar,pxe.cproempactualizar,pro.cproductos,LTRIM(CONCAT(per.`capellidos`,' ',per.`cnombres`,per.`cnomcomercial`))  as cnomcomercial,
+	CASE WHEN pxe.nestado='1' THEN '<span class="label label-success"><i class="fa fa-angle-double-up" ></i></span>' 
+	WHEN pxe.nestado='0' THEN '<span class="label label-danger"><i class="fa fa-angle-double-down" ></i></span>'	
+	ELSE '<span class="label label-danger">Inactivo<i class="fa fa-asterisk" ></i></span>'  END cestado
 	FROM sim_productosempresa pxe
 	inner join sim_productos pro on pro.nidproductos=pxe.nidproductos
-	inner join sim_personaroles perro on perro.nidperroles = pxe.nidperroles
-	inner join sim_persona per on per.nidpersona=perro.nidpersona
-	WHERE pxe.nestado = 1;
+	inner join sim_empresa emp on emp.nidempresas = pxe.nidempresas
+	inner join sim_persona per on per.nidpersona=emp.nidpersona
+	WHERE pro.nestado = 1
+	and emp.nestado=1
+	and per.nestado=1;
 	
 	END IF;
 	
 	IF (vaccion = 'qry_productoxidempresa') THEN
 	
-	SELECT pxe.nidproempresa,pxe.nidperroles,pxe.nidproductos,pxe.nestado,pxe.cproempguardar,pxe.cproempactualizar,pro.cproductos,LTRIM(CONCAT(per.`capellidos`,' ',per.`cnombres`,per.`cnomcomercial`))  AS cnomcomercial
+	SELECT pxe.nidproempresa,pxe.nidempresas,pxe.nidproductos,pxe.nestado,pxe.cproempguardar,pxe.cproempactualizar,pro.cproductos,LTRIM(CONCAT(per.`capellidos`,' ',per.`cnombres`,per.`cnomcomercial`))  AS cnomcomercial,
+	CASE WHEN pxe.nestado='1' THEN '<span class="label label-success"><i class="fa fa-angle-double-up" ></i></span>' 
+	WHEN pxe.nestado='0' THEN '<span class="label label-danger"><i class="fa fa-angle-double-down" ></i></span>'	
+	ELSE '<span class="label label-danger">Inactivo<i class="fa fa-asterisk" ></i></span>'  END cestado
 	FROM sim_productosempresa pxe
 	INNER JOIN sim_productos pro ON pro.nidproductos=pxe.nidproductos
-	INNER JOIN sim_personaroles perro ON perro.nidperroles = pxe.nidperroles
-	INNER JOIN sim_persona per ON per.nidpersona=perro.nidpersona
-	WHERE pxe.nestado = 1
-	AND perro.nidperroles = vidempresa;
+	INNER JOIN sim_empresa emp ON emp.nidempresas = pxe.nidempresas
+	INNER JOIN sim_persona per ON per.nidpersona=emp.nidpersona
+	WHERE pro.nestado = 1
+	AND emp.nestado=1
+	AND per.nestado=1
+	and pxe.nestado=1
+	and pxe.nidempresas = vidempresa;
 	
 	END IF;
 	
@@ -1309,7 +1399,11 @@ BEGIN
 	AND nestado = 1;
 	
 	END IF;
-	
+	IF (vaccion = 'qry_idUserByCodPerson') THEN
+ 		SELECT usu.nidusuario
+ 		FROM sim_usuario usu
+		WHERE usu.nidpersona = vnidusuarios AND usu.nestado = 1;
+	END IF;
 	IF (vaccion = 'qry_usuarioxper') THEN
 	
 	set vexiste = (SELECT count(usu.nidusuario)
@@ -1338,30 +1432,42 @@ DELIMITER $$
 BEGIN
 	IF (vaccion = 'qry_vendedorxempresa') THEN
 	
-	SELECT carven.nidvenempresa,carven.nidvendedor,carven.nidempresas,perro.nidperroles,perro.nidroles,
-	perro.nidpersona,perro.nestado,LTRIM(CONCAT(per.`capellidos`,' ',per.`cnombres`,per.`cnomcomercial`))  as vendedor,
+	SELECT carven.nidcartvendedor,carven.nidvendedor,carven.nidempresas,
+	emp.nidpersona,carven.nestado,LTRIM(CONCAT(per.`capellidos`,' ',per.`cnombres`,per.`cnomcomercial`)) AS empresa,
+	LTRIM(CONCAT(per2.`capellidos`,' ',per2.`cnombres`,per2.`cnomcomercial`)) AS vendedor,
 	CASE WHEN carven.nestado='1' THEN '<span class="label label-success"><i class="fa fa-angle-double-up" ></i></span>' 
 	WHEN carven.nestado='0' THEN '<span class="label label-danger"><i class="fa fa-angle-double-down" ></i></span>'	
 	ELSE '<span class="label label-danger">Inactivo<i class="fa fa-asterisk" ></i></span>'  END cestado
-	from sim_carteravendedor carven
-	inner join sim_personaroles perro on perro.nidperroles=carven.nidvendedor
-	inner join sim_persona per on per.nidpersona=perro.nidpersona
-	WHERE perro.nestado = 1
-	and perro.nidroles=8;
+	FROM sim_carteravendedor carven
+	INNER JOIN sim_empresa emp ON emp.nidempresas=carven.nidempresas
+	INNER JOIN sim_persona per ON per.nidpersona=emp.nidpersona
+	INNER JOIN sim_persona per2 ON per2.`nidpersona`=carven.`nidvendedor`
+	WHERE emp.nestado = 1
+	AND per.nestado=1
+	AND per2.nestado=1;
+	
 	
 	
 	END IF;
 	
 	IF (vaccion = 'qry_empresaxvendedor') THEN
 		
-	SELECT carven.nidvenempresa,carven.nidvendedor,carven.nidempresas,perro.nidperroles,perro.nidroles,
-	perro.nidpersona,perro.nestado,LTRIM(CONCAT(per.`capellidos`,' ',per.`cnombres`,per.`cnomcomercial`))  AS vendedor
+		
+SELECT carven.nidcartvendedor,carven.nidvendedor,carven.nidempresas,
+	emp.nidpersona,carven.nestado,LTRIM(CONCAT(per.`capellidos`,' ',per.`cnombres`,per.`cnomcomercial`)) AS empresa,
+	LTRIM(CONCAT(per2.`capellidos`,' ',per2.`cnombres`,per2.`cnomcomercial`)) AS vendedor,
+	CASE WHEN carven.nestado='1' THEN '<span class="label label-success"><i class="fa fa-angle-double-up" ></i></span>' 
+	WHEN carven.nestado='0' THEN '<span class="label label-danger"><i class="fa fa-angle-double-down" ></i></span>'	
+	ELSE '<span class="label label-danger">Inactivo<i class="fa fa-asterisk" ></i></span>'  END cestado
 	FROM sim_carteravendedor carven
-	INNER JOIN sim_personaroles perro ON perro.nidperroles=carven.nidvendedor
-	INNER JOIN sim_persona per ON per.nidpersona=perro.nidpersona
-	WHERE perro.nestado = 1
-	AND perro.nidroles=8
-	AND per.nidpersona=vnidpersona;
+	INNER JOIN sim_empresa emp ON emp.nidempresas=carven.nidempresas
+	INNER JOIN sim_persona per ON per.nidpersona=emp.nidpersona
+	INNER JOIN sim_persona per2 ON per2.`nidpersona`=carven.`nidvendedor`
+	WHERE emp.nestado = 1
+	AND per.nestado=1
+	AND per2.nestado=1
+	AND carven.nestado=1
+	AND per2.nidpersona=vnidpersona;
 	
 	END IF;
 	
@@ -1401,6 +1507,79 @@ BEGIN
     END */$$
 DELIMITER ;
 
+/* Procedure structure for procedure `sim_sp_upd_clientexempresa` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `sim_sp_upd_clientexempresa` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_upd_clientexempresa`(IN vaccion VARCHAR(30),IN vnidcartclientes INT)
+BEGIN
+	DECLARE vestado INT;
+	DECLARE vnidclientes INT;
+	DECLARE vempresa INT;
+	DECLARE vasignado INT;
+	SET vestado = (SELECT nestado FROM sim_carteraclientes WHERE nidcartclientes=vnidcartclientes);
+	IF (vaccion = 'upd_estadoClientexempresa') THEN	
+		IF (vestado=1) THEN
+			UPDATE 	sim_carteraclientes SET nestado=0 WHERE nidcartclientes=vnidcartclientes;
+			SELECT '1' AS msg;
+		ELSE
+			SET vnidclientes = (SELECT nidclientes FROM sim_carteraclientes WHERE nidcartclientes=vnidcartclientes);			
+			SET vempresa = (SELECT nidempresas FROM sim_carteraclientes WHERE nidcartclientes=vnidcartclientes);
+			SET vasignado = (SELECT COUNT(nidempresas) FROM sim_carteraclientes WHERE nidempresas=vempresa AND nidclientes= vnidclientes AND nestado=1);
+		
+			IF (vasignado>0)THEN
+			SELECT '2' AS msg;
+			ELSE
+			UPDATE 	sim_carteraclientes SET nestado=1 WHERE nidcartclientes=vnidcartclientes;
+			SELECT '1' AS msg;
+			END IF;
+		
+			
+		
+		END IF;
+	END IF;
+    END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `sim_sp_upd_empresas` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `sim_sp_upd_empresas` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_upd_empresas`(IN vaccion VARCHAR(30),IN vnidempresa INT)
+BEGIN
+	DECLARE vestado INT;
+	DECLARE vidper INT;
+	DECLARE vexisteemp INT;
+	DECLARE vexistenidpersona INT;
+	SET vestado = (SELECT nestado FROM sim_empresa WHERE nidempresas=vnidempresa);
+	
+	IF (vaccion = 'upd_estadoEmp') THEN	
+		
+		IF (vestado=1) THEN
+	
+			UPDATE 	sim_empresa SET nestado=0 WHERE nidempresas=vnidempresa;
+			SELECT '1' AS msg;
+	
+		ELSE
+			SET vidper = (SELECT nidpersona FROM sim_empresa WHERE nidempresas=vnidempresa);
+			SET vexisteemp = (SELECT COUNT(nidpersona) FROM sim_empresa WHERE nidpersona=vidper AND nestado=1);
+			IF (vexisteemp = 0) THEN
+				UPDATE 	sim_empresa SET nestado=1 WHERE nidempresas=vnidempresa;
+				SELECT '1' AS msg;
+			ELSE
+			SELECT '2' AS msg;
+			END IF;
+		
+		END IF;
+	END IF;
+	
+    END */$$
+DELIMITER ;
+
 /* Procedure structure for procedure `sim_sp_upd_encuesta` */
 
 /*!50003 DROP PROCEDURE IF EXISTS  `sim_sp_upd_encuesta` */;
@@ -1426,6 +1605,38 @@ BEGIN
 		SELECT '1' AS msg;
 	END IF;
 	
+	END IF;
+    END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `sim_sp_upd_linea` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `sim_sp_upd_linea` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_upd_linea`(IN vaccion VARCHAR(30),IN vnidlinea INT)
+BEGIN
+	DECLARE vestado INT;
+	declare vnomlinea varchar(100);
+	declare vexiste int;
+	SET vestado = (SELECT nestado FROM sim_linea WHERE nidlinea=vnidlinea);
+	IF (vaccion = 'upd_estadoLinea') THEN	
+		IF (vestado=1) THEN
+			UPDATE 	sim_linea SET nestado=0 WHERE nidlinea=vnidlinea;
+			SELECT '1' AS msg;
+		ELSE
+			SET vnomlinea = (SELECT clinea FROM sim_linea WHERE nidlinea=vnidlinea);
+			set vexiste = (select count(nestado) from sim_linea where clinea=vnomlinea and nestado=1);
+			if (vexiste >0) then
+			SELECT '2' AS msg;
+			else
+			UPDATE sim_linea SET nestado=1 WHERE nidlinea=vnidlinea;
+			SELECT '1' AS msg;
+			end if;
+			
+		
+		END IF;
 	END IF;
     END */$$
 DELIMITER ;
@@ -1466,6 +1677,77 @@ BEGIN
 		END IF;
 	END IF;
 	
+    END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `sim_sp_upd_producto` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `sim_sp_upd_producto` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_upd_producto`(IN vaccion VARCHAR(30),IN vnidproducto INT)
+BEGIN
+	DECLARE vestado INT;
+	declare vnompro varchar(100);
+	declare vlinea int;
+	declare vexiste int;
+	SET vestado = (SELECT nestado FROM sim_productos WHERE nidproductos=vnidproducto);
+	IF (vaccion = 'upd_estadoProducto') THEN	
+		IF (vestado=1) THEN
+			UPDATE 	sim_productos SET nestado=0 WHERE nidproductos=vnidproducto;
+			SELECT '1' AS msg;
+		ELSE
+			SET vnompro = (SELECT cproductos FROM sim_productos WHERE nidproductos=vnidproducto);
+			SET vlinea = (SELECT nidlinea FROM sim_productos WHERE nidproductos=vnidproducto);
+			set vexiste = (select count(nidproductos) from sim_productos where nidlinea=vlinea and cproductos=vnompro and nestado=1);
+			
+			if (vexiste>0) then
+			SELECT '2' AS msg;
+			else
+			UPDATE 	sim_productos SET nestado=1 WHERE nidproductos=vnidproducto;
+			SELECT '1' AS msg;
+			end if;
+			
+		
+		END IF;
+	END IF;
+    END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `sim_sp_upd_productoxempresa` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `sim_sp_upd_productoxempresa` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_upd_productoxempresa`(IN vaccion VARCHAR(30),IN vnidproempresa INT)
+BEGIN
+	DECLARE vestado INT;
+	declare vproducto INT;
+	DECLARE vempresa INT;
+	DECLARE vasignado INT;
+	SET vestado = (SELECT nestado FROM sim_productosempresa WHERE nidproempresa=vnidproempresa);
+	IF (vaccion = 'upd_estadoProductoxempresa') THEN	
+		IF (vestado=1) THEN
+			UPDATE 	sim_productosempresa SET nestado=0 WHERE nidproempresa=vnidproempresa;
+			SELECT '1' AS msg;
+		ELSE
+			SET vproducto = (SELECT nidproductos FROM sim_productosempresa WHERE nidproempresa=vnidproempresa);			
+			SET vempresa = (SELECT nidempresas FROM sim_productosempresa WHERE nidproempresa=vnidproempresa);
+			SET vasignado = (SELECT COUNT(nidempresas) FROM sim_productosempresa WHERE nidempresas=vempresa AND nidproductos= vproducto AND nestado=1);
+		
+			IF (vasignado>0)THEN
+			SELECT '2' AS msg;
+			ELSE
+			UPDATE 	sim_productosempresa SET nestado=1 WHERE nidproempresa=vnidproempresa;
+			SELECT '1' AS msg;
+			END IF;
+		
+			
+		
+		END IF;
+	END IF;
     END */$$
 DELIMITER ;
 
@@ -1528,6 +1810,42 @@ BEGIN
 		END IF;
 	END IF;
 	
+    END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `sim_sp_upd_vendedorxempresa` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `sim_sp_upd_vendedorxempresa` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_upd_vendedorxempresa`(IN vaccion VARCHAR(30),IN vnidcartvendedor INT)
+BEGIN
+	DECLARE vestado INT;
+	DECLARE vnidvendedor INT;
+	DECLARE vempresa INT;
+	DECLARE vasignado INT;
+	SET vestado = (SELECT nestado FROM sim_carteravendedor WHERE nidcartvendedor=vnidcartvendedor);
+	IF (vaccion = 'upd_estadoVendedorxempresa') THEN	
+		IF (vestado=1) THEN
+			UPDATE 	sim_carteravendedor SET nestado=0 WHERE nidcartvendedor=vnidcartvendedor;
+			SELECT '1' AS msg;
+		ELSE
+			SET vnidvendedor = (SELECT nidvendedor FROM sim_carteravendedor WHERE nidcartvendedor=vnidcartvendedor);			
+			SET vempresa = (SELECT nidempresas FROM sim_carteravendedor WHERE nidcartvendedor=vnidcartvendedor);
+			SET vasignado = (SELECT COUNT(nidempresas) FROM sim_carteravendedor WHERE nidempresas=vempresa AND nidvendedor= vnidvendedor AND nestado=1);
+		
+			IF (vasignado>0)THEN
+			SELECT '2' AS msg;
+			ELSE
+			UPDATE 	sim_carteravendedor SET nestado=1 WHERE nidcartvendedor=vnidcartvendedor;
+			SELECT '1' AS msg;
+			END IF;
+		
+			
+		
+		END IF;
+	END IF;
     END */$$
 DELIMITER ;
 

@@ -21,11 +21,11 @@
             <tbody>
                 <?php foreach ($listarVendedorxEmpresas as $key => $listar) { ?>
                     <tr>
-                        <td><?php echo $listar['nidvendedor'] ?></td>
+                        <td><?php echo $listar['empresa'] ?></td>
                         <td><?php echo $listar['vendedor'] ?></td>
                         <td><?php echo $listar['cestado'] ?></td>
                         <td><a href="#" class="btn btn-sm blue">Editar <i class="fa fa-edit"></i></a>
-                            <a href="#" onclick="estadoVendedor(<?php echo $listar['nidvenempresa'] ?>)" class="btn btn-sm red"><?php if ($listar['nestado'] == '1') { ?>Dar de baja <?php } else { ?> Dar de alta <?php } ?> <i class="fa fa-refresh"></i></a></td>
+                            <a href="#" onclick="estadoVendedor(<?php echo $listar['nidcartvendedor'] ?>)" <?php if ($listar['nestado'] == '1') { ?>  class="btn btn-sm red">Dar de baja <?php } else {  ?>   class="btn btn-sm green"> Activar <?php } ?> <i class="fa fa-refresh"></i></a></td>
                     </tr>
                 <?php } ?>
             </tbody>

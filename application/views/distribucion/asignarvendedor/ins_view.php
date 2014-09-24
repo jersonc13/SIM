@@ -14,7 +14,7 @@
                         <select id="cbo_empresa" name="cbo_empresa" class="form-control">
                             <option value="0" selected="true" disabled>Seleccione</option>
                             <?php foreach ($listarEmpresas as $key => $listar) { ?>
-                                <option value="<?php echo $listar['nidperroles'] ?>"><?php echo $listar['cnomcomercial'] ?></option>
+                                <option value="<?php echo $listar['nidempresas'] ?>"><?php echo $listar['cnombre'] ?></option>
                             <?php } ?>
                         </select>
                     </div>
@@ -24,8 +24,8 @@
                     <div class="col-md-6">
                         <select id="cbo_vendedor" name="cbo_vendedor" class="form-control">
                             <option value="0" selected="true" disabled>Seleccione</option>
-                            <?php foreach ($listarVendedor as $key => $vendedor) { ?>
-                                <option value="<?php echo $vendedor['nidperroles'] ?>"><?php echo $vendedor['cnomcomercial'] ?></option>
+                            <?php foreach ($listarPersonas as $key => $vendedor) { ?>
+                                <option value="<?php echo $vendedor['nidpersona'] ?>"><?php echo $vendedor['cnomcomercial'] ?></option>
                             <?php } ?>
                         </select>
                     </div>

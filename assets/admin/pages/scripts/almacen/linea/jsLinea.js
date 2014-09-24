@@ -9,10 +9,14 @@ $(function() {
                 url: "linea/registrarLinea",
                 data: $(form).serialize(),
                 success: function(data) {
-                    if (data == '1') {
-                        alert("Datos ingresados correctamente");
-                    } else {
-                        alert("Error al ingresar los datos");
+                    switch (data) {
+                        case "1":
+                            alert("Datos ingresados correctamente");
+                            listarLinea();
+                            break;
+                        case "2":
+                            alert("Ya existe otra línea con el mismo nombre");
+                            break;
                     }
                 },
                 error: function(data) {
@@ -83,8 +87,9 @@ function estadoLinea(nidvalor) {
             },
             success: function(data) {
                 switch (data) {
-                    case "0":
-                        alert("Ha ocurrido un error, vuelva a intentarlo.");
+                    case "2":
+                        alert("Ya existe una linea con el mismo nombre");
+                        listarLinea();
                         break;
                     case "1":
                         listarLinea();
