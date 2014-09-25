@@ -9,8 +9,8 @@ class Usuarios_model extends CI_Model {
         parent::__construct();
     }
 
-    function da_listarUsuarios() {
-        $instruccion = "CALL sim_sp_qry_usuarios ('qry_usuarios','');";
+    function da_listarUsuarios( $accion = 'qry_usuarios', $codUser = 0) {
+        $instruccion = "CALL sim_sp_qry_usuarios ('".$accion."', ".$codUser.");";
         $query = $this->db->query($instruccion);
         $this->db->close();
         if ($query) {
@@ -112,6 +112,18 @@ class Usuarios_model extends CI_Model {
             return ($query->result_array());
         } else {
             return 0;
+        }
+    }
+
+    public function editar( $data, $id ){
+
+        $this->db->where('nidusuario', $id);
+        $query = $this->db->update('sim_usuario', $data);
+
+        if( $query){
+            return true;
+        }else{
+            return false;
         }
     }
 

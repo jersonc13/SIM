@@ -7,5 +7,6 @@
 -- select uo.nidopcion,o.copcion,o.curl from sim_opcionusuario as uo	inner join sim_opcion as o on o.nidopcion = uo.nidopcion 	inner join sim_usuario as  u on u.nidusuario = uo.nidusuario where u.nidpersona = 11 and u.nestado = 1;
 -- select * from sim_linea as l where l.nidlinea = 3
 -- CALL sim_sp_qry_linea ('qry_linea_estado','1','0');
-CALL sim_sp_qry_producto ('qry_producto_get','3','0');
--- select * from sim_productos where nestado = 1;
+-- CALL sim_sp_qry_producto ('qry_producto_get','3','0');
+ CALL sim_sp_qry_usuarios ('qry_usuarioGet', 3)
+-- select * from sim_usuario

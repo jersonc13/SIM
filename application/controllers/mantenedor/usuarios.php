@@ -102,4 +102,24 @@ class Usuarios extends CI_Controller {
         }
     }
 
+    function getEdit(){
+        $nUsuId = $this->input->post('id');
+        $data['usuario'] = $this->usuarios_model->da_listarUsuarios('qry_usuarioGet',$nUsuId)[0];
+        // print "<pre>".print_r($data,true)."</pre>";exit();
+        $this->load->view('mantenedor/usuarios/upd_view', $data);
+    }
+
+    function editarUsuario(){
+        $rpt = "";
+        $data['cusuario'] = $this->input->post('txtUpdUsuario');
+        $data['ccontrasena'] = md5($this->input->post('txtUpdContrasena'));
+        $data['nestado'] = $this->input->post('estado');
+        $nidUsu = $this->input->post('txtid');
+        if( $this->usuarios_model->editar( $data, $nidUsu ) ){
+            $rpt = "1";
+        }else{
+            $rpt = "0";
+        }
+        echo $rpt;
+    }
 }

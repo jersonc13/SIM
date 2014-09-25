@@ -25,7 +25,7 @@
                         <td><?php echo $listar['cnombre']  ?></td>
                         <td><?php echo $listar['cdniruc'] ?></td>
                         <td>
-                            <a href="#" class="btn btn-sm blue">Editar <i class="fa fa-edit"></i></a>
+                            <a href="#" class="btn btn-sm blue" onclick="editarUsuario(<?php echo $listar['nidusuario']; ?>)">Editar <i class="fa fa-edit"></i></a>
                             <a href="#" onclick="estadoUsuarios(<?php echo $listar['nidusuario'] ?>)"<?php if ($listar['nestado'] == '1') { ?>  class="btn btn-sm red">Dar de baja <?php } else {  ?>   class="btn btn-sm green"> Activar <?php } ?> <i class="fa fa-refresh"></i></a></td>
                     </tr>
                 <?php } ?>

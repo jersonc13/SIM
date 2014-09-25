@@ -1,4 +1,11 @@
 $(function(){
+    // $(".button-next").bind({
+    //   click:function(evt){
+    //     console.log("click");
+    //     console.log(map);   
+    //     google.maps.event.trigger(map, 'resize');
+    //   }
+    // });    
 	initializeMap();
 });
 
@@ -10,14 +17,15 @@ function initializeMap() {
 	};
 	map = new google.maps.Map(document.getElementById("mapa-latitud"),
 		mapOptions);
-
-	google.maps.event.addListener(map, 'click', function(event){
-		addMarker(event.latLng);
-	});
+    google.maps.event.addListener(map, 'click', function(event){
+        addMarker(event.latLng);
+    });
+    google.maps.event.trigger(map, "resize");
+    google.maps.event.addListenerOnce(map, 'idle', function() {
+       google.maps.event.trigger(map, 'resize');
+    });
 }
 function updateMap(latLng){
-	console.log("Actualizando");
-	console.log(latLng);
 	$("input[name=txtlatitud]").val( latLng.lat() );
     $("input[name=txtlongitud]").val( latLng.lng() );
 }

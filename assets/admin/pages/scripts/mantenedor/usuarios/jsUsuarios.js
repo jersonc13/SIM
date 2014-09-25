@@ -203,3 +203,23 @@ function registrarPermisos() {
 
 }
 
+function editarUsuario(id){
+    if (confirm('Esta seguro de editar este registro?')) {
+        msgLoading("#mostrar_qry");
+        $.ajax({
+            url:'usuarios/getEdit',
+            type:'post',
+            cache:false,
+            data:{
+                id:id
+            },
+            success:function(data){
+                $("#mostrar_qry").html(data);
+            },
+            error:function(er){
+                console.log(er.statusText);
+                alert("Houston, tenemos un problema... Creo que has roto algo...");
+            }
+        });   
+    }
+}
