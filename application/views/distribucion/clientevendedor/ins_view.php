@@ -12,9 +12,9 @@
                     <label class="control-label col-md-3">Selección Vendedor:</label>
                     <div class="col-md-6">
                         <select id="cbo_vendedor" name="cbo_vendedor" class="form-control">
-                            <option value="0" selected="true" disabled>Seleccione</option>
+                            <option value="">Selecciona un Vendedor</option>
                             <?php foreach ($listarVendedor as $key => $listar) { ?>
-                                <option value="<?php echo $listar['nidperroles'] ?>"><?php echo $listar['cnomcomercial'] ?></option>
+                                <option value="<?php echo $listar['nidcartvendedor'] ?>"><?php echo $listar['cnomcomercial'] ?></option>
                             <?php } ?>
                         </select>
                     </div>
@@ -23,9 +23,9 @@
                     <label class="control-label col-md-3">Selección de Clientes:</label>
                     <div class="col-md-6">
                         <select id="cbo_cliente" name="cbo_cliente" class="form-control">
-                            <option value="0" selected="true" disabled>Seleccione</option>
+                            <option value="">Selecciona un Cliente</option>
                             <?php foreach ($listarClientes as $key => $clientes) { ?>
-                                <option value="<?php echo $clientes['nidperroles'] ?>"><?php echo $clientes['cnomcomercial'] ?></option>
+                                <option value="<?php echo $clientes['nidcartclientes'] ?>"><?php echo $clientes['cnomcomercial'] ?></option>
                             <?php } ?>
                         </select>
                     </div>

@@ -12,6 +12,7 @@ class Clientevendedor extends CI_Controller {
         $this->load->model('almacen/linea_model');
         $this->load->model('mantenedor/persona_model');
         $this->load->model('distribucion/clientevendedor_model');
+        $this->load->model('distribucion/asignarvendedor_model');
     }
 
     function _validaracceso() {
@@ -26,9 +27,9 @@ class Clientevendedor extends CI_Controller {
     function index() {
 //        $data['listarAreas'] = $this->areas_model->da_listarAreas();
         $data['main_content'] = 'distribucion/clientevendedor/panel_view';
-        $data['listarLineas'] = $this->linea_model->da_listarLinea();
-        $data['listarClientes'] = $this->persona_model->da_listarPersona('qry_clientes');
-        $data['listarVendedor'] = $this->persona_model->da_listarPersona('qry_vendedor');
+        $idEmpresa = $this->asignarvendedor_model->da_listarVendedorxEmpresas('qry_empresaxvendedor',$this->session->userdata('ssnidpersona'));
+        $data['listarClientes'] = $this->clientevendedor_model->da_listarPersona('qry_clientes',$idEmpresa[0]['nidempresas']);
+        $data['listarVendedor'] = $this->clientevendedor_model->da_listarPersona('qry_vendedor',$idEmpresa[0]['nidempresas']);
         $data['titulo'] = 'Asignar Productos | SIM';
         $this->load->view('master/plantilla_view', $data);
     }
@@ -49,30 +50,14 @@ class Clientevendedor extends CI_Controller {
             echo $validar['msg'];
         }
     }
-
-    function actualizarArea() {
-
-        $txte_nidarea = $_POST['txte_nidarea'];
-        $txte_area = $_POST['txte_area'];
-        $txte_alias = $_POST['txte_alias'];
-
-        $validar = $this->area_model->dbactualizarArea($txte_nidarea, $txte_area, $txte_alias);
-
-        if ($validar) {
-            echo $validar['msg'];
-        } else {
-            echo $validar['msg'];
-        }
-    }
-
-    function estadoAreas() {
-        $nidarea = $_POST['nidareas'];
-        $result = $this->areas_model->da_estadoAreas($nidarea);
-
+    
+     function estadoClientevendedor() {
+        $nidvalor = $_POST['nidvalor'];
+        $result = $this->clientevendedor_model->da_estadoClientevendedor($nidvalor);
         if ($result) {
-            echo 1;
+            echo $result['msg'];
         } else {
-            echo 0;
+            echo $result['msg'];
         }
     }
 

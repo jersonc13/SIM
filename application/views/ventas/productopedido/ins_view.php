@@ -14,7 +14,7 @@
                     <label class="control-label col-md-3">Selección Producto:</label>
                     <div class="col-md-6">
                         <select id="cbo_productoempresa" name="cbo_productoempresa" class="form-control">
-                            <option value="0" selected="true" disabled>Seleccione</option>
+                            <option value="">Seleccionar Producto </option>
                             <?php foreach ($listarProductosxEmpresas as $key => $listar) { ?>
                                 <option value="<?php echo $listar['nidproempresa'] ?>"><?php echo $listar['cproductos'] ?></option>
                             <?php } ?>
@@ -32,7 +32,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="col-md-offset-3 col-md-9">
-                            <button type="submit" class="btn green"><i class="fa fa-save"></i> Guardar</button>
+                            <button type="submit" class="btn green" name="btnregistrar" id="btnregistrar"><i class="fa fa-save"></i> Guardar</button>
                         </div>
                     </div>
                 </div>

@@ -1,18 +1,23 @@
 $(function() {
-    asignarproductos();
-    $("frmProductoPedido").validate({
+    listarproductospedido();
+    $("#frmProductoPedido").validate({
         errorElement: 'span',
         errorClass: 'help-block',
         submitHandler: function(form) {
+            var botonEnviar = document.getElementById('btnregistrar');
+            botonEnviar.disabled = true;
             $.ajax({
                 type: "POST",
-                url: "poductoPedido/registrarProductoPedido",
+                url: "productopedido/registrarProductoPedido",
                 data: $(form).serialize(),
                 success: function(data) {
                     if (data == '1') {
                         alert("Datos ingresados correctamente");
+                        botonEnviar.disabled = false;
+                        listarproductospedido();
                     } else {
                         alert("Error al ingresar los datos");
+                        botonEnviar.disabled = false;
                     }
                 },
                 error: function(data) {
@@ -21,10 +26,10 @@ $(function() {
             });
         },
         rules: {
-            txtProducto: {
+            cbo_productoempresa: {
                 required: true
             },
-            cbo_linea: {
+            txtcantidad: {
                 required: true
             }
         },
@@ -38,88 +43,14 @@ $(function() {
         }
     });
 });
-function asignarproductos() {
+function listarproductospedido() {
     msgLoading("#mostrar_qry");
     $.ajax({
         type: "POST",
-        url: "asignarproductos/listarProductosEmpresas",
+        url: "productopedido/listarProductopedido",
         cache: false,
         success: function(data) {
             $("#mostrar_qry").html(data);
-        },
-        error: function() {
-            alert("Ha ocurrido un error, vuelva a intentarlo.");
-        }
-    });
-}
-
-function buscarDNI() {
-    $.ajax({
-        type: "POST",
-        url: "personanatural/buscarDNI",
-        cache: false,
-        data: {
-            txtDetalleDNI: $('#txtDetalleDNI').val()
-        },
-        success: function(data) {
-            $("#detalle_lista").html(data);
-//            alert(data);
-        },
-        error: function() {
-            alert("Ha ocurrido un error, vuelva a intentarlo.");
-        }
-    });
-}
-
-function RegistrarDatos() {
-    $.ajax({
-        type: "POST",
-        url: "personanatural/cargarprovincia",
-        cache: false,
-        data: {
-            idDepartamento: $('#cbo_departamento').val()
-        },
-        success: function(data) {
-            $("#div_provincia").html(data);
-//            alert(data);
-        },
-        error: function() {
-            alert("Ha ocurrido un error, vuelva a intentarlo.");
-        }
-    });
-}
-
-
-
-function cargaProvincia() {
-    $.ajax({
-        type: "POST",
-        url: "personanatural/cargarprovincia",
-        cache: false,
-        data: {
-            idDepartamento: $('#cbo_departamento').val()
-        },
-        success: function(data) {
-            $("#div_provincia").html(data);
-//            alert(data);
-        },
-        error: function() {
-            alert("Ha ocurrido un error, vuelva a intentarlo.");
-        }
-    });
-}
-
-function cargarDistrito() {
-    $.ajax({
-        type: "POST",
-        url: "personanatural/cargardistrito",
-        cache: false,
-        data: {
-            idProvincia: $('#cbo_provincia').val()
-        },
-        success: function(data) {
-            $("#div_distrito").html(data);
-//            alert(data);
         },
         error: function() {
             alert("Ha ocurrido un error, vuelva a intentarlo.");

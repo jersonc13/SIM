@@ -33,10 +33,10 @@ class Productopedido extends CI_Controller {
         $this->load->view('master/plantilla_view', $data);
     }
 
-    function listarClientesxVendedor() {
+    function listarProductopedido() {
 
-        $data['listarClientesxVendedor'] = $this->clientevendedor_model->da_listarClientesvendedor();
-        $this->load->view('distribucion/clientevendedor/qry_view', $data);
+        $data['listarProductoPedido'] = $this->productopedido_model->da_listarProductopedido();
+        $this->load->view('ventas/productopedido/qry_view', $data);
     }
 
     function registrarProductoPedido() {

@@ -44,15 +44,6 @@
                         <a href="#tab_1" data-toggle="tab">
                             Nuevo </a>
                     </li>
-<!--                    <li >
-                        <a href="#tab_2" data-toggle="tab">
-                            Detalle </a>
-                    </li>-->
-                    <li >
-                        <a href="#tab_3" data-toggle="tab">
-                            Editar </a>
-                    </li>
-
                 </ul>
                 <div class="tab-content">
 
@@ -68,18 +59,6 @@
                     <div class="tab-pane" id="tab_1">
 
                         <?php $this->load->view('ventas/productopedido/ins_view') ?>
-
-                    </div>
-
-<!--                    <div class="tab-pane" id="tab_2">
-
-                        <?php // $this->load->view('mantenedor/personanatural/detalle_view') ?>
-
-                    </div>-->
-
-                    <div class="tab-pane" id="tab_3">
-
-                        <?php $this->load->view('mantenedor/personanatural/upd_view') ?>
 
                     </div>
 

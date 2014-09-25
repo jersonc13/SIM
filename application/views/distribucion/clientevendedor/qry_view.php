@@ -22,10 +22,9 @@
                 <?php foreach ($listarClientesxVendedor as $key => $listar) { ?>
                     <tr>
                         <td><?php echo $listar['vendedor'] ?></td>
-                        <td><?php echo $listar['nidcarclientes'] ?></td>
+                        <td><?php echo $listar['cliente'] ?></td>
                         <td><?php echo $listar['cestado'] ?></td>
-                        <td><a href="#" class="btn btn-sm blue">Editar <i class="fa fa-edit"></i></a>
-                            <a href="#" onclick="estadoCliente(<?php echo $listar['nidvenclientes'] ?>)" class="btn btn-sm red"><?php if ($listar['nestado'] == '1') { ?>Dar de baja <?php } else { ?> Dar de alta <?php } ?> <i class="fa fa-refresh"></i></a></td>
+                        <td><a href="#" onclick="estadoClientevendedor(<?php echo $listar['nidvenclientes'] ?>)" class="btn btn-sm red"><?php if ($listar['nestado'] == '1') { ?>Dar de baja <?php } else { ?> Dar de alta <?php } ?> <i class="fa fa-refresh"></i></a></td>
                     </tr>
                 <?php } ?>
             </tbody>
