@@ -29,7 +29,7 @@ $(function(){
 	            required: true
 	        }
 	    },
-	    highlight: function(element) { // hightlight error inputs
+	    highlight: function(element) { 
 	        $(element)
 	                .closest('.form-group').removeClass('has-success').addClass('has-error'); // set error class to the control group
 	    },
