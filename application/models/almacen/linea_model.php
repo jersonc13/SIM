@@ -9,8 +9,8 @@ class Linea_model extends CI_Model {
         parent::__construct();
     }
 
-    function da_listarLinea() {
-        $instruccion = "CALL sim_sp_qry_linea ('qry_linea','0','0');";
+    function da_listarLinea( $accion = 'qry_linea', $idLinea = 0, $vclinea = 0 ) {
+        $instruccion = "CALL sim_sp_qry_linea ('".$accion."',".$idLinea.",".$vclinea.");";
         $query = $this->db->query($instruccion);
         $this->db->close();
         if ($query) {

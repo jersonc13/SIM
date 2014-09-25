@@ -84,3 +84,23 @@ function estadoProducto(nidvalor) {
         });
     }
 }
+function editarProducto( idprod, idlinea ){
+    if (confirm('Esta seguro de editar este registro?')) {
+        msgLoading("#mostrar_qry");
+        $.ajax({
+            type: "POST",
+            url: "producto/getEdit",
+            cache: false,
+            data: {
+                idprod : idprod 
+                ,idlinea : idlinea
+            },
+            success: function(data) {
+                $("#mostrar_qry").html(data);
+            },
+            error: function() {
+                alert("Ha ocurrido un error, vuelva a intentarlo.");
+            }
+        });
+    }
+}

@@ -24,7 +24,8 @@
                         <td><?php echo $listar['cproductos'] ?></td>
                         <td><?php echo strtoupper($listar['clinea']) ?></td>
                         <td><?php echo $listar['cestado'] ?></td>
-                        <td><a href="#" class="btn btn-sm blue">Editar <i class="fa fa-edit"></i></a>
+                        <td>
+                            <a href="#" class="btn btn-sm blue" onclick="editarProducto(<?php echo $listar['nidproductos'] ?>,<?php echo $listar['nidlinea'] ?>)" >Editar <i class="fa fa-edit"></i></a>
                             <a href="#" onclick="estadoProducto(<?php echo $listar['nidproductos'] ?>)" <?php if ($listar['nestado'] == '1') { ?>  class="btn btn-sm red">Dar de baja <?php } else {  ?>   class="btn btn-sm green"> Activar <?php } ?> <i class="fa fa-refresh"></i></a></td>
                     </tr>
                 <?php } ?>

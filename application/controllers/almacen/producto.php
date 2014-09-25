@@ -56,4 +56,26 @@ class Producto extends CI_Controller {
         }
     }
 
+    function getEdit(){
+        $idProd  = $this->input->post('idprod');
+        $data['idlinea'] = $this->input->post('idlinea');
+        $data['cbolistarLineas'] = $this->linea_model->da_listarLinea('qry_linea_estado','1');
+        $data['producto'] = $this->producto_model->da_listarProducto('qry_producto_get',$idProd)[0];
+        $this->load->view('almacen/producto/upd_view', $data);
+    }
+
+    function editarProducto(){
+        $rpt = "";
+        $nidproductos = $this->input->post('txtid');
+        $data['cproductos'] = $this->input->post('txtUpdProducto');
+        $data['nidlinea'] = $this->input->post('cbo_linea');
+        $data['nestado'] = $this->input->post('estado');
+        if( $this->producto_model->editar( $data, $nidproductos ) ){
+            $rpt = "1";
+        }else{
+            $rpt = "0";
+        }
+        echo $rpt;
+    }
+
 }

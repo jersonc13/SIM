@@ -56,57 +56,37 @@ CREATE TABLE IF NOT EXISTS `sim_carteraclientes` (
   `ccarcliguardar` varchar(30) DEFAULT NULL,
   `ccarcliactualizar` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`nidcartclientes`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla sim_comercial_prod.sim_carteraclientes: ~26 rows (aproximadamente)
+-- Volcando datos para la tabla sim_comercial_prod.sim_carteraclientes: ~6 rows (aproximadamente)
 /*!40000 ALTER TABLE `sim_carteraclientes` DISABLE KEYS */;
 INSERT INTO `sim_carteraclientes` (`nidcartclientes`, `nidclientes`, `nidempresas`, `nestado`, `ccarcliguardar`, `ccarcliactualizar`) VALUES
-	(1, 6, 4, 1, '0', '0'),
-	(2, 7, 4, 1, '0', '0'),
-	(3, 6, 5, 1, '0', '0'),
-	(4, 10, 4, 1, '0', '0'),
-	(5, 10, 4, 1, '0', '0'),
-	(6, 10, 4, 1, '0', '0'),
-	(7, 10, 4, 1, '0', '0'),
-	(8, 10, 4, 1, '0', '0'),
-	(9, 10, 4, 1, '0', '0'),
-	(10, 10, 4, 1, '0', '0'),
-	(11, 10, 4, 1, '0', '0'),
-	(12, 10, 4, 1, '0', '0'),
-	(13, 10, 4, 1, '0', '0'),
-	(14, 10, 4, 1, '0', '0'),
-	(15, 10, 4, 1, '0', '0'),
-	(16, 10, 4, 1, '0', '0'),
-	(17, 10, 4, 1, '0', '0'),
-	(18, 10, 4, 1, '0', '0'),
-	(19, 10, 4, 1, '0', '0'),
-	(20, 10, 4, 1, '0', '0'),
-	(21, 10, 4, 1, '0', '0'),
-	(22, 10, 4, 1, '0', '0'),
-	(23, 10, 4, 1, '0', '0'),
-	(24, 10, 4, 1, '0', '0'),
-	(25, 10, 4, 1, '0', '0'),
-	(26, 10, 4, 1, '0', '0');
+	(27, 9, 4, 1, '0', '0'),
+	(28, 10, 4, 1, '0', '0'),
+	(29, 10, 5, 1, '0', '0'),
+	(30, 15, 5, 1, '0', '0'),
+	(31, 9, 4, 0, '0', '0'),
+	(32, 15, 4, 1, '0', '0');
 /*!40000 ALTER TABLE `sim_carteraclientes` ENABLE KEYS */;
 
 
 -- Volcando estructura para tabla sim_comercial_prod.sim_carteravendedor
 CREATE TABLE IF NOT EXISTS `sim_carteravendedor` (
-  `nidvenempresa` int(11) NOT NULL AUTO_INCREMENT,
+  `nidcartvendedor` int(11) NOT NULL AUTO_INCREMENT,
   `nidvendedor` int(11) NOT NULL,
   `nidempresas` int(11) NOT NULL,
   `nestado` int(11) NOT NULL,
   `ccarvenguardar` varchar(30) NOT NULL,
   `ccarvenactualizar` varchar(30) NOT NULL,
-  PRIMARY KEY (`nidvenempresa`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`nidcartvendedor`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 -- Volcando datos para la tabla sim_comercial_prod.sim_carteravendedor: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `sim_carteravendedor` DISABLE KEYS */;
-INSERT INTO `sim_carteravendedor` (`nidvenempresa`, `nidvendedor`, `nidempresas`, `nestado`, `ccarvenguardar`, `ccarvenactualizar`) VALUES
-	(2, 9, 4, 1, '0', '0'),
-	(4, 8, 4, 1, '0', '0'),
-	(5, 11, 4, 1, '0', '0');
+INSERT INTO `sim_carteravendedor` (`nidcartvendedor`, `nidvendedor`, `nidempresas`, `nestado`, `ccarvenguardar`, `ccarvenactualizar`) VALUES
+	(8, 2, 4, 1, '0', '0'),
+	(9, 11, 4, 1, '0', '0'),
+	(10, 2, 4, 0, '0', '0');
 /*!40000 ALTER TABLE `sim_carteravendedor` ENABLE KEYS */;
 
 
@@ -118,23 +98,21 @@ CREATE TABLE IF NOT EXISTS `sim_empresa` (
   `cempguardar` varchar(30) DEFAULT NULL,
   `cempactualizar` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`nidempresas`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla sim_comercial_prod.sim_empresa: ~12 rows (aproximadamente)
+-- Volcando datos para la tabla sim_comercial_prod.sim_empresa: ~10 rows (aproximadamente)
 /*!40000 ALTER TABLE `sim_empresa` DISABLE KEYS */;
 INSERT INTO `sim_empresa` (`nidempresas`, `nidpersona`, `nestado`, `cempguardar`, `cempactualizar`) VALUES
-	(1, 2, 1, '0', '0'),
-	(2, 2, 1, '0', '0'),
-	(3, 1, 1, '0', '0'),
 	(4, 7, 1, '0', '0'),
 	(5, 8, 1, '0', '0'),
 	(6, 9, 1, '0', '0'),
 	(7, 10, 1, '0', '0'),
-	(8, 6, 1, '0', '0'),
-	(9, 11, 1, '0', '0'),
+	(8, 6, 0, '0', '0'),
+	(9, 11, 0, '0', '0'),
 	(10, 12, 1, '0', '0'),
-	(11, 14, 1, '0', '0'),
-	(12, 14, 1, '0', '0');
+	(11, 14, 0, '0', '0'),
+	(12, 14, 0, '0', '0'),
+	(13, 15, 1, '0', '0');
 /*!40000 ALTER TABLE `sim_empresa` ENABLE KEYS */;
 
 
@@ -147,15 +125,18 @@ CREATE TABLE IF NOT EXISTS `sim_linea` (
   `clinguardar` varchar(30) DEFAULT NULL,
   `clinactualizar` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`nidlinea`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla sim_comercial_prod.sim_linea: ~4 rows (aproximadamente)
+-- Volcando datos para la tabla sim_comercial_prod.sim_linea: ~7 rows (aproximadamente)
 /*!40000 ALTER TABLE `sim_linea` DISABLE KEYS */;
 INSERT INTO `sim_linea` (`nidlinea`, `clinea`, `calias`, `nestado`, `clinguardar`, `clinactualizar`) VALUES
 	(1, 'Esencias', 'ese', 1, '0', '0'),
 	(2, 'Mermeladas', 'mer', 1, '0', '0'),
 	(3, 'Levaduras', 'lev', 1, '0', '0'),
-	(4, 'Cerveza', 'cer', 1, '0', '0');
+	(4, 'Cerveza', 'cer', 1, '0', '0'),
+	(5, 'harinas', 'har', 1, '0', '0'),
+	(6, 'Levaduras2', 'Lev', 0, '0', '0'),
+	(7, 'Levaduras2', 'Lev', 1, '0', '0');
 /*!40000 ALTER TABLE `sim_linea` ENABLE KEYS */;
 
 
@@ -229,9 +210,9 @@ CREATE TABLE IF NOT EXISTS `sim_opcion` (
   `copcguardar` varchar(30) DEFAULT NULL,
   `copcactualizar` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`nidopcion`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla sim_comercial_prod.sim_opcion: ~21 rows (aproximadamente)
+-- Volcando datos para la tabla sim_comercial_prod.sim_opcion: ~22 rows (aproximadamente)
 /*!40000 ALTER TABLE `sim_opcion` DISABLE KEYS */;
 INSERT INTO `sim_opcion` (`nidopcion`, `copcion`, `curl`, `cicono`, `nvalor`, `nestado`, `copcguardar`, `copcactualizar`) VALUES
 	(1, 'Mantenedores', '#', 'fa-tasks', 0, 1, '0', '0'),
@@ -254,7 +235,8 @@ INSERT INTO `sim_opcion` (`nidopcion`, `copcion`, `curl`, `cicono`, `nvalor`, `n
 	(18, 'Ventas', '#', 'fa-shopping-cart', 0, 1, '0', '0'),
 	(19, 'Pedido de Productos', 'ventas/productopedido', '', 18, 1, '0', '0'),
 	(20, 'Venta Diaria', 'ventas/ventadiaria', '', 18, 1, '0', '0'),
-	(21, 'Asignar Vendedor a Empresas', 'distribucion/asignarvendedor', '', 14, 1, '0', '0');
+	(21, 'Asignar Vendedor a Empresas', 'distribucion/asignarvendedor', '', 14, 1, '0', '0'),
+	(22, 'Empresas', 'mantenedor/empresas', '', 1, 1, '0', '0');
 /*!40000 ALTER TABLE `sim_opcion` ENABLE KEYS */;
 
 
@@ -267,20 +249,24 @@ CREATE TABLE IF NOT EXISTS `sim_opcionusuario` (
   `copcusuactualizar` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla sim_comercial_prod.sim_opcionusuario: ~25 rows (aproximadamente)
+-- Volcando datos para la tabla sim_comercial_prod.sim_opcionusuario: ~26 rows (aproximadamente)
 /*!40000 ALTER TABLE `sim_opcionusuario` DISABLE KEYS */;
 INSERT INTO `sim_opcionusuario` (`nidopcion`, `nidusuario`, `nestado`, `copcusuguardar`, `copcusuactualizar`) VALUES
+	(1, 1, 1, '0', '0'),
+	(2, 1, 1, '0', '0'),
+	(5, 1, 1, '0', '0'),
+	(18, 20, 1, '0', '0'),
+	(19, 20, 1, '0', '0'),
+	(20, 20, 1, '0', '0'),
+	(18, 25, 1, '0', '0'),
+	(19, 25, 1, '0', '0'),
 	(1, 3, 1, '0', '0'),
 	(2, 3, 1, '0', '0'),
 	(3, 3, 1, '0', '0'),
 	(4, 3, 1, '0', '0'),
 	(5, 3, 1, '0', '0'),
 	(8, 3, 1, '0', '0'),
-	(9, 3, 1, '0', '0'),
-	(10, 3, 1, '0', '0'),
-	(1, 1, 1, '0', '0'),
-	(2, 1, 1, '0', '0'),
-	(5, 1, 1, '0', '0'),
+	(22, 3, 1, '0', '0'),
 	(11, 3, 1, '0', '0'),
 	(12, 3, 1, '0', '0'),
 	(13, 3, 1, '0', '0'),
@@ -288,23 +274,10 @@ INSERT INTO `sim_opcionusuario` (`nidopcion`, `nidusuario`, `nestado`, `copcusug
 	(15, 3, 1, '0', '0'),
 	(16, 3, 1, '0', '0'),
 	(17, 3, 1, '0', '0'),
+	(21, 3, 1, '0', '0'),
 	(18, 3, 1, '0', '0'),
 	(19, 3, 1, '0', '0'),
-	(20, 3, 1, '0', '0'),
-	(21, 3, 1, '0', '0'),
-	(18, 20, 1, '0', '0'),
-	(19, 20, 1, '0', '0'),
-	(20, 20, 1, '0', '0'),
-	(1, 25, 1, '0', '0'),
-	(2, 25, 1, '0', '0'),
-	(4, 25, 1, '0', '0'),
-	(6, 25, 1, '0', '0'),
-	(11, 25, 1, '0', '0'),
-	(12, 25, 1, '0', '0'),
-	(14, 25, 1, '0', '0'),
-	(16, 25, 1, '0', '0'),
-	(18, 25, 1, '0', '0'),
-	(19, 25, 1, '0', '0');
+	(20, 3, 1, '0', '0');
 /*!40000 ALTER TABLE `sim_opcionusuario` ENABLE KEYS */;
 
 
@@ -436,7 +409,7 @@ INSERT INTO `sim_persona` (`nidpersona`, `capellidos`, `cnombres`, `cnomcomercia
 	(4, 'Perez Pereda', 'Juan Jaime', '', '12312312323', '12345', 0, '0', _binary 0x30, 11, 22, 19),
 	(5, 'Perez cabrera', 'alonso', '', '12312312', '12345', 0, '0', _binary 0x30, 11, 21, 18),
 	(6, 'cabrera cabrera', 'lazaro', '', '12312333', '12345', 1, '0', _binary 0x30, 11, 22, 18),
-	(7, '', '', 'Carbon & Miel', '10121212122', '12345', 0, '0', _binary 0x30, 0, 0, 19),
+	(7, '', '', 'Carbon & Miel', '10121212122', '12345', 1, '0', _binary 0x30, 0, 0, 19),
 	(8, '', '', 'Dist. Cumbres SAC', '10232233232', '12345', 1, '0', _binary 0x30, 0, 0, 19),
 	(9, '', '', 'Bodega fitopanpan', '12312312312', '12345', 1, '0', _binary 0x30, 0, 0, 19),
 	(10, '', '', 'Bodega carloncho', '12312323421', '12345', 1, '0', _binary 0x30, 0, 0, 19),
@@ -512,39 +485,40 @@ CREATE TABLE IF NOT EXISTS `sim_productos` (
   `cproactualizar` varchar(30) DEFAULT NULL,
   `nidlinea` int(11) DEFAULT NULL,
   PRIMARY KEY (`nidproductos`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla sim_comercial_prod.sim_productos: ~5 rows (aproximadamente)
+-- Volcando datos para la tabla sim_comercial_prod.sim_productos: ~7 rows (aproximadamente)
 /*!40000 ALTER TABLE `sim_productos` DISABLE KEYS */;
 INSERT INTO `sim_productos` (`nidproductos`, `cproductos`, `nestado`, `cproguardar`, `cproactualizar`, `nidlinea`) VALUES
 	(1, 'frutas del campo', 1, '0', '0', 2),
 	(2, 'carbon y miel', 1, '0', '0', 2),
 	(3, 'pan carbon y miel', 1, '0', '0', 3),
 	(4, 'esencia de vainilla', 1, '0', '0', 1),
-	(5, 'Lata de Cerveza 650 L.', 1, '0', '0', 4);
+	(5, 'Lata de Cerveza 650 L.', 1, '0', '0', 4),
+	(6, 'blanca flor 500 gr', 1, '0', '0', 5),
+	(9, 'Lata de Cerveza 650 L.', 0, '0', '0', 1);
 /*!40000 ALTER TABLE `sim_productos` ENABLE KEYS */;
 
 
 -- Volcando estructura para tabla sim_comercial_prod.sim_productosempresa
 CREATE TABLE IF NOT EXISTS `sim_productosempresa` (
   `nidproempresa` int(11) NOT NULL AUTO_INCREMENT,
-  `nidperroles` int(11) DEFAULT NULL,
+  `nidempresas` int(11) DEFAULT NULL,
   `nidproductos` int(11) DEFAULT NULL,
   `nestado` int(11) DEFAULT NULL,
   `cproempguardar` varchar(30) DEFAULT NULL,
   `cproempactualizar` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`nidproempresa`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla sim_comercial_prod.sim_productosempresa: ~6 rows (aproximadamente)
+-- Volcando datos para la tabla sim_comercial_prod.sim_productosempresa: ~5 rows (aproximadamente)
 /*!40000 ALTER TABLE `sim_productosempresa` DISABLE KEYS */;
-INSERT INTO `sim_productosempresa` (`nidproempresa`, `nidperroles`, `nidproductos`, `nestado`, `cproempguardar`, `cproempactualizar`) VALUES
-	(1, 4, 1, 1, '0', '0'),
-	(2, 4, 4, 1, '0', '0'),
-	(3, 4, 3, 1, '0', '0'),
-	(4, 5, 5, 1, '0', '0'),
-	(5, 4, 0, 1, '0', '0'),
-	(6, 3, 5, 1, '0', '0');
+INSERT INTO `sim_productosempresa` (`nidproempresa`, `nidempresas`, `nidproductos`, `nestado`, `cproempguardar`, `cproempactualizar`) VALUES
+	(7, 4, 6, 1, '0', '0'),
+	(10, 6, 6, 1, '0', '0'),
+	(11, 4, 6, 0, '0', '0'),
+	(12, 4, 1, 1, '0', '0'),
+	(13, 4, 4, 1, '0', '0');
 /*!40000 ALTER TABLE `sim_productosempresa` ENABLE KEYS */;
 
 
@@ -589,12 +563,21 @@ DELIMITER ;
 DELIMITER //
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_ins_clientexempresa`(IN vaccion VARCHAR(30),IN vnidempresas VARCHAR(100),IN vnidcliente VARCHAR(100))
 BEGIN
+	declare vexiste int;
 	IF (vaccion = 'ins_clientexempresa') THEN
+	set vexiste = (select count(nestado) from sim_carteraclientes where nidclientes=vnidcliente and nidempresas=vnidempresas and nestado=1);
 	
+	if (vexiste > 0) then
+	
+	SELECT '2' AS msg;	
+	
+	else
 	INSERT INTO sim_carteraclientes (nidclientes,nidempresas,nestado,ccarcliguardar,ccarcliactualizar)
 	VALUES (vnidcliente,vnidempresas,'1','0','0');
 	
 	SELECT '1' AS msg;	
+	
+	end if;
 	
 	END IF;
 	
@@ -643,12 +626,18 @@ DELIMITER ;
 DELIMITER //
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_ins_linea`(IN vaccion VARCHAR(30),IN vlinea VARCHAR(100),IN valias VARCHAR(100))
 BEGIN
+	declare vexiste varchar(100);
 	IF (vaccion = 'ins_linea') THEN
-	
+	set vexiste = (select count(clinea) from sim_linea where clinea=vlinea and nestado=1);
+	if (vexiste > 0) then
+	SELECT '2' AS msg;		
+	else
 	INSERT INTO sim_linea (clinea,calias,nestado,clinguardar,clinactualizar)
 	VALUES (vlinea,valias,'1','0','0');
 	
 	SELECT '1' AS msg;	
+	end if;
+	
 	
 	END IF;
 	
@@ -738,13 +727,17 @@ DELIMITER ;
 DELIMITER //
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_ins_producto`(IN vaccion VARCHAR(30),IN vcproducto VARCHAR(100),IN vnidlinea VARCHAR(100))
 BEGIN
+	declare vexiste int;
 	IF (vaccion = 'ins_producto') THEN
-	
+	set vexiste = (select count(nidlinea) from sim_productos where cproductos=vcproducto and nidlinea=vnidlinea);
+	if (vexiste > 0)then
+	SELECT '2' AS msg;	
+	else
 	INSERT INTO sim_productos (cproductos,nestado,cproguardar,cproactualizar,nidlinea)
 	VALUES (vcproducto,'1','0','0',vnidlinea);
 	
 	SELECT '1' AS msg;	
-	
+	end if;
 	END IF;
 	
 		
@@ -774,15 +767,19 @@ DELIMITER ;
 
 -- Volcando estructura para procedimiento sim_comercial_prod.sim_sp_ins_productoxempresa
 DELIMITER //
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_ins_productoxempresa`(IN vaccion VARCHAR(30),IN vnidperroles VARCHAR(100),IN vnidproducto VARCHAR(100))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_ins_productoxempresa`(IN vaccion VARCHAR(30),IN vnidempresa VARCHAR(100),IN vnidproducto VARCHAR(100))
 BEGIN
+	declare vasignado int;
 	IF (vaccion = 'ins_productoxempresa') THEN
-	
-	INSERT INTO sim_productosempresa (nidperroles,nidproductos,nestado,cproempguardar,cproempactualizar)
-	VALUES (vnidperroles,vnidproducto,'1','0','0');
-	
-	SELECT '1' AS msg;	
-	
+	set vasignado = (select count(nidempresas) from sim_productosempresa where nidempresas=vnidempresa and nidproductos= vnidproducto and nestado=1);
+		
+	if (vasignado>0)then
+		select '2' as msg;
+	else
+		INSERT INTO sim_productosempresa (nidempresas,nidproductos,nestado,cproempguardar,cproempactualizar)
+		VALUES (vnidempresa,vnidproducto,'1','0','0');
+		SELECT '1' AS msg;
+	end if;
 	END IF;
 	
 		
@@ -831,18 +828,19 @@ DELIMITER //
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_ins_vendedorxempresa`(IN vaccion VARCHAR(30),IN vnidempresas VARCHAR(100),IN vnidvendedor VARCHAR(100))
 BEGIN
 	DECLARE vexiste INT;
-	SET vexiste = (SELECT COUNT(nidvendedor) FROM sim_carteravendedor WHERE nidvendedor=vnidvendedor);
-	
 	IF (vaccion = 'ins_vendedorxempresa') THEN
-		
-	IF (vexiste=0) THEN
+	SET vexiste = (SELECT COUNT(nestado) FROM sim_carteravendedor WHERE nidvendedor=vnidvendedor AND nidempresas=vnidempresas AND nestado=1);
 	
-		INSERT INTO sim_carteravendedor (nidvendedor,nidempresas,nestado,ccarvenguardar,ccarvenactualizar)
-		VALUES (vnidvendedor,vnidempresas,'1','0','0');
-		SELECT '1' AS msg;
+	IF (vexiste > 0) THEN
+	
+	SELECT '2' AS msg;	
+	
 	ELSE
+	INSERT INTO sim_carteravendedor (nidvendedor,nidempresas,nestado,ccarvenguardar,ccarvenactualizar)
+	VALUES (vnidvendedor,vnidempresas,'1','0','0');
 	
-		SELECT '0' AS msg;
+	SELECT '1' AS msg;	
+	
 	END IF;
 	
 	END IF;
@@ -984,14 +982,19 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_qry_clientesxempresa`(IN vac
 BEGIN
 	IF (vaccion = 'qry_clientesxempresa') THEN
 	
-	SELECT carcli.nidcartclientes,carcli.nidclientes,carcli.nidempresas,perro.nidperroles,perro.nidroles,
-	perro.nidpersona,perro.nestado,per.cnomcomercial as cliente
-	from sim_carteraclientes carcli
-	inner join sim_personaroles perro on perro.nidperroles=carcli.nidclientes
-	inner join sim_persona per on per.nidpersona=perro.nidpersona
-	WHERE perro.nestado = 1
-	and perro.nidroles=7;
-	
+SELECT carcli.nidcartclientes,carcli.nidclientes,carcli.nidempresas,emp.nidempresas,
+	emp.nidpersona,carcli.nestado,LTRIM(CONCAT(per.`capellidos`,' ',per.`cnombres`,per.`cnomcomercial`)) AS empresa,
+	LTRIM(CONCAT(per2.`capellidos`,' ',per2.`cnombres`,per2.`cnomcomercial`)) AS cliente,
+	CASE WHEN carcli.nestado='1' THEN '<span class="label label-success"><i class="fa fa-angle-double-up" ></i></span>' 
+	WHEN carcli.nestado='0' THEN '<span class="label label-danger"><i class="fa fa-angle-double-down" ></i></span>'	
+	ELSE '<span class="label label-danger">Inactivo<i class="fa fa-asterisk" ></i></span>'  END cestado
+	FROM sim_carteraclientes carcli
+	INNER JOIN sim_empresa emp ON emp.nidempresas=carcli.nidempresas
+	INNER JOIN sim_persona per ON per.nidpersona=emp.nidpersona
+	INNER JOIN sim_persona per2 ON per2.`nidpersona`=carcli.`nidclientes`
+	WHERE emp.nestado = 1
+	AND per.nestado=1
+	AND per2.nestado=1;
 	
 	END IF;
     END//
@@ -1038,6 +1041,58 @@ BEGIN
 DELIMITER ;
 
 
+-- Volcando estructura para procedimiento sim_comercial_prod.sim_sp_qry_empresas
+DELIMITER //
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_qry_empresas`(IN vaccion VARCHAR(30),IN vnidempresa VARCHAR(200),IN vcempresa VARCHAR(200))
+BEGIN
+	DECLARE vexiste INT;
+	IF (vaccion = 'qry_empresas') THEN
+	
+	SELECT emp.nidempresas,emp.nidpersona,emp.nestado,LTRIM(CONCAT(per.`capellidos`,' ',per.`cnombres`,per.`cnomcomercial`)) AS cnombre,
+	CASE WHEN emp.nestado='1' THEN '<span class="label label-success"><i class="fa fa-angle-double-up" ></i></span>' 
+	WHEN emp.nestado='0' THEN '<span class="label label-danger"><i class="fa fa-angle-double-down" ></i></span>'	
+	ELSE '<span class="label label-danger">Inactivo<i class="fa fa-asterisk" ></i></span>'  END cestado
+	FROM sim_empresa emp
+	inner join sim_persona per on per.nidpersona=emp.nidpersona
+	where per.nestado=1;
+	END IF;
+	
+	IF (vaccion = 'qry_empresasactivas') THEN
+	
+	SELECT emp.nidempresas,emp.nidpersona,emp.nestado,LTRIM(CONCAT(per.`capellidos`,' ',per.`cnombres`,per.`cnomcomercial`)) AS cnombre,
+	CASE WHEN emp.nestado='1' THEN '<span class="label label-success"><i class="fa fa-angle-double-up" ></i></span>' 
+	WHEN emp.nestado='0' THEN '<span class="label label-danger"><i class="fa fa-angle-double-down" ></i></span>'	
+	ELSE '<span class="label label-danger">Inactivo<i class="fa fa-asterisk" ></i></span>'  END cestado
+	FROM sim_empresa emp
+	INNER JOIN sim_persona per ON per.nidpersona=emp.nidpersona
+	WHERE emp.nestado=1 and per.nestado=1;
+	END IF;
+	
+	IF (vaccion = 'qry_persona') THEN
+	SELECT nidpersona,capellidos,cnombres,cnomcomercial,nestado,cdniruc
+	FROM sim_persona
+	WHERE CONCAT(capellidos,' ',cnombres,' ',cnomcomercial) LIKE CONCAT ('%', vnidempresa, '%')
+	AND nestado = 1;
+	END IF;
+	
+	IF (vaccion = 'qry_empresaxper') THEN
+	
+	SET vexiste = (SELECT COUNT(emp.nidpersona) FROM sim_empresa emp WHERE emp.nidpersona=vnidempresa AND emp.nestado=1);
+	
+	IF (vexiste>0) THEN
+		SELECT 2 AS msg;
+	ELSE
+		INSERT INTO sim_empresa(nidpersona,nestado,cempguardar,cempactualizar)
+		VALUES (vnidempresa,'1','0','0');
+		SELECT 3 AS msg;
+	END IF;
+		
+	
+	END IF;
+    END//
+DELIMITER ;
+
+
 -- Volcando estructura para procedimiento sim_comercial_prod.sim_sp_qry_encuesta
 DELIMITER //
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_qry_encuesta`(IN vaccion VARCHAR(30),IN vnidempresa INT ,IN vempresa VARCHAR(20))
@@ -1059,16 +1114,32 @@ DELIMITER ;
 
 -- Volcando estructura para procedimiento sim_comercial_prod.sim_sp_qry_linea
 DELIMITER //
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_qry_linea`(IN vaccion VARCHAR(30),IN vnidlinea INT ,IN vclinea VARCHAR(20))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_qry_linea`(IN `vaccion` VARCHAR(30), IN `vnidlinea` INT , IN `vclinea` VARCHAR(20))
 BEGIN
-	IF (vaccion = 'qry_linea') THEN
-	
-	SELECT nidlinea,clinea,calias,nestado,clinguardar,clinactualizar
-	FROM sim_linea
-	WHERE nestado = 1;
-	
-	END IF;
-    END//
+  IF ( vaccion = 'qry_linea' ) THEN
+    SELECT nidlinea,
+           clinea,
+           calias,
+           nestado,
+           clinguardar,
+           clinactualizar,
+           CASE
+             WHEN nestado = '1' THEN
+              '<span class="label label-success"><i class="fa fa-angle-double-up" ></i></span>'
+             WHEN nestado = '0' THEN
+              '<span class="label label-danger"><i class="fa fa-angle-double-down" ></i></span>'
+             ELSE
+              '<span class="label label-danger">Inactivo<i class="fa fa-asterisk" ></i></span>'
+           END cestado
+    FROM   sim_linea;
+  END IF;
+
+  IF ( vaccion = 'qry_linea_estado' ) THEN
+    SELECT nidlinea,
+           clinea
+    FROM   sim_linea WHERE nestado = vnidlinea;
+  END IF;
+END//
 DELIMITER ;
 
 
@@ -1162,21 +1233,44 @@ BEGIN
 	AND perro.nidroles=7;
 	
 	END IF;
-    END//
+	
+	IF (vaccion = 'qry_personas') THEN
+	
+	SELECT nidpersona,capellidos,cnombres,cnomcomercial,nestado,cdniruc,LTRIM(CONCAT(`capellidos`,' ',`cnombres`,`cnomcomercial`)) AS cnomcomercial
+	FROM sim_persona
+	WHERE nestado = 1;
+	
+	END IF;
+	
+   END//
 DELIMITER ;
 
 
 -- Volcando estructura para procedimiento sim_comercial_prod.sim_sp_qry_producto
 DELIMITER //
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_qry_producto`(IN vaccion VARCHAR(30),IN vnidproductos INT ,IN vcproductos VARCHAR(20))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_qry_producto`(IN `vaccion` VARCHAR(30), IN `vnidproductos` INT , IN `vcproductos` VARCHAR(20))
 BEGIN
 	IF (vaccion = 'qry_producto') THEN
 	
-	SELECT nidproductos,cproductos,nestado,cproguardar,cproactualizar,nidlinea
-	FROM sim_productos
-	WHERE nestado = 1;
+	SELECT pro.nidproductos,pro.cproductos,pro.nestado,pro.cproguardar,pro.cproactualizar,pro.nidlinea,lin.clinea,
+	CASE WHEN pro.nestado='1' THEN '<span class="label label-success"><i class="fa fa-angle-double-up" ></i></span>' 
+	WHEN pro.nestado='0' THEN '<span class="label label-danger"><i class="fa fa-angle-double-down" ></i></span>'	
+	ELSE '<span class="label label-danger">Inactivo<i class="fa fa-asterisk" ></i></span>'  END cestado
+	FROM sim_productos pro
+	inner join sim_linea lin on lin.nidlinea=pro.nidlinea
+	WHERE lin.nestado = 1;
 	
 	END IF;
+	IF (vaccion = 'qry_producto_get') THEN
+		SELECT 
+			pro.nidproductos
+			,pro.cproductos
+			,pro.nestado
+			,pro.nidlinea
+		FROM sim_productos pro
+		WHERE pro.nidproductos = vnidproductos;
+	
+	END IF;	
     END//
 DELIMITER ;
 
@@ -1187,24 +1281,35 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_qry_productoxempresa`(IN vac
 BEGIN
 	IF (vaccion = 'qry_productoxempresa') THEN
 	
-	SELECT pxe.nidproempresa,pxe.nidperroles,pxe.nidproductos,pxe.nestado,pxe.cproempguardar,pxe.cproempactualizar,pro.cproductos,LTRIM(CONCAT(per.`capellidos`,' ',per.`cnombres`,per.`cnomcomercial`))  as cnomcomercial
+	SELECT pxe.nidproempresa,pxe.nidempresas,pxe.nidproductos,pxe.nestado,pxe.cproempguardar,pxe.cproempactualizar,pro.cproductos,LTRIM(CONCAT(per.`capellidos`,' ',per.`cnombres`,per.`cnomcomercial`))  as cnomcomercial,
+	CASE WHEN pxe.nestado='1' THEN '<span class="label label-success"><i class="fa fa-angle-double-up" ></i></span>' 
+	WHEN pxe.nestado='0' THEN '<span class="label label-danger"><i class="fa fa-angle-double-down" ></i></span>'	
+	ELSE '<span class="label label-danger">Inactivo<i class="fa fa-asterisk" ></i></span>'  END cestado
 	FROM sim_productosempresa pxe
 	inner join sim_productos pro on pro.nidproductos=pxe.nidproductos
-	inner join sim_personaroles perro on perro.nidperroles = pxe.nidperroles
-	inner join sim_persona per on per.nidpersona=perro.nidpersona
-	WHERE pxe.nestado = 1;
+	inner join sim_empresa emp on emp.nidempresas = pxe.nidempresas
+	inner join sim_persona per on per.nidpersona=emp.nidpersona
+	WHERE pro.nestado = 1
+	and emp.nestado=1
+	and per.nestado=1;
 	
 	END IF;
 	
 	IF (vaccion = 'qry_productoxidempresa') THEN
 	
-	SELECT pxe.nidproempresa,pxe.nidperroles,pxe.nidproductos,pxe.nestado,pxe.cproempguardar,pxe.cproempactualizar,pro.cproductos,LTRIM(CONCAT(per.`capellidos`,' ',per.`cnombres`,per.`cnomcomercial`))  AS cnomcomercial
+	SELECT pxe.nidproempresa,pxe.nidempresas,pxe.nidproductos,pxe.nestado,pxe.cproempguardar,pxe.cproempactualizar,pro.cproductos,LTRIM(CONCAT(per.`capellidos`,' ',per.`cnombres`,per.`cnomcomercial`))  AS cnomcomercial,
+	CASE WHEN pxe.nestado='1' THEN '<span class="label label-success"><i class="fa fa-angle-double-up" ></i></span>' 
+	WHEN pxe.nestado='0' THEN '<span class="label label-danger"><i class="fa fa-angle-double-down" ></i></span>'	
+	ELSE '<span class="label label-danger">Inactivo<i class="fa fa-asterisk" ></i></span>'  END cestado
 	FROM sim_productosempresa pxe
 	INNER JOIN sim_productos pro ON pro.nidproductos=pxe.nidproductos
-	INNER JOIN sim_personaroles perro ON perro.nidperroles = pxe.nidperroles
-	INNER JOIN sim_persona per ON per.nidpersona=perro.nidpersona
-	WHERE pxe.nestado = 1
-	AND perro.nidperroles = vidempresa;
+	INNER JOIN sim_empresa emp ON emp.nidempresas = pxe.nidempresas
+	INNER JOIN sim_persona per ON per.nidpersona=emp.nidpersona
+	WHERE pro.nestado = 1
+	AND emp.nestado=1
+	AND per.nestado=1
+	and pxe.nestado=1
+	and pxe.nidempresas = vidempresa;
 	
 	END IF;
 	
@@ -1242,97 +1347,60 @@ DELIMITER ;
 
 -- Volcando estructura para procedimiento sim_comercial_prod.sim_sp_qry_usuarios
 DELIMITER //
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_qry_usuarios`(IN `vaccion` VARCHAR(30), IN `vnidusuarios` VARCHAR(50))
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_qry_usuarios`(IN vaccion VARCHAR(30),IN vnidusuarios VARCHAR(50))
 BEGIN
-	DECLARE vexiste INT;
-
+	declare vexiste int;
 	IF (vaccion = 'qry_usuarios') THEN
-		SELECT usu.nidusuario
-			,usu.cusuario
-			,usu.ccontrasena
-			,usu.nestado
-			,usu.nidpersona
-			,usu.ntipousuario
-			,LTRIM(CONCAT (
-					per.`capellidos`
-					,' '
-					,per.`cnombres`
-					,per.`cnomcomercial`
-					)) AS cnombre
-			,per.cdniruc
-			,CASE 
-				WHEN usu.nestado = '1'
-					THEN '<span class="label label-success"><i class="fa fa-angle-double-up" ></i></span>'
-				WHEN usu.nestado = '0'
-					THEN '<span class="label label-danger"><i class="fa fa-angle-double-down" ></i></span>'
-				ELSE '<span class="label label-danger">Inactivo<i class="fa fa-asterisk" ></i></span>'
-				END cestado
-		FROM sim_usuario usu
-		INNER JOIN sim_persona per ON per.nidpersona = usu.nidpersona
-		WHERE per.nestado = 1;
+	
+	SELECT usu.nidusuario,usu.cusuario,usu.ccontrasena,usu.nestado,usu.nidpersona,usu.ntipousuario,LTRIM(CONCAT(per.`capellidos`,' ',per.`cnombres`,per.`cnomcomercial`)) AS cnombre,per.cdniruc,
+	CASE WHEN usu.nestado='1' THEN '<span class="label label-success"><i class="fa fa-angle-double-up" ></i></span>' 
+	WHEN usu.nestado='0' THEN '<span class="label label-danger"><i class="fa fa-angle-double-down" ></i></span>'	
+	ELSE '<span class="label label-danger">Inactivo<i class="fa fa-asterisk" ></i></span>'  END cestado
+	FROM sim_usuario usu
+	inner join sim_persona per ON per.nidpersona=usu.nidpersona
+	where per.nestado = 1;
+	
 	END IF;
-
+	
+	IF (vaccion = 'qry_usuariosxid') THEN
+	
+	SELECT usu.nidusuario,usu.cusuario,usu.ccontrasena,usu.nestado,usu.nidpersona,usu.ntipousuario,mae.cmaestra,LTRIM(CONCAT(per.`capellidos`,' ',per.`cnombres`,per.`cnomcomercial`)) AS cnombre,per.cdniruc
+	FROM sim_usuario usu
+	INNER JOIN sim_maestra mae ON mae.nidmaestra=usu.ntipousuario
+	INNER JOIN sim_persona per ON per.nidpersona=usu.nidpersona
+	where usu.nidusuario=vnidusuarios;
+	
+	END IF;
+	
+	IF (vaccion = 'qry_persona') THEN
+	
+	SELECT nidpersona,capellidos,cnombres,cnomcomercial,nestado,cdniruc
+	FROM sim_persona
+	WHERE CONCAT(capellidos,' ',cnombres,' ',cnomcomercial) LIKE CONCAT ('%', vnidusuarios, '%')
+	AND nestado = 1;
+	
+	END IF;
 	IF (vaccion = 'qry_idUserByCodPerson') THEN
  		SELECT usu.nidusuario
  		FROM sim_usuario usu
-		WHERE usu.nidpersona = vnidusuarios and usu.nestado = 1;
+		WHERE usu.nidpersona = vnidusuarios AND usu.nestado = 1;
 	END IF;
-	IF (vaccion = 'qry_usuariosxid') THEN
-		SELECT usu.nidusuario
-			,usu.cusuario
-			,usu.ccontrasena
-			,usu.nestado
-			,usu.nidpersona
-			,usu.ntipousuario
-			,mae.cmaestra
-			,LTRIM(CONCAT (
-					per.`capellidos`
-					,' '
-					,per.`cnombres`
-					,per.`cnomcomercial`
-					)) AS cnombre
-			,per.cdniruc
-		FROM sim_usuario usu
-		INNER JOIN sim_maestra mae ON mae.nidmaestra = usu.ntipousuario
-		INNER JOIN sim_persona per ON per.nidpersona = usu.nidpersona
-		WHERE usu.nidusuario = vnidusuarios;
-	END IF ;
-	IF (vaccion = 'qry_persona') THEN
-		SELECT nidpersona
-			,capellidos
-			,cnombres
-			,cnomcomercial
-			,nestado
-			,cdniruc
-		FROM sim_persona
-		WHERE CONCAT (
-				capellidos
-				,' '
-				,cnombres
-				,' '
-				,cnomcomercial
-				) LIKE CONCAT (
-				'%'
-				,vnidusuarios
-				,'%'
-				)
-			AND nestado = 1;
-	END IF ;
 	IF (vaccion = 'qry_usuarioxper') THEN
-		SET vexiste = (
-				SELECT count(usu.nidusuario)
-				FROM sim_usuario usu
-				WHERE usu.nidpersona = vnidusuarios
-					AND usu.nestado = 1
-				);
-
-		IF (vexiste > 0) then
-			SELECT 2 AS msg;
-		ELSE
-			SELECT 3 AS msg;
-			END IF ;
-	END IF ;
-END//
+	
+	set vexiste = (SELECT count(usu.nidusuario)
+	FROM sim_usuario usu
+	WHERE usu.nidpersona=vnidusuarios
+	and usu.nestado=1);
+	
+	if (vexiste>0) then
+		select 2 AS msg;
+	else
+		SELECT 3 AS msg;
+	end if;
+		
+	
+	END IF;
+    END//
 DELIMITER ;
 
 
@@ -1342,30 +1410,42 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_qry_vendedorxempresa`(IN vac
 BEGIN
 	IF (vaccion = 'qry_vendedorxempresa') THEN
 	
-	SELECT carven.nidvenempresa,carven.nidvendedor,carven.nidempresas,perro.nidperroles,perro.nidroles,
-	perro.nidpersona,perro.nestado,LTRIM(CONCAT(per.`capellidos`,' ',per.`cnombres`,per.`cnomcomercial`))  as vendedor,
+	SELECT carven.nidcartvendedor,carven.nidvendedor,carven.nidempresas,
+	emp.nidpersona,carven.nestado,LTRIM(CONCAT(per.`capellidos`,' ',per.`cnombres`,per.`cnomcomercial`)) AS empresa,
+	LTRIM(CONCAT(per2.`capellidos`,' ',per2.`cnombres`,per2.`cnomcomercial`)) AS vendedor,
 	CASE WHEN carven.nestado='1' THEN '<span class="label label-success"><i class="fa fa-angle-double-up" ></i></span>' 
 	WHEN carven.nestado='0' THEN '<span class="label label-danger"><i class="fa fa-angle-double-down" ></i></span>'	
 	ELSE '<span class="label label-danger">Inactivo<i class="fa fa-asterisk" ></i></span>'  END cestado
-	from sim_carteravendedor carven
-	inner join sim_personaroles perro on perro.nidperroles=carven.nidvendedor
-	inner join sim_persona per on per.nidpersona=perro.nidpersona
-	WHERE perro.nestado = 1
-	and perro.nidroles=8;
+	FROM sim_carteravendedor carven
+	INNER JOIN sim_empresa emp ON emp.nidempresas=carven.nidempresas
+	INNER JOIN sim_persona per ON per.nidpersona=emp.nidpersona
+	INNER JOIN sim_persona per2 ON per2.`nidpersona`=carven.`nidvendedor`
+	WHERE emp.nestado = 1
+	AND per.nestado=1
+	AND per2.nestado=1;
+	
 	
 	
 	END IF;
 	
 	IF (vaccion = 'qry_empresaxvendedor') THEN
 		
-	SELECT carven.nidvenempresa,carven.nidvendedor,carven.nidempresas,perro.nidperroles,perro.nidroles,
-	perro.nidpersona,perro.nestado,LTRIM(CONCAT(per.`capellidos`,' ',per.`cnombres`,per.`cnomcomercial`))  AS vendedor
+		
+SELECT carven.nidcartvendedor,carven.nidvendedor,carven.nidempresas,
+	emp.nidpersona,carven.nestado,LTRIM(CONCAT(per.`capellidos`,' ',per.`cnombres`,per.`cnomcomercial`)) AS empresa,
+	LTRIM(CONCAT(per2.`capellidos`,' ',per2.`cnombres`,per2.`cnomcomercial`)) AS vendedor,
+	CASE WHEN carven.nestado='1' THEN '<span class="label label-success"><i class="fa fa-angle-double-up" ></i></span>' 
+	WHEN carven.nestado='0' THEN '<span class="label label-danger"><i class="fa fa-angle-double-down" ></i></span>'	
+	ELSE '<span class="label label-danger">Inactivo<i class="fa fa-asterisk" ></i></span>'  END cestado
 	FROM sim_carteravendedor carven
-	INNER JOIN sim_personaroles perro ON perro.nidperroles=carven.nidvendedor
-	INNER JOIN sim_persona per ON per.nidpersona=perro.nidpersona
-	WHERE perro.nestado = 1
-	AND perro.nidroles=8
-	AND per.nidpersona=vnidpersona;
+	INNER JOIN sim_empresa emp ON emp.nidempresas=carven.nidempresas
+	INNER JOIN sim_persona per ON per.nidpersona=emp.nidpersona
+	INNER JOIN sim_persona per2 ON per2.`nidpersona`=carven.`nidvendedor`
+	WHERE emp.nestado = 1
+	AND per.nestado=1
+	AND per2.nestado=1
+	AND carven.nestado=1
+	AND per2.nidpersona=vnidpersona;
 	
 	END IF;
 	
@@ -1400,6 +1480,73 @@ BEGIN
 DELIMITER ;
 
 
+-- Volcando estructura para procedimiento sim_comercial_prod.sim_sp_upd_clientexempresa
+DELIMITER //
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_upd_clientexempresa`(IN vaccion VARCHAR(30),IN vnidcartclientes INT)
+BEGIN
+	DECLARE vestado INT;
+	DECLARE vnidclientes INT;
+	DECLARE vempresa INT;
+	DECLARE vasignado INT;
+	SET vestado = (SELECT nestado FROM sim_carteraclientes WHERE nidcartclientes=vnidcartclientes);
+	IF (vaccion = 'upd_estadoClientexempresa') THEN	
+		IF (vestado=1) THEN
+			UPDATE 	sim_carteraclientes SET nestado=0 WHERE nidcartclientes=vnidcartclientes;
+			SELECT '1' AS msg;
+		ELSE
+			SET vnidclientes = (SELECT nidclientes FROM sim_carteraclientes WHERE nidcartclientes=vnidcartclientes);			
+			SET vempresa = (SELECT nidempresas FROM sim_carteraclientes WHERE nidcartclientes=vnidcartclientes);
+			SET vasignado = (SELECT COUNT(nidempresas) FROM sim_carteraclientes WHERE nidempresas=vempresa AND nidclientes= vnidclientes AND nestado=1);
+		
+			IF (vasignado>0)THEN
+			SELECT '2' AS msg;
+			ELSE
+			UPDATE 	sim_carteraclientes SET nestado=1 WHERE nidcartclientes=vnidcartclientes;
+			SELECT '1' AS msg;
+			END IF;
+		
+			
+		
+		END IF;
+	END IF;
+    END//
+DELIMITER ;
+
+
+-- Volcando estructura para procedimiento sim_comercial_prod.sim_sp_upd_empresas
+DELIMITER //
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_upd_empresas`(IN vaccion VARCHAR(30),IN vnidempresa INT)
+BEGIN
+	DECLARE vestado INT;
+	DECLARE vidper INT;
+	DECLARE vexisteemp INT;
+	DECLARE vexistenidpersona INT;
+	SET vestado = (SELECT nestado FROM sim_empresa WHERE nidempresas=vnidempresa);
+	
+	IF (vaccion = 'upd_estadoEmp') THEN	
+		
+		IF (vestado=1) THEN
+	
+			UPDATE 	sim_empresa SET nestado=0 WHERE nidempresas=vnidempresa;
+			SELECT '1' AS msg;
+	
+		ELSE
+			SET vidper = (SELECT nidpersona FROM sim_empresa WHERE nidempresas=vnidempresa);
+			SET vexisteemp = (SELECT COUNT(nidpersona) FROM sim_empresa WHERE nidpersona=vidper AND nestado=1);
+			IF (vexisteemp = 0) THEN
+				UPDATE 	sim_empresa SET nestado=1 WHERE nidempresas=vnidempresa;
+				SELECT '1' AS msg;
+			ELSE
+			SELECT '2' AS msg;
+			END IF;
+		
+		END IF;
+	END IF;
+	
+    END//
+DELIMITER ;
+
+
 -- Volcando estructura para procedimiento sim_comercial_prod.sim_sp_upd_encuesta
 DELIMITER //
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_upd_encuesta`(IN vaccion VARCHAR(30),IN vnidencuesta INT,IN vencuesta VARCHAR(100),IN vidperroles INT,IN vnidusuario INT)
@@ -1421,6 +1568,35 @@ BEGIN
 		SELECT '1' AS msg;
 	END IF;
 	
+	END IF;
+    END//
+DELIMITER ;
+
+
+-- Volcando estructura para procedimiento sim_comercial_prod.sim_sp_upd_linea
+DELIMITER //
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_upd_linea`(IN vaccion VARCHAR(30),IN vnidlinea INT)
+BEGIN
+	DECLARE vestado INT;
+	declare vnomlinea varchar(100);
+	declare vexiste int;
+	SET vestado = (SELECT nestado FROM sim_linea WHERE nidlinea=vnidlinea);
+	IF (vaccion = 'upd_estadoLinea') THEN	
+		IF (vestado=1) THEN
+			UPDATE 	sim_linea SET nestado=0 WHERE nidlinea=vnidlinea;
+			SELECT '1' AS msg;
+		ELSE
+			SET vnomlinea = (SELECT clinea FROM sim_linea WHERE nidlinea=vnidlinea);
+			set vexiste = (select count(nestado) from sim_linea where clinea=vnomlinea and nestado=1);
+			if (vexiste >0) then
+			SELECT '2' AS msg;
+			else
+			UPDATE sim_linea SET nestado=1 WHERE nidlinea=vnidlinea;
+			SELECT '1' AS msg;
+			end if;
+			
+		
+		END IF;
 	END IF;
     END//
 DELIMITER ;
@@ -1458,6 +1634,71 @@ BEGIN
 		END IF;
 	END IF;
 	
+    END//
+DELIMITER ;
+
+
+-- Volcando estructura para procedimiento sim_comercial_prod.sim_sp_upd_producto
+DELIMITER //
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_upd_producto`(IN vaccion VARCHAR(30),IN vnidproducto INT)
+BEGIN
+	DECLARE vestado INT;
+	declare vnompro varchar(100);
+	declare vlinea int;
+	declare vexiste int;
+	SET vestado = (SELECT nestado FROM sim_productos WHERE nidproductos=vnidproducto);
+	IF (vaccion = 'upd_estadoProducto') THEN	
+		IF (vestado=1) THEN
+			UPDATE 	sim_productos SET nestado=0 WHERE nidproductos=vnidproducto;
+			SELECT '1' AS msg;
+		ELSE
+			SET vnompro = (SELECT cproductos FROM sim_productos WHERE nidproductos=vnidproducto);
+			SET vlinea = (SELECT nidlinea FROM sim_productos WHERE nidproductos=vnidproducto);
+			set vexiste = (select count(nidproductos) from sim_productos where nidlinea=vlinea and cproductos=vnompro and nestado=1);
+			
+			if (vexiste>0) then
+			SELECT '2' AS msg;
+			else
+			UPDATE 	sim_productos SET nestado=1 WHERE nidproductos=vnidproducto;
+			SELECT '1' AS msg;
+			end if;
+			
+		
+		END IF;
+	END IF;
+    END//
+DELIMITER ;
+
+
+-- Volcando estructura para procedimiento sim_comercial_prod.sim_sp_upd_productoxempresa
+DELIMITER //
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_upd_productoxempresa`(IN vaccion VARCHAR(30),IN vnidproempresa INT)
+BEGIN
+	DECLARE vestado INT;
+	declare vproducto INT;
+	DECLARE vempresa INT;
+	DECLARE vasignado INT;
+	SET vestado = (SELECT nestado FROM sim_productosempresa WHERE nidproempresa=vnidproempresa);
+	IF (vaccion = 'upd_estadoProductoxempresa') THEN	
+		IF (vestado=1) THEN
+			UPDATE 	sim_productosempresa SET nestado=0 WHERE nidproempresa=vnidproempresa;
+			SELECT '1' AS msg;
+		ELSE
+			SET vproducto = (SELECT nidproductos FROM sim_productosempresa WHERE nidproempresa=vnidproempresa);			
+			SET vempresa = (SELECT nidempresas FROM sim_productosempresa WHERE nidproempresa=vnidproempresa);
+			SET vasignado = (SELECT COUNT(nidempresas) FROM sim_productosempresa WHERE nidempresas=vempresa AND nidproductos= vproducto AND nestado=1);
+		
+			IF (vasignado>0)THEN
+			SELECT '2' AS msg;
+			ELSE
+			UPDATE 	sim_productosempresa SET nestado=1 WHERE nidproempresa=vnidproempresa;
+			SELECT '1' AS msg;
+			END IF;
+		
+			
+		
+		END IF;
+	END IF;
     END//
 DELIMITER ;
 
@@ -1514,6 +1755,39 @@ BEGIN
 		END IF;
 	END IF;
 	
+    END//
+DELIMITER ;
+
+
+-- Volcando estructura para procedimiento sim_comercial_prod.sim_sp_upd_vendedorxempresa
+DELIMITER //
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sim_sp_upd_vendedorxempresa`(IN vaccion VARCHAR(30),IN vnidcartvendedor INT)
+BEGIN
+	DECLARE vestado INT;
+	DECLARE vnidvendedor INT;
+	DECLARE vempresa INT;
+	DECLARE vasignado INT;
+	SET vestado = (SELECT nestado FROM sim_carteravendedor WHERE nidcartvendedor=vnidcartvendedor);
+	IF (vaccion = 'upd_estadoVendedorxempresa') THEN	
+		IF (vestado=1) THEN
+			UPDATE 	sim_carteravendedor SET nestado=0 WHERE nidcartvendedor=vnidcartvendedor;
+			SELECT '1' AS msg;
+		ELSE
+			SET vnidvendedor = (SELECT nidvendedor FROM sim_carteravendedor WHERE nidcartvendedor=vnidcartvendedor);			
+			SET vempresa = (SELECT nidempresas FROM sim_carteravendedor WHERE nidcartvendedor=vnidcartvendedor);
+			SET vasignado = (SELECT COUNT(nidempresas) FROM sim_carteravendedor WHERE nidempresas=vempresa AND nidvendedor= vnidvendedor AND nestado=1);
+		
+			IF (vasignado>0)THEN
+			SELECT '2' AS msg;
+			ELSE
+			UPDATE 	sim_carteravendedor SET nestado=1 WHERE nidcartvendedor=vnidcartvendedor;
+			SELECT '1' AS msg;
+			END IF;
+		
+			
+		
+		END IF;
+	END IF;
     END//
 DELIMITER ;
 
@@ -3617,9 +3891,9 @@ CREATE TABLE IF NOT EXISTS `sim_ultimasesion` (
   `nestado` int(11) DEFAULT NULL,
   `random` int(11) DEFAULT NULL,
   PRIMARY KEY (`nidultsesion`)
-) ENGINE=InnoDB AUTO_INCREMENT=136 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=161 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla sim_comercial_prod.sim_ultimasesion: ~135 rows (aproximadamente)
+-- Volcando datos para la tabla sim_comercial_prod.sim_ultimasesion: ~160 rows (aproximadamente)
 /*!40000 ALTER TABLE `sim_ultimasesion` DISABLE KEYS */;
 INSERT INTO `sim_ultimasesion` (`nidultsesion`, `nidusuario`, `dinicio`, `dfin`, `nestado`, `random`) VALUES
 	(1, 2, '2014-07-03 01:08:00', '0000-00-00 00:00:00', 1, 6),
@@ -3756,10 +4030,32 @@ INSERT INTO `sim_ultimasesion` (`nidultsesion`, `nidusuario`, `dinicio`, `dfin`,
 	(132, 3, '2014-09-22 04:22:49', '0000-00-00 00:00:00', 1, 15),
 	(133, 3, '2014-09-22 04:23:38', '0000-00-00 00:00:00', 1, 13),
 	(134, 3, '2014-09-22 23:22:35', '0000-00-00 00:00:00', 1, 14),
-	(135, 3, '2014-09-22 23:51:03', '0000-00-00 00:00:00', 1, 8),
-	(136, 3, '2014-09-23 02:58:14', '0000-00-00 00:00:00', 1, 9),
-	(137, 25, '2014-09-23 03:03:47', '0000-00-00 00:00:00', 1, 10),
-	(138, 3, '2014-09-23 03:03:58', '0000-00-00 00:00:00', 1, 14);
+	(135, 3, '2014-09-23 00:50:16', '0000-00-00 00:00:00', 1, 6),
+	(136, 3, '2014-09-23 01:38:38', '0000-00-00 00:00:00', 1, 5),
+	(137, 3, '2014-09-23 03:15:57', '0000-00-00 00:00:00', 1, 8),
+	(138, 25, '2014-09-23 03:18:39', '0000-00-00 00:00:00', 1, 10),
+	(139, 3, '2014-09-23 03:19:03', '0000-00-00 00:00:00', 1, 14),
+	(140, 3, '2014-09-23 13:40:03', '0000-00-00 00:00:00', 1, 13),
+	(141, 3, '2014-09-23 21:07:36', '0000-00-00 00:00:00', 1, 7),
+	(142, 3, '2014-09-24 00:35:59', '0000-00-00 00:00:00', 1, 13),
+	(143, 3, '2014-09-24 00:56:38', '0000-00-00 00:00:00', 1, 9),
+	(144, 3, '2014-09-24 01:01:08', '0000-00-00 00:00:00', 1, 13),
+	(145, 3, '2014-09-24 01:03:09', '0000-00-00 00:00:00', 1, 7),
+	(146, 3, '2014-09-24 01:04:24', '0000-00-00 00:00:00', 1, 6),
+	(147, 3, '2014-09-24 01:34:24', '0000-00-00 00:00:00', 1, 8),
+	(148, 3, '2014-09-24 02:17:23', '0000-00-00 00:00:00', 1, 11),
+	(149, 3, '2014-09-24 02:40:27', '0000-00-00 00:00:00', 1, 12),
+	(150, 3, '2014-09-24 02:49:29', '0000-00-00 00:00:00', 1, 6),
+	(151, 3, '2014-09-24 03:07:08', '0000-00-00 00:00:00', 1, 10),
+	(152, 3, '2014-09-24 03:38:42', '0000-00-00 00:00:00', 1, 5),
+	(153, 3, '2014-09-24 03:39:46', '0000-00-00 00:00:00', 1, 15),
+	(154, 3, '2014-09-24 03:53:14', '0000-00-00 00:00:00', 1, 7),
+	(155, 3, '2014-09-24 04:16:02', '0000-00-00 00:00:00', 1, 10),
+	(156, 3, '2014-09-24 04:23:55', '0000-00-00 00:00:00', 1, 10),
+	(157, 3, '2014-09-24 04:40:54', '0000-00-00 00:00:00', 1, 12),
+	(158, 3, '2014-09-24 04:42:01', '0000-00-00 00:00:00', 1, 10),
+	(159, 3, '2014-09-24 04:44:58', '0000-00-00 00:00:00', 1, 7),
+	(160, 3, '2014-09-24 23:00:51', '0000-00-00 00:00:00', 1, 10);
 /*!40000 ALTER TABLE `sim_ultimasesion` ENABLE KEYS */;
 
 
@@ -3774,9 +4070,9 @@ CREATE TABLE IF NOT EXISTS `sim_usuario` (
   `cusuactualizar` varchar(30) DEFAULT NULL,
   `ntipousuario` int(2) DEFAULT NULL,
   PRIMARY KEY (`nidusuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 
--- Volcando datos para la tabla sim_comercial_prod.sim_usuario: ~10 rows (aproximadamente)
+-- Volcando datos para la tabla sim_comercial_prod.sim_usuario: ~11 rows (aproximadamente)
 /*!40000 ALTER TABLE `sim_usuario` DISABLE KEYS */;
 INSERT INTO `sim_usuario` (`nidusuario`, `cusuario`, `ccontrasena`, `nestado`, `nidpersona`, `cusuguardar`, `cusuactualizar`, `ntipousuario`) VALUES
 	(1, '43501922', 'e10adc3949ba59abbe56e057f20f883e', 1, 1, '2014070243501922', '2014070243501922', 6),
@@ -3789,7 +4085,7 @@ INSERT INTO `sim_usuario` (`nidusuario`, `cusuario`, `ccontrasena`, `nestado`, `
 	(21, 'bramirez', 'e10adc3949ba59abbe56e057f20f883e', 1, 12, '123456', '123456', 7),
 	(22, 'dtorres', 'e10adc3949ba59abbe56e057f20f883e', 1, 14, '123456', '123456', 8),
 	(24, 'udemo', '25d55ad283aa400af464c76d713c07ad', 1, 13, '123456', '123456', 7),
-	(25, 'lafruta', '25f9e794323b453885f5181f1b624d0b', 1, 11, '123456', '123456', 7);
+	(25, 'ddomingod', '220466675e31b9d20c051d5e57974150', 1, 11, '123456', '123456', 7);
 /*!40000 ALTER TABLE `sim_usuario` ENABLE KEYS */;
 
 
